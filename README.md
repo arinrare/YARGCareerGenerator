@@ -13,8 +13,10 @@ Songs are referenced by **Song Tuple** (title, artist, charter, source) so the r
 ## Quick start
 
 ```
-python career_builder.py scan     # list songs + per-source counts
-python career_builder.py build    # generate the career
+1. python career_builder.py regenerate-sources  # rebuild sources.json from a YARG install
+2. python career_builder.py scan                # list songs + per-source counts
+3. python career_builder.py build               # generate the career
+
 ```
 
 Output goes to `output_dir` (default: this folder) as both `<name>.json` (import via
@@ -66,6 +68,23 @@ The **default career is 80 songs across 12 tiers** (5/10/5/5/10/5/5/10/5/5/10/5)
 this target plus per-source song counts, so you can pick sources whose combined count is near 80
 (e.g. `ghwt` = 86, `ghwtdlc` = 155). Whatever you select is re-split across the tiers by
 `redistribute`.
+
+## YARG install location
+
+`sources.json` is generated from a YARG install's `StreamingAssets\sources\OpenSource-master`
+registry. The `yarg` block in `settings.json` points at which build to use:
+
+- `yarg.install_dir` — the install folder (the one containing `YARG.exe`). Leave `""` to
+  auto-detect. `regenerate-sources` scans **all drives (C: first)** for the YARC launcher layout
+  (`<drive>:\YARC\YARG Installs\*\installation`) and a few common standalone locations; if it finds
+  multiple it lists them and asks you to pick, and if it finds none it prompts for a path. Each
+  install is labelled **`Nightly`** or **`Stable`** (read from the launcher's `releaseName`;
+  "Stable" = retail/release).
+- `yarg.data_dir` — the `LocalLow` profile (`nightly` vs `release`); informational for now.
+
+**Note:** the release/retail build ships only `base` (official GH/RB/YARG sources); the nightly
+build also ships `extra` (community/custom sources). Regenerating from a release install will drop
+the `custom`/`charter` sources, so point at the nightly build if you need those.
 
 ## Difficulty ordering
 

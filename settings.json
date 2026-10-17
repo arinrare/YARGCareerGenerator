@@ -24,6 +24,13 @@
     "difficulty.field: song.ini key used to sort (e.g. diff_guitar, diff_band, diff_drums, diff_vocals).",
     "difficulty.missing: 'last' puts songs with that difficulty == -1 (or missing) at the end; 'skip' drops them.",
     "",
+    "yarg.install_dir: YARG install folder (the ...\\installation dir containing YARG.exe). Leave \"\" to",
+    "                  auto-detect on regenerate-sources (scans all drives, C: first). Used only to",
+    "                  (re)build sources.json from that build's StreamingAssets\\sources\\OpenSource-master.",
+    "                  NOTE: the release/retail build ships no 'extra' community sources, only 'base'.",
+    "yarg.data_dir: LocalLow profile folder (nightly vs release). Informational for now; reserved for",
+    "               future song-cache validation or writing careers into custom\\careers.",
+    "",
     "tiers: one entry per career level. song_count = tracks per level; unlock_criteria = stars required to unlock.",
     "       redistribute = 'auto' re-splits songs across tiers proportionally when the selected total",
     "       does not equal the sum of tier song_counts (e.g. you picked 147 songs but the 12 tiers total 80).",
@@ -34,6 +41,10 @@
   ],
   "music_root": "J:\\Stored\\YARG Music",
   "output_dir": "J:\\Stored\\YARG Careers",
+  "yarg": {
+    "install_dir": "",
+    "data_dir": "C:\\Users\\micha\\AppData\\LocalLow\\YARC\\YARG\\nightly"
+  },
   "visibility": "private",
   "difficulty": {
     "field": "diff_guitar",
@@ -41,9 +52,13 @@
     "missing": "last"
   },
   "source_selection": {
-    "weights": {"ghwt": 8, "ghwtdlc": 1},
+    "weights": {
+      "ghwt": 8,
+      "ghwtdlc": 1
+    },
     "filter": [
-      "ghwt", "ghwtdlc"
+      "ghwt",
+      "ghwtdlc"
     ],
     "limit": 0
   },
@@ -59,7 +74,7 @@
     ]
   },
   "career": {
-    "name": "Career Guitar Hero World Tour",
+    "name": "Test",
     "title": null,
     "description": "Starting a band has never been easier! Bring your friends to the YARG and begin playing the songs you've rehearsed. Even if you flub a few notes, everyone's here for a good time!",
     "source": "yarg",
