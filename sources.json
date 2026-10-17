@@ -1,0 +1,1609 @@
+{
+  "sources": {
+    "311hero": {
+      "group": "extra",
+      "name": "311 Hero",
+      "type": "custom"
+    },
+    "3up": {
+      "group": "extra",
+      "name": "3-UP",
+      "type": "charter"
+    },
+    "JRabes": {
+      "group": "extra",
+      "name": "JRabes",
+      "type": "charter"
+    },
+    "a2z": {
+      "group": "extra",
+      "name": "A-Z Pack",
+      "type": "custom"
+    },
+    "a7x": {
+      "group": "extra",
+      "name": "Avenged Sevenfold Mega Pack",
+      "type": "custom"
+    },
+    "a7xmegapack": {
+      "group": "extra",
+      "name": "Avenged Sevenfold Mega Pack",
+      "type": "custom"
+    },
+    "a9": {
+      "group": "extra",
+      "name": "Asphalt 9: Legends",
+      "type": "custom"
+    },
+    "ab": {
+      "group": "extra",
+      "name": "Aeon Bridge",
+      "type": "custom"
+    },
+    "adagiodiscog": {
+      "group": "extra",
+      "name": "Adagio Discography",
+      "type": "custom"
+    },
+    "addygh": {
+      "group": "extra",
+      "name": "Guitar Hero II: Addy's Disc",
+      "type": "custom"
+    },
+    "aep": {
+      "group": "extra",
+      "name": "The Eternal Project",
+      "type": "custom"
+    },
+    "ah": {
+      "group": "extra",
+      "name": "Angevil Hero",
+      "type": "custom"
+    },
+    "ah1": {
+      "group": "extra",
+      "name": "Angevil Hero",
+      "type": "custom"
+    },
+    "ah2": {
+      "group": "extra",
+      "name": "Angevil Hero 2",
+      "type": "custom"
+    },
+    "ah3": {
+      "group": "extra",
+      "name": "Angevil Hero 3",
+      "type": "custom"
+    },
+    "ah4": {
+      "group": "extra",
+      "name": "Angevil Hero 4",
+      "type": "custom"
+    },
+    "ahbe": {
+      "group": "extra",
+      "name": "Anti Hero - Beach Episode",
+      "type": "custom"
+    },
+    "airheads": {
+      "group": "extra",
+      "name": "AIRheads",
+      "type": "custom"
+    },
+    "animehero": {
+      "group": "extra",
+      "name": "Anime Hero",
+      "type": "custom"
+    },
+    "antihero": {
+      "group": "extra",
+      "name": "Anti Hero",
+      "type": "custom"
+    },
+    "antihero2": {
+      "group": "extra",
+      "name": "Anti Hero 2",
+      "type": "custom"
+    },
+    "bandhero": {
+      "group": "base",
+      "name": "Band Hero",
+      "type": "gh"
+    },
+    "bandhero2": {
+      "group": "base",
+      "name": "Band Hero 2",
+      "type": "gh"
+    },
+    "beatles": {
+      "group": "base",
+      "name": "The Beatles: Rock Band",
+      "type": "rb"
+    },
+    "beatles_dlc": {
+      "group": "base",
+      "name": "The Beatles: Rock Band DLC",
+      "type": "rb"
+    },
+    "bgrb": {
+      "group": "extra",
+      "name": "Bee Gees: Rock Band",
+      "type": "custom"
+    },
+    "bh": {
+      "group": "base",
+      "name": "Band Hero",
+      "type": "gh"
+    },
+    "bh2": {
+      "group": "base",
+      "name": "Band Hero 2",
+      "type": "gh"
+    },
+    "bhdlc": {
+      "group": "extra",
+      "name": "Band Hero DLC",
+      "type": "gh"
+    },
+    "bhds": {
+      "group": "extra",
+      "name": "Band Hero DS",
+      "type": "gh"
+    },
+    "bitcrusher": {
+      "group": "extra",
+      "name": "BITCRUSHER",
+      "type": "custom"
+    },
+    "bitcrusherdlc": {
+      "group": "extra",
+      "name": "BITCRUSHER DLC",
+      "type": "custom"
+    },
+    "blackhole": {
+      "group": "extra",
+      "name": "Black Hole",
+      "type": "custom"
+    },
+    "bleepbloops": {
+      "group": "extra",
+      "name": "Bleep Bloops",
+      "type": "custom"
+    },
+    "bleepbloopuc": {
+      "group": "extra",
+      "name": "Bleep Bloop Undercharts",
+      "type": "custom"
+    },
+    "blitz": {
+      "group": "base",
+      "name": "Rock Band Blitz",
+      "type": "rb"
+    },
+    "bodom": {
+      "group": "extra",
+      "name": "Bodom Hero",
+      "type": "custom"
+    },
+    "brick": {
+      "group": "extra",
+      "name": "Brick",
+      "type": "custom"
+    },
+    "bs": {
+      "group": "extra",
+      "name": "Blanket Statement",
+      "type": "custom"
+    },
+    "bstatement": {
+      "group": "extra",
+      "name": "Blanket Statement",
+      "type": "custom"
+    },
+    "burnout3": {
+      "group": "extra",
+      "name": "Burnout 3: Takedown",
+      "type": "custom"
+    },
+    "c3customs": {
+      "group": "extra",
+      "name": "C3 Customs",
+      "type": "custom"
+    },
+    "c3legacy": {
+      "group": "extra",
+      "name": "C3 Legacy",
+      "type": "custom"
+    },
+    "casp": {
+      "group": "extra",
+      "name": "CASP",
+      "type": "custom"
+    },
+    "cb": {
+      "group": "extra",
+      "name": "Circuit Breaker",
+      "type": "custom"
+    },
+    "ccc": {
+      "group": "extra",
+      "name": "C3 Customs",
+      "type": "custom"
+    },
+    "ch": {
+      "group": "extra",
+      "name": "Clone Hero",
+      "type": "game"
+    },
+    "charts": {
+      "group": "extra",
+      "name": "CHARTS",
+      "type": "custom"
+    },
+    "charts2": {
+      "group": "extra",
+      "name": "CHARTS 2",
+      "type": "custom"
+    },
+    "chelhero": {
+      "group": "extra",
+      "name": "Chel Hero",
+      "type": "custom"
+    },
+    "chelhero2": {
+      "group": "extra",
+      "name": "Chel Hero 2",
+      "type": "custom"
+    },
+    "chillhanger": {
+      "group": "extra",
+      "name": "Chill Hanger",
+      "type": "custom"
+    },
+    "chu": {
+      "group": "extra",
+      "name": "CloneHeroUruguay",
+      "type": "charter"
+    },
+    "clonehero": {
+      "group": "extra",
+      "name": "Clone Hero",
+      "type": "game"
+    },
+    "codered": {
+      "group": "extra",
+      "name": "Code Red",
+      "type": "custom"
+    },
+    "comtp45": {
+      "group": "extra",
+      "name": "Community Track Pack 4.5",
+      "type": "custom"
+    },
+    "comtpi": {
+      "group": "extra",
+      "name": "Community Track Pack I",
+      "type": "custom"
+    },
+    "comtpii": {
+      "group": "extra",
+      "name": "Community Track Pack II",
+      "type": "custom"
+    },
+    "comtpiii": {
+      "group": "extra",
+      "name": "Community Track Pack III",
+      "type": "custom"
+    },
+    "comtpiv": {
+      "group": "extra",
+      "name": "Community Track Pack IV",
+      "type": "custom"
+    },
+    "comtpv": {
+      "group": "extra",
+      "name": "Community Track Pack V",
+      "type": "custom"
+    },
+    "cosmiclatte": {
+      "group": "extra",
+      "name": "Cosmic Latte",
+      "type": "charter"
+    },
+    "cowhero": {
+      "group": "extra",
+      "name": "Cow Hero",
+      "type": "custom"
+    },
+    "cowherodlc1": {
+      "group": "extra",
+      "name": "Cow Hero DLC 1 - Bull Conqueror",
+      "type": "custom"
+    },
+    "cowherodlc2": {
+      "group": "extra",
+      "name": "Cow Hero DLC 2 - Bovine Champion",
+      "type": "custom"
+    },
+    "cowherodlc3": {
+      "group": "extra",
+      "name": "Cow Hero DLC 3 - Cattle Guardian",
+      "type": "custom"
+    },
+    "creativech": {
+      "group": "extra",
+      "name": "Creative Commons Hero",
+      "type": "custom"
+    },
+    "csc": {
+      "group": "extra",
+      "name": "Custom Songs Central",
+      "type": "custom"
+    },
+    "cth": {
+      "group": "extra",
+      "name": "Carpal Tunnel Hero",
+      "type": "custom"
+    },
+    "cth1": {
+      "group": "extra",
+      "name": "Carpal Tunnel Hero",
+      "type": "custom"
+    },
+    "cth1r": {
+      "group": "extra",
+      "name": "Carpal Tunnel Hero 1: Remastered",
+      "type": "custom"
+    },
+    "cth2": {
+      "group": "extra",
+      "name": "Carpal Tunnel Hero 2",
+      "type": "custom"
+    },
+    "cth3": {
+      "group": "extra",
+      "name": "Carpal Tunnel Hero 3",
+      "type": "custom"
+    },
+    "cth3dlc": {
+      "group": "extra",
+      "name": "Carpal Tunnel Hero 3 DLC",
+      "type": "custom"
+    },
+    "custom": {
+      "group": "base",
+      "name": "Custom/Unknown",
+      "type": "custom"
+    },
+    "customs": {
+      "group": "extra",
+      "name": "Custom Songs",
+      "type": "custom"
+    },
+    "daijyoubs": {
+      "group": "extra",
+      "name": "DaiJyoubs",
+      "type": "charter"
+    },
+    "dcr": {
+      "group": "extra",
+      "name": "Delta's Chart Repository",
+      "type": "custom"
+    },
+    "deltaom3ga": {
+      "group": "extra",
+      "name": "DeltaOm3ga",
+      "type": "charter"
+    },
+    "dhc": {
+      "group": "extra",
+      "name": "Djent Hero Collection",
+      "type": "custom"
+    },
+    "digi": {
+      "group": "extra",
+      "name": "Digitizer",
+      "type": "custom"
+    },
+    "digitizer": {
+      "group": "extra",
+      "name": "Digitizer",
+      "type": "custom"
+    },
+    "disgo": {
+      "group": "extra",
+      "name": "Disgorodraphy",
+      "type": "custom"
+    },
+    "dissonancehero": {
+      "group": "extra",
+      "name": "Dissonance Hero",
+      "type": "custom"
+    },
+    "djenth": {
+      "group": "extra",
+      "name": "Djent Hero",
+      "type": "custom"
+    },
+    "djenthdlc": {
+      "group": "extra",
+      "name": "Djent Hero DLC",
+      "type": "custom"
+    },
+    "djenthero": {
+      "group": "extra",
+      "name": "Djent Hero",
+      "type": "custom"
+    },
+    "djentherodlc": {
+      "group": "extra",
+      "name": "Djent Hero DLC",
+      "type": "custom"
+    },
+    "djh": {
+      "group": "extra",
+      "name": "DJ Hero",
+      "type": "game"
+    },
+    "djh2": {
+      "group": "extra",
+      "name": "DJ Hero 2",
+      "type": "game"
+    },
+    "djh2dlc": {
+      "group": "extra",
+      "name": "DJ Hero 2 DLC",
+      "type": "game"
+    },
+    "djhdlc": {
+      "group": "extra",
+      "name": "DJ Hero DLC",
+      "type": "game"
+    },
+    "djhero": {
+      "group": "extra",
+      "name": "DJ Hero",
+      "type": "game"
+    },
+    "djhero2": {
+      "group": "extra",
+      "name": "DJ Hero 2",
+      "type": "game"
+    },
+    "djhero2dlc": {
+      "group": "extra",
+      "name": "DJ Hero 2 DLC",
+      "type": "game"
+    },
+    "djherodlc": {
+      "group": "extra",
+      "name": "DJ Hero DLC",
+      "type": "game"
+    },
+    "djmax": {
+      "group": "extra",
+      "name": "DJMax",
+      "type": "custom"
+    },
+    "dk15": {
+      "group": "extra",
+      "name": "donnaken15's Customs",
+      "type": "charter"
+    },
+    "donnaken15": {
+      "group": "extra",
+      "name": "donnaken15's Customs",
+      "type": "charter"
+    },
+    "emotion": {
+      "group": "extra",
+      "name": "Emotional Rollercoaster",
+      "type": "custom"
+    },
+    "encore": {
+      "group": "extra",
+      "name": "encore",
+      "type": "game"
+    },
+    "eof": {
+      "group": "extra",
+      "name": "Editor on Fire",
+      "type": "game"
+    },
+    "example": {
+      "group": "extra",
+      "name": "Example and Test Charts",
+      "type": "custom"
+    },
+    "examples": {
+      "group": "extra",
+      "name": "Example and Test Charts",
+      "type": "custom"
+    },
+    "facelift": {
+      "group": "extra",
+      "name": "Facelift",
+      "type": "custom"
+    },
+    "finnish": {
+      "group": "extra",
+      "name": "Suomibiisit",
+      "type": "custom"
+    },
+    "fof": {
+      "group": "extra",
+      "name": "Frets on Fire",
+      "type": "game"
+    },
+    "fofix": {
+      "group": "extra",
+      "name": "Frets on Fire X",
+      "type": "game"
+    },
+    "fp": {
+      "group": "extra",
+      "name": "Focal Point",
+      "type": "custom"
+    },
+    "fp2": {
+      "group": "extra",
+      "name": "Focal Point 2",
+      "type": "custom"
+    },
+    "fp3": {
+      "group": "extra",
+      "name": "Focal Point 3",
+      "type": "custom"
+    },
+    "french": {
+      "group": "extra",
+      "name": "HexaNation",
+      "type": "custom"
+    },
+    "fret smasher": {
+      "group": "extra",
+      "name": "Fret Smasher",
+      "type": "game"
+    },
+    "fretsmasher": {
+      "group": "extra",
+      "name": "Fret Smasher",
+      "type": "game"
+    },
+    "fuse": {
+      "group": "extra",
+      "name": "Fuse Box",
+      "type": "custom"
+    },
+    "fusebox": {
+      "group": "extra",
+      "name": "Fuse Box",
+      "type": "custom"
+    },
+    "gd": {
+      "group": "extra",
+      "name": "GITADORA",
+      "type": "game"
+    },
+    "gdrb": {
+      "group": "base",
+      "name": "Green Day: Rock Band",
+      "type": "rb"
+    },
+    "gdrb_plus": {
+      "group": "base",
+      "name": "Green Day: Rock Band DLC",
+      "type": "rb"
+    },
+    "gdrbdlc": {
+      "group": "base",
+      "name": "Green Day: Rock Band DLC",
+      "type": "rb"
+    },
+    "gdrbp": {
+      "group": "base",
+      "name": "Green Day: Rock Band DLC",
+      "type": "rb"
+    },
+    "generic": {
+      "group": "extra",
+      "name": "Bleep Bloops",
+      "type": "custom"
+    },
+    "gf1": {
+      "group": "extra",
+      "name": "GuitarFreaks",
+      "type": "game"
+    },
+    "gf2dm1": {
+      "group": "extra",
+      "name": "GuitarFreaks 2ndMIX & DrumMania",
+      "type": "game"
+    },
+    "gh": {
+      "group": "base",
+      "name": "Guitar Hero",
+      "type": "gh"
+    },
+    "gh1": {
+      "group": "base",
+      "name": "Guitar Hero",
+      "type": "gh"
+    },
+    "gh1dx": {
+      "group": "base",
+      "name": "Guitar Hero Deluxe",
+      "type": "gh"
+    },
+    "gh2": {
+      "group": "base",
+      "name": "Guitar Hero II",
+      "type": "gh"
+    },
+    "gh2dlc": {
+      "group": "base",
+      "name": "Guitar Hero II DLC",
+      "type": "gh"
+    },
+    "gh2dx": {
+      "group": "base",
+      "name": "Guitar Hero II Deluxe",
+      "type": "gh"
+    },
+    "gh2dxcustoms": {
+      "group": "base",
+      "name": "Guitar Hero II Deluxe Customs",
+      "type": "gh"
+    },
+    "gh2dxdlc": {
+      "group": "base",
+      "name": "Guitar Hero II Deluxe DLC",
+      "type": "gh"
+    },
+    "gh3": {
+      "group": "base",
+      "name": "Guitar Hero III: Legends of Rock",
+      "type": "gh"
+    },
+    "gh3dlc": {
+      "group": "base",
+      "name": "Guitar Hero III DLC",
+      "type": "gh"
+    },
+    "gh5": {
+      "group": "base",
+      "name": "Guitar Hero 5",
+      "type": "gh"
+    },
+    "gh5dlc": {
+      "group": "base",
+      "name": "Guitar Hero 5 DLC",
+      "type": "gh"
+    },
+    "gh80s": {
+      "group": "base",
+      "name": "Guitar Hero Encore: Rocks the 80s",
+      "type": "gh"
+    },
+    "gh80sdx": {
+      "group": "base",
+      "name": "Guitar Hero Encore Deluxe",
+      "type": "gh"
+    },
+    "gha": {
+      "group": "base",
+      "name": "Guitar Hero: Aerosmith",
+      "type": "gh"
+    },
+    "ghdx": {
+      "group": "base",
+      "name": "Guitar Hero Deluxe",
+      "type": "gh"
+    },
+    "ghl": {
+      "group": "base",
+      "name": "Guitar Hero Live",
+      "type": "gh"
+    },
+    "ghm": {
+      "group": "base",
+      "name": "Guitar Hero: Metallica",
+      "type": "gh"
+    },
+    "ghmdlc": {
+      "group": "base",
+      "name": "Death Magnetic DLC",
+      "type": "gh"
+    },
+    "ghot": {
+      "group": "base",
+      "name": "Guitar Hero: On Tour",
+      "type": "gh"
+    },
+    "ghotd": {
+      "group": "base",
+      "name": "Guitar Hero On Tour: Decades",
+      "type": "gh"
+    },
+    "ghotmh": {
+      "group": "base",
+      "name": "Guitar Hero On Tour: Modern Hits",
+      "type": "gh"
+    },
+    "ghsh": {
+      "group": "base",
+      "name": "Guitar Hero: Smash Hits",
+      "type": "gh"
+    },
+    "ghtorb3": {
+      "group": "extra",
+      "name": "Guitar Hero To Rock Band 3",
+      "type": "custom"
+    },
+    "ghtv": {
+      "group": "base",
+      "name": "Guitar Hero TV",
+      "type": "gh"
+    },
+    "ghvh": {
+      "group": "base",
+      "name": "Guitar Hero: Van Halen",
+      "type": "gh"
+    },
+    "ghwor": {
+      "group": "base",
+      "name": "Guitar Hero: Warriors of Rock",
+      "type": "gh"
+    },
+    "ghwordlc": {
+      "group": "base",
+      "name": "Guitar Hero: Warriors of Rock DLC",
+      "type": "gh"
+    },
+    "ghwt": {
+      "group": "base",
+      "name": "Guitar Hero: World Tour",
+      "type": "gh"
+    },
+    "ghwtdlc": {
+      "group": "base",
+      "name": "Guitar Hero: World Tour DLC",
+      "type": "gh"
+    },
+    "ghx2setlist": {
+      "group": "extra",
+      "name": "Guitar Hero X-II",
+      "type": "custom"
+    },
+    "ghxsetlist": {
+      "group": "extra",
+      "name": "Guitar Hero X",
+      "type": "custom"
+    },
+    "gorod": {
+      "group": "extra",
+      "name": "Disgorodraphy",
+      "type": "custom"
+    },
+    "goulart": {
+      "group": "extra",
+      "name": "raphaelgoulart",
+      "type": "charter"
+    },
+    "greenday": {
+      "group": "base",
+      "name": "Green Day: Rock Band",
+      "type": "rb"
+    },
+    "guitarzero": {
+      "group": "extra",
+      "name": "Guitar Zero",
+      "type": "custom"
+    },
+    "guitarzero132": {
+      "group": "extra",
+      "name": "Guitar Zero",
+      "type": "custom"
+    },
+    "guitarzero2": {
+      "group": "extra",
+      "name": "Guitar Zero 2",
+      "type": "custom"
+    },
+    "guitarzero2dlc": {
+      "group": "extra",
+      "name": "Guitar Zero 2 DLC",
+      "type": "custom"
+    },
+    "guitarzerodlc": {
+      "group": "extra",
+      "name": "Guitar Zero 2 DLC",
+      "type": "custom"
+    },
+    "guitarzeroencore1": {
+      "group": "extra",
+      "name": "Guitar Zero Encore 1: Rocks the '70s",
+      "type": "custom"
+    },
+    "gze1": {
+      "group": "extra",
+      "name": "Guitar Zero Encore 1: Rocks the '70s",
+      "type": "custom"
+    },
+    "harmonyhero": {
+      "group": "extra",
+      "name": "Harmony Hero",
+      "type": "custom"
+    },
+    "hugh": {
+      "group": "extra",
+      "name": "Hugh",
+      "type": "charter"
+    },
+    "idta": {
+      "group": "extra",
+      "name": "Initial D The Arcade Setlist",
+      "type": "custom"
+    },
+    "imetal": {
+      "group": "extra",
+      "name": "Instru-Metal",
+      "type": "custom"
+    },
+    "indp": {
+      "group": "extra",
+      "name": "Indiependence Day",
+      "type": "custom"
+    },
+    "ironhandhero": {
+      "group": "extra",
+      "name": "Iron Hand Hero",
+      "type": "custom"
+    },
+    "jamband": {
+      "group": "extra",
+      "name": "JAMband",
+      "type": "game"
+    },
+    "jambanddlc": {
+      "group": "extra",
+      "name": "JAMband DLC",
+      "type": "game"
+    },
+    "jrabes": {
+      "group": "extra",
+      "name": "JRabes",
+      "type": "charter"
+    },
+    "jrb": {
+      "group": "extra",
+      "name": "J-Rock Band",
+      "type": "custom"
+    },
+    "kh": {
+      "group": "extra",
+      "name": "Koreaboo Hero",
+      "type": "custom"
+    },
+    "kh2": {
+      "group": "extra",
+      "name": "Koreaboo Hero 2",
+      "type": "custom"
+    },
+    "kh3": {
+      "group": "extra",
+      "name": "Koreaboo Hero 3",
+      "type": "custom"
+    },
+    "lanebreakers": {
+      "group": "extra",
+      "name": "Lane Breakers",
+      "type": "custom"
+    },
+    "lego": {
+      "group": "base",
+      "name": "Lego Rock Band",
+      "type": "rb"
+    },
+    "lisarb": {
+      "group": "extra",
+      "name": "Lisarb 1",
+      "type": "custom"
+    },
+    "lisarb1": {
+      "group": "extra",
+      "name": "Lisarb 1",
+      "type": "custom"
+    },
+    "lisarb2": {
+      "group": "extra",
+      "name": "Lisarb 2",
+      "type": "custom"
+    },
+    "lisarb3": {
+      "group": "extra",
+      "name": "Lisarb 3",
+      "type": "custom"
+    },
+    "lrb": {
+      "group": "base",
+      "name": "Lego Rock Band",
+      "type": "rb"
+    },
+    "ma": {
+      "group": "extra",
+      "name": "Max Altitude",
+      "type": "custom"
+    },
+    "mania": {
+      "group": "extra",
+      "name": "Mania Hero",
+      "type": "custom"
+    },
+    "maniahero": {
+      "group": "extra",
+      "name": "Mania Hero",
+      "type": "custom"
+    },
+    "marathon": {
+      "group": "extra",
+      "name": "Marathon Hero",
+      "type": "custom"
+    },
+    "marathonhero2": {
+      "group": "extra",
+      "name": "Marathon Hero 2",
+      "type": "custom"
+    },
+    "meme": {
+      "group": "extra",
+      "name": "Meme Songs",
+      "type": "custom"
+    },
+    "mh_aren": {
+      "group": "extra",
+      "name": "Mania Hero",
+      "type": "custom"
+    },
+    "mh_asriel": {
+      "group": "extra",
+      "name": "Mania Hero",
+      "type": "custom"
+    },
+    "mh_dex": {
+      "group": "extra",
+      "name": "Mania Hero",
+      "type": "custom"
+    },
+    "mh_fluffy": {
+      "group": "extra",
+      "name": "Mania Hero",
+      "type": "custom"
+    },
+    "mh_ori": {
+      "group": "extra",
+      "name": "Mania Hero",
+      "type": "custom"
+    },
+    "mh_sasquatch": {
+      "group": "extra",
+      "name": "Mania Hero",
+      "type": "custom"
+    },
+    "mh_sickliff": {
+      "group": "extra",
+      "name": "Mania Hero",
+      "type": "custom"
+    },
+    "mh_skittlecouch": {
+      "group": "extra",
+      "name": "Mania Hero",
+      "type": "custom"
+    },
+    "mh_supra": {
+      "group": "extra",
+      "name": "Mania Hero",
+      "type": "custom"
+    },
+    "mickelraven": {
+      "group": "extra",
+      "name": "Mickelräven",
+      "type": "charter"
+    },
+    "milohax": {
+      "group": "extra",
+      "name": "MiloHax Customs",
+      "type": "custom"
+    },
+    "miscellaneous": {
+      "group": "extra",
+      "name": "Miscellaneous Packs",
+      "type": "custom"
+    },
+    "nirvana": {
+      "group": "extra",
+      "name": "Nirvana Discography",
+      "type": "custom"
+    },
+    "nirvanasp": {
+      "group": "extra",
+      "name": "Nirvana Discography",
+      "type": "custom"
+    },
+    "ohm": {
+      "group": "extra",
+      "name": "ΩHM",
+      "type": "custom"
+    },
+    "paletagalleta": {
+      "group": "extra",
+      "name": "PaletaGalleta",
+      "type": "charter"
+    },
+    "paradigm": {
+      "group": "extra",
+      "name": "Paradigm",
+      "type": "custom"
+    },
+    "paramore": {
+      "group": "extra",
+      "name": "Paramore Mega Pack",
+      "type": "custom"
+    },
+    "paramoremegapack": {
+      "group": "extra",
+      "name": "Paramore Mega Pack",
+      "type": "custom"
+    },
+    "pearljam": {
+      "group": "extra",
+      "name": "Pearl Jam: Rock Band",
+      "type": "rb"
+    },
+    "pg": {
+      "group": "extra",
+      "name": "PowerGig: Rise of the SixString",
+      "type": "game"
+    },
+    "pgdlc": {
+      "group": "extra",
+      "name": "PowerGig: Rise of the SixString DLC",
+      "type": "game"
+    },
+    "ph1": {
+      "group": "extra",
+      "name": "Puppetz Hero I",
+      "type": "custom"
+    },
+    "ph2": {
+      "group": "extra",
+      "name": "Puppetz Hero II",
+      "type": "custom"
+    },
+    "ph3": {
+      "group": "extra",
+      "name": "Puppetz Hero III",
+      "type": "custom"
+    },
+    "ph4": {
+      "group": "extra",
+      "name": "Puppetz Hero IV",
+      "type": "custom"
+    },
+    "phaseshift": {
+      "group": "extra",
+      "name": "Phase Shift",
+      "type": "game"
+    },
+    "popstarguitar": {
+      "group": "extra",
+      "name": "PopStar Guitar",
+      "type": "game"
+    },
+    "praise": {
+      "group": "extra",
+      "name": "Guitar Praise",
+      "type": "game"
+    },
+    "praisedlc": {
+      "group": "extra",
+      "name": "Guitar Praise DLC",
+      "type": "game"
+    },
+    "praiseexpansion": {
+      "group": "extra",
+      "name": "Guitar Praise: Expansion Pack 1",
+      "type": "game"
+    },
+    "psgp4": {
+      "group": "extra",
+      "name": "Phase Shift Guitar Project 4",
+      "type": "custom"
+    },
+    "psh": {
+      "group": "extra",
+      "name": "Plastic Shred Hero: Legends of Apahetic Charting",
+      "type": "custom"
+    },
+    "psh2": {
+      "group": "extra",
+      "name": "Plastic Shred Hero 2",
+      "type": "custom"
+    },
+    "ra": {
+      "group": "extra",
+      "name": "Redemption Arc",
+      "type": "custom"
+    },
+    "ragequit": {
+      "group": "extra",
+      "name": "Rage Quit",
+      "type": "custom"
+    },
+    "rb1": {
+      "group": "base",
+      "name": "Rock Band 1",
+      "type": "rb"
+    },
+    "rb1_dlc": {
+      "group": "base",
+      "name": "Rock Band 1 DLC",
+      "type": "rb"
+    },
+    "rb1dlc": {
+      "group": "base",
+      "name": "Rock Band 1 DLC",
+      "type": "rb"
+    },
+    "rb2": {
+      "group": "base",
+      "name": "Rock Band 2",
+      "type": "rb"
+    },
+    "rb2_dlc": {
+      "group": "base",
+      "name": "Rock Band 2 DLC",
+      "type": "rb"
+    },
+    "rb2_real": {
+      "group": "base",
+      "name": "Rock Band 2",
+      "type": "rb"
+    },
+    "rb2dlc": {
+      "group": "base",
+      "name": "Rock Band 2 DLC",
+      "type": "rb"
+    },
+    "rb3": {
+      "group": "base",
+      "name": "Rock Band 3",
+      "type": "rb"
+    },
+    "rb3_dlc": {
+      "group": "base",
+      "name": "Rock Band 3 DLC",
+      "type": "rb"
+    },
+    "rb3dlc": {
+      "group": "base",
+      "name": "Rock Band 3 DLC",
+      "type": "rb"
+    },
+    "rb4": {
+      "group": "base",
+      "name": "Rock Band 4",
+      "type": "rb"
+    },
+    "rb4_dlc": {
+      "group": "base",
+      "name": "Rock Band 4 DLC",
+      "type": "rb"
+    },
+    "rb4_rivals": {
+      "group": "base",
+      "name": "Rock Band Rivals",
+      "type": "rb"
+    },
+    "rb4dlc": {
+      "group": "base",
+      "name": "Rock Band 4 DLC",
+      "type": "rb"
+    },
+    "rb4rivals": {
+      "group": "base",
+      "name": "Rock Band Rivals",
+      "type": "rb"
+    },
+    "rb_blitz": {
+      "group": "base",
+      "name": "Rock Band Blitz",
+      "type": "rb"
+    },
+    "rbacdc": {
+      "group": "base",
+      "name": "AC/DC Live: Rock Band Track Pack",
+      "type": "rb"
+    },
+    "rbb": {
+      "group": "base",
+      "name": "Rock Band Blitz",
+      "type": "rb"
+    },
+    "rbee": {
+      "group": "extra",
+      "name": "Rock Band en Español",
+      "type": "custom"
+    },
+    "rbn": {
+      "group": "base",
+      "name": "Rock Band Network",
+      "type": "rb"
+    },
+    "rbn1": {
+      "group": "base",
+      "name": "Rock Band Network",
+      "type": "rb"
+    },
+    "rbn1_lost": {
+      "group": "base",
+      "name": "Lost Rock Band Network 1.0",
+      "type": "rb"
+    },
+    "rbn1lost": {
+      "group": "base",
+      "name": "Lost Rock Band Network",
+      "type": "rb"
+    },
+    "rbn2": {
+      "group": "base",
+      "name": "Rock Band Network 2.0",
+      "type": "rb"
+    },
+    "rbn2_lost": {
+      "group": "base",
+      "name": "Lost Rock Band Network 2.0",
+      "type": "rb"
+    },
+    "rbn2lost": {
+      "group": "base",
+      "name": "Lost Rock Band Network 2.0",
+      "type": "rb"
+    },
+    "rbn_lost": {
+      "group": "base",
+      "name": "Lost Rock Band Network",
+      "type": "rb"
+    },
+    "rbpj": {
+      "group": "extra",
+      "name": "Pearl Jam: Rock Band",
+      "type": "rb"
+    },
+    "rbr": {
+      "group": "base",
+      "name": "Rock Band Rivals",
+      "type": "rb"
+    },
+    "rbtp1": {
+      "group": "extra",
+      "name": "Rock Band Track Pack Vol. 1",
+      "type": "rb"
+    },
+    "rbtp2": {
+      "group": "extra",
+      "name": "Rock Band Track Pack Vol. 2",
+      "type": "rb"
+    },
+    "rbtp_acdc": {
+      "group": "base",
+      "name": "AC/DC Live: Rock Band Track Pack",
+      "type": "rb"
+    },
+    "rbtp_classic_rock": {
+      "group": "extra",
+      "name": "Rock Band Track Pack: Classic Rock",
+      "type": "rb"
+    },
+    "rbtp_country_1": {
+      "group": "extra",
+      "name": "Rock Band Country Track Pack",
+      "type": "rb"
+    },
+    "rbtp_country_2": {
+      "group": "extra",
+      "name": "Rock Band Country Track Pack 2",
+      "type": "rb"
+    },
+    "rbtp_metal": {
+      "group": "extra",
+      "name": "Rock Band Metal Track Pack",
+      "type": "rb"
+    },
+    "rbtp_vol_1": {
+      "group": "extra",
+      "name": "Rock Band Track Pack Vol. 1",
+      "type": "rb"
+    },
+    "rbtp_vol_2": {
+      "group": "extra",
+      "name": "Rock Band Track Pack Vol. 2",
+      "type": "rb"
+    },
+    "rbtpc": {
+      "group": "extra",
+      "name": "Rock Band Country Track Pack",
+      "type": "rb"
+    },
+    "rbtpc2": {
+      "group": "extra",
+      "name": "Rock Band Country Track Pack 2",
+      "type": "rb"
+    },
+    "rbtpcr": {
+      "group": "extra",
+      "name": "Rock Band Track Pack: Classic Rock",
+      "type": "rb"
+    },
+    "rbtpm": {
+      "group": "extra",
+      "name": "Rock Band Metal Track Pack",
+      "type": "rb"
+    },
+    "rbvr": {
+      "group": "extra",
+      "name": "Rock Band VR",
+      "type": "rb"
+    },
+    "redo": {
+      "group": "extra",
+      "name": "thardwardy",
+      "type": "charter"
+    },
+    "revolved": {
+      "group": "extra",
+      "name": "REVOLVED",
+      "type": "custom"
+    },
+    "rr": {
+      "group": "extra",
+      "name": "Rock Revolution",
+      "type": "game"
+    },
+    "rrdlc": {
+      "group": "extra",
+      "name": "Rock Revolution DLC",
+      "type": "game"
+    },
+    "rv": {
+      "group": "extra",
+      "name": "RhythmVerse",
+      "type": "custom"
+    },
+    "s_hero": {
+      "group": "extra",
+      "name": "S Hero",
+      "type": "custom"
+    },
+    "santa": {
+      "group": "extra",
+      "name": "Santa Rockstar",
+      "type": "game"
+    },
+    "santahd": {
+      "group": "extra",
+      "name": "Santa Rockstar",
+      "type": "game"
+    },
+    "santarockstar": {
+      "group": "extra",
+      "name": "Santa Rockstar",
+      "type": "game"
+    },
+    "santarockstarhd": {
+      "group": "extra",
+      "name": "Santa Rockstar",
+      "type": "game"
+    },
+    "scorespy": {
+      "group": "extra",
+      "name": "ScoreSpy",
+      "type": "custom"
+    },
+    "scu": {
+      "group": "extra",
+      "name": "Small Charters United",
+      "type": "custom"
+    },
+    "scufd": {
+      "group": "extra",
+      "name": "Small Charters United",
+      "type": "custom"
+    },
+    "se": {
+      "group": "extra",
+      "name": "Symphonic Effect",
+      "type": "custom"
+    },
+    "singstarguitar": {
+      "group": "extra",
+      "name": "SingStar Guitar",
+      "type": "game"
+    },
+    "soi": {
+      "group": "extra",
+      "name": "Shadow of Intent Discography",
+      "type": "custom"
+    },
+    "solomedley": {
+      "group": "extra",
+      "name": "Solo Medleys",
+      "type": "custom"
+    },
+    "stryper": {
+      "group": "extra",
+      "name": "Guitar Praise: Stryper",
+      "type": "game"
+    },
+    "sxdisc": {
+      "group": "extra",
+      "name": "Symphony X Discography Setlist",
+      "type": "custom"
+    },
+    "synergy": {
+      "group": "extra",
+      "name": "Synergy",
+      "type": "custom"
+    },
+    "tbrb": {
+      "group": "base",
+      "name": "The Beatles: Rock Band",
+      "type": "rb"
+    },
+    "tbrbdlc": {
+      "group": "base",
+      "name": "The Beatles: Rock Band DLC",
+      "type": "rb"
+    },
+    "ted": {
+      "group": "extra",
+      "name": "thardwardy",
+      "type": "charter"
+    },
+    "teminite": {
+      "group": "extra",
+      "name": "Teminite",
+      "type": "custom"
+    },
+    "test": {
+      "group": "extra",
+      "name": "Example and Test Charts",
+      "type": "custom"
+    },
+    "tfoth": {
+      "group": "extra",
+      "name": "The Fall of Troy Hero",
+      "type": "custom"
+    },
+    "ugc": {
+      "group": "base",
+      "name": "Rock Band Network 1.0",
+      "type": "rb"
+    },
+    "ugc1": {
+      "group": "base",
+      "name": "Rock Band Network 1.0",
+      "type": "rb"
+    },
+    "ugc1_lost": {
+      "group": "base",
+      "name": "Lost Rock Band Network 1.0",
+      "type": "rb"
+    },
+    "ugc2": {
+      "group": "base",
+      "name": "Rock Band Network 2.0",
+      "type": "rb"
+    },
+    "ugc2_lost": {
+      "group": "base",
+      "name": "Lost Rock Band Network 2.0",
+      "type": "rb"
+    },
+    "ugc_c3": {
+      "group": "extra",
+      "name": "C3 Customs",
+      "type": "custom"
+    },
+    "ugc_lost": {
+      "group": "base",
+      "name": "Lost Rock Band Network",
+      "type": "rb"
+    },
+    "ugc_plus": {
+      "group": "base",
+      "name": "Rock Band Network 2.0",
+      "type": "rb"
+    },
+    "vene": {
+      "group": "extra",
+      "name": "Venerabela",
+      "type": "charter"
+    },
+    "venera1": {
+      "group": "extra",
+      "name": "Venera Hero 1",
+      "type": "custom"
+    },
+    "venera2": {
+      "group": "extra",
+      "name": "Venera Hero 2",
+      "type": "custom"
+    },
+    "venera3": {
+      "group": "extra",
+      "name": "Venera Hero 3",
+      "type": "custom"
+    },
+    "vortex_hero": {
+      "group": "extra",
+      "name": "Vortex Hero",
+      "type": "custom"
+    },
+    "vortexhero": {
+      "group": "extra",
+      "name": "Vortex Hero",
+      "type": "custom"
+    },
+    "wcc": {
+      "group": "extra",
+      "name": "World Charts Community",
+      "type": "custom"
+    },
+    "yarg": {
+      "group": "base",
+      "name": "YARG",
+      "type": "game"
+    },
+    "yargdlc": {
+      "group": "base",
+      "name": "YARG DLC",
+      "type": "game"
+    },
+    "yarn": {
+      "group": "base",
+      "name": "YARN",
+      "type": "game"
+    },
+    "yoshibyl": {
+      "group": "extra",
+      "name": "YoShibyl",
+      "type": "custom"
+    },
+    "yoshiog": {
+      "group": "extra",
+      "name": "YoShibyl",
+      "type": "custom"
+    },
+    "yurianime": {
+      "group": "extra",
+      "name": "Yuri Anime Pack",
+      "type": "custom"
+    },
+    "zancharted": {
+      "group": "extra",
+      "name": "Zancharted",
+      "type": "custom"
+    },
+    "zerogravity": {
+      "group": "extra",
+      "name": "Zero Gravity",
+      "type": "custom"
+    },
+    "zgsb": {
+      "group": "extra",
+      "name": "Zero Gravity - Space Battle",
+      "type": "custom"
+    }
+  }
+}

@@ -1,0 +1,168 @@
+{
+  "_notes": [
+    "Career builder settings. Edit this file, then run:  python career_builder.py scan   and   python career_builder.py build",
+    "",
+    "Song counts found in J:\\Stored\\YARG Music:",
+    "   Guitar Hero World Tour     = 86 songs",
+    "   Guitar Hero World Tour DLC = 147 songs",
+    "",
+    "visibility:",
+    "   'private' - any source allowed (Guitar Hero / Rock Band / other games / customs).",
+    "   'public'  - HARD BLOCK: build is refused unless every selected song's source (icon)",
+    "               is a general custom (type custom/charter) or YARC launcher content (yarg/yargdlc/yarn).",
+    "               Songs are always emitted as Song Tuples.",
+    "",
+    "source_selection.filter: list of source icon ids (e.g. \"ghwt\", \"gh3\", \"c3customs\"). Empty = all sources.",
+    "source_selection.limit: cap on the number of distinct sources used (0 = unlimited). Sources are",
+    "                         ranked by song count; the top N are used and everything else is dropped.",
+    "source_selection.weights: OPTIONAL. If non-empty it OVERRIDES filter/limit. Maps source id ->",
+    "                         weight. The target song total is split across the listed sources in",
+    "                         proportion to their weights (largest remainder). Higher weight = more songs.",
+    "                         A small weight = 'filler' (just tops up the total); a large weight on one",
+    "                         source = 'pull mostly from here'. Example: {\"ghwt\": 3, \"ghwtdlc\": 1, \"gh3\": 1}.",
+    "",
+    "difficulty.field: song.ini key used to sort (e.g. diff_guitar, diff_band, diff_drums, diff_vocals).",
+    "difficulty.missing: 'last' puts songs with that difficulty == -1 (or missing) at the end; 'skip' drops them.",
+    "",
+    "tiers: one entry per career level. song_count = tracks per level; unlock_criteria = stars required to unlock.",
+    "       redistribute = 'auto' re-splits songs across tiers proportionally when the selected total",
+    "       does not equal the sum of tier song_counts (e.g. you picked 147 songs but the 12 tiers total 80).",
+    "",
+    "DEFAULT CAREER SIZE: the 12 tiers below total 80 songs (5/10/5/5/10/5/5/10/5/5/10/5).",
+    "When picking source_selection.filter, aim for sources whose combined song count is close to 80",
+    "(e.g. ghwt = 86, ghwtdlc = 155); redistribute will split whatever you select across the tiers."
+  ],
+  "music_root": "J:\\Stored\\YARG Music",
+  "output_dir": "J:\\Stored\\YARG Careers",
+  "visibility": "private",
+  "difficulty": {
+    "field": "diff_guitar",
+    "ascending": true,
+    "missing": "last"
+  },
+  "source_selection": {
+    "weights": {"ghwt": 8, "ghwtdlc": 1},
+    "filter": [
+      "ghwt", "ghwtdlc"
+    ],
+    "limit": 0
+  },
+  "public_checks": {
+    "allowed_types": [
+      "custom",
+      "charter"
+    ],
+    "always_allowed_ids": [
+      "yarg",
+      "yargdlc",
+      "yarn"
+    ]
+  },
+  "career": {
+    "name": "Career Guitar Hero World Tour",
+    "title": null,
+    "description": "Starting a band has never been easier! Bring your friends to the YARG and begin playing the songs you've rehearsed. Even if you flub a few notes, everyone's here for a good time!",
+    "source": "yarg",
+    "version": 1,
+    "type": "Career"
+  },
+  "redistribute": "auto",
+  "tiers": [
+    {
+      "name": "Playing in the Backyard",
+      "unlock_criteria": 0,
+      "is_bonus": false,
+      "venue_hint": null,
+      "custom_unlock_text": null,
+      "song_count": 5
+    },
+    {
+      "name": "Tunnel Tripping",
+      "unlock_criteria": 25,
+      "is_bonus": true,
+      "venue_hint": "Venue/TunnelTrip",
+      "custom_unlock_text": "Uh... where are we? What did we say about eating the YARG gems? Now you'll need to play yourself out of this stupor. Go on, try whatever you want, it's all a dream.",
+      "song_count": 10
+    },
+    {
+      "name": "Getting in the Groove",
+      "unlock_criteria": 25,
+      "is_bonus": false,
+      "venue_hint": null,
+      "custom_unlock_text": "Getting the hang of it? Now you can start cranking up the energy. You're sure to impress your acquaintances with faster and more intricate songs.",
+      "song_count": 5
+    },
+    {
+      "name": "Garage Band",
+      "unlock_criteria": 50,
+      "is_bonus": false,
+      "venue_hint": null,
+      "custom_unlock_text": "Think you can make it as a band? The club in your area has a large garage where up-and-coming acts play shows on the regular. Sign up for a gig and see what you've got!",
+      "song_count": 5
+    },
+    {
+      "name": "Locked Up",
+      "unlock_criteria": 75,
+      "is_bonus": true,
+      "venue_hint": null,
+      "custom_unlock_text": "So you're telling me that you played some illegal songs, and the police got you trapped in this cell? That's just great. Perhaps you could play them some songs and they'll let you go.",
+      "song_count": 10
+    },
+    {
+      "name": "Rocking Harder",
+      "unlock_criteria": 75,
+      "is_bonus": false,
+      "venue_hint": null,
+      "custom_unlock_text": "Seems like the local patronage has taken a interest to you. Now that you've got the experience, it's time to captivate the crowd with your harder-hitting songs! Get the word out there.",
+      "song_count": 5
+    },
+    {
+      "name": "Cathedral Concert",
+      "unlock_criteria": 100,
+      "is_bonus": false,
+      "venue_hint": "Venue/Church",
+      "custom_unlock_text": "You've booked a church for your next gig? That's wild. But with a larger space for a crowd, your range of influence ever grows. Bless these lands with your music!",
+      "song_count": 5
+    },
+    {
+      "name": "Devil's Work",
+      "unlock_criteria": 125,
+      "is_bonus": true,
+      "venue_hint": "Venue/MagiaAlliance",
+      "custom_unlock_text": "Don't tell me you tried playing \"The Devil Went Down to Georgia\" of all songs... Now it seems you've got an audience with the underworld. Entertain them, or be damned for eternity...",
+      "song_count": 10
+    },
+    {
+      "name": "Soaring Higher",
+      "unlock_criteria": 125,
+      "is_bonus": false,
+      "venue_hint": null,
+      "custom_unlock_text": "In a place where acts can give you wings, your band can take the jump and ascend ever higher! Serenade the crowd with soaring melodies and complex progressions, and take the next step towards stardom.",
+      "song_count": 5
+    },
+    {
+      "name": "Festival Frenzy",
+      "unlock_criteria": 150,
+      "is_bonus": false,
+      "venue_hint": "Venue/OutdoorConcert",
+      "custom_unlock_text": "You're finally here: the grand music festival, localized entirely within your city! So many bands take turns fighting for attention over a wave of visitors from all over the area. Make a name for yourself!",
+      "song_count": 5
+    },
+    {
+      "name": "Own the Studio",
+      "unlock_criteria": 175,
+      "is_bonus": true,
+      "venue_hint": null,
+      "custom_unlock_text": "This is your first opportunity to record your own music? With professional equipment and a white room? Choose whichever songs you please, I'm sure it'll turn out great!",
+      "song_count": 10
+    },
+    {
+      "name": "Pinnacle of Performance",
+      "unlock_criteria": 175,
+      "is_bonus": false,
+      "venue_hint": "Venue/Festival",
+      "custom_unlock_text": "Out of all acts in the festival, your band stands out on top. You have the final set: send the crowd home with an experience they'll never forget!",
+      "song_count": 5
+    }
+  ]
+}

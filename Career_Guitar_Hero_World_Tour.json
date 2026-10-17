@@ -1,0 +1,1348 @@
+{
+  "Title": null,
+  "Description": "Starting a band has never been easier! Bring your friends to the YARG and begin playing the songs you've rehearsed. Even if you flub a few notes, everyone's here for a good time!",
+  "BackgroundImageName": null,
+  "Source": "yarg",
+  "Version": 1,
+  "Name": "Career Guitar Hero World Tour",
+  "Id": "ffef0a19-1202-4468-8e42-e89c30622e39",
+  "Type": "Career",
+  "Tiers": [
+    {
+      "Name": "Playing in the Backyard",
+      "Id": "2ed035a9-69f1-4db8-a6e7-99b0373942b9",
+      "Description": null,
+      "Songs": [
+        {
+          "Id": "dba8c075-3ce1-bd3c-707f-6aaed40a27a2",
+          "SongId": null,
+          "SongHash": null,
+          "ShortName": null,
+          "SongTuple": {
+            "Artist": "Nirvana",
+            "Title": "About a Girl (Unplugged Live)",
+            "Source": "ghwt",
+            "Charter": "Neversoft"
+          },
+          "Identifier": "SongTuple",
+          "Description": null
+        },
+        {
+          "Id": "8fc274e7-1353-6c5d-bf8a-51273b1b9a7b",
+          "SongId": null,
+          "SongHash": null,
+          "ShortName": null,
+          "SongTuple": {
+            "Artist": "Tokio Hotel",
+            "Title": "Monsoon",
+            "Source": "ghwt",
+            "Charter": "Neversoft"
+          },
+          "Identifier": "SongTuple",
+          "Description": null
+        },
+        {
+          "Id": "32384ef1-51cd-3858-0c49-691f1b666dc0",
+          "SongId": null,
+          "SongHash": null,
+          "ShortName": null,
+          "SongTuple": {
+            "Artist": "R.E.M.",
+            "Title": "The One I Love",
+            "Source": "ghwt",
+            "Charter": "Neversoft"
+          },
+          "Identifier": "SongTuple",
+          "Description": null
+        },
+        {
+          "Id": "ef4255a2-4666-9998-fc97-5b45d821a524",
+          "SongId": null,
+          "SongHash": null,
+          "ShortName": null,
+          "SongTuple": {
+            "Artist": "The Smashing Pumpkins",
+            "Title": "Today",
+            "Source": "ghwt",
+            "Charter": "Neversoft"
+          },
+          "Identifier": "SongTuple",
+          "Description": null
+        },
+        {
+          "Id": "8257678e-29c5-6304-e4f7-8a928470f1ff",
+          "SongId": null,
+          "SongHash": null,
+          "ShortName": null,
+          "SongTuple": {
+            "Artist": "Kent",
+            "Title": "Vinternoll2",
+            "Source": "ghwt",
+            "Charter": "Neversoft"
+          },
+          "Identifier": "SongTuple",
+          "Description": null
+        }
+      ],
+      "CustomUnlockText": null,
+      "BackgroundImage": null,
+      "CompletionBonusText": null,
+      "CompletionBonus": "None",
+      "MediaFilename": null,
+      "VenueSize": "NotSpecified",
+      "VenueHint": null,
+      "UnlockType": "StarCount",
+      "UnlockCriteria": 0,
+      "CompletionMode": "SingleSong",
+      "IsBonus": false
+    },
+    {
+      "Name": "Tunnel Tripping",
+      "Id": "209158c6-9d34-42c8-8f03-5805c2701664",
+      "Description": null,
+      "Songs": [
+        {
+          "Id": "c0226968-b9b9-bd36-20de-da18fa30151b",
+          "SongId": null,
+          "SongHash": null,
+          "ShortName": null,
+          "SongTuple": {
+            "Artist": "Linkin Park",
+            "Title": "What I've Done",
+            "Source": "ghwt",
+            "Charter": "Neversoft"
+          },
+          "Identifier": "SongTuple",
+          "Description": null
+        },
+        {
+          "Id": "d269091f-3874-a5e4-1e4f-8eceea1f2ba0",
+          "SongId": null,
+          "SongHash": null,
+          "ShortName": null,
+          "SongTuple": {
+            "Artist": "Sportfreunde Stiller",
+            "Title": "'54,'74,'90,2010",
+            "Source": "ghwtdlc",
+            "Charter": "Neversoft"
+          },
+          "Identifier": "SongTuple",
+          "Description": null
+        },
+        {
+          "Id": "fe29a60f-fa8a-f532-73aa-a57a5347568f",
+          "SongId": null,
+          "SongHash": null,
+          "ShortName": null,
+          "SongTuple": {
+            "Artist": "Oasis",
+            "Title": "Ain't Got Nothin'",
+            "Source": "ghwtdlc",
+            "Charter": "Neversoft"
+          },
+          "Identifier": "SongTuple",
+          "Description": null
+        },
+        {
+          "Id": "38c68a69-e0d3-8884-a965-fd1b009f71aa",
+          "SongId": null,
+          "SongHash": null,
+          "ShortName": null,
+          "SongTuple": {
+            "Artist": "Paul McCartney & Wings",
+            "Title": "Band on the Run",
+            "Source": "ghwt",
+            "Charter": "Neversoft"
+          },
+          "Identifier": "SongTuple",
+          "Description": null
+        },
+        {
+          "Id": "65bec9d2-ce50-4db0-e3d4-a435e612fbcc",
+          "SongId": null,
+          "SongHash": null,
+          "ShortName": null,
+          "SongTuple": {
+            "Artist": "311",
+            "Title": "Beautiful Disaster",
+            "Source": "ghwt",
+            "Charter": "Neversoft"
+          },
+          "Identifier": "SongTuple",
+          "Description": null
+        },
+        {
+          "Id": "2fc33827-f117-e8ac-13d4-84097eedb529",
+          "SongId": null,
+          "SongHash": null,
+          "ShortName": null,
+          "SongTuple": {
+            "Artist": "Wolfmother",
+            "Title": "Dimension",
+            "Source": "ghwtdlc",
+            "Charter": "Neversoft"
+          },
+          "Identifier": "SongTuple",
+          "Description": null
+        },
+        {
+          "Id": "857e6ea3-f5cc-2acf-0076-0491b0c72dce",
+          "SongId": null,
+          "SongHash": null,
+          "ShortName": null,
+          "SongTuple": {
+            "Artist": "Modest Mouse",
+            "Title": "Float On",
+            "Source": "ghwt",
+            "Charter": "Neversoft"
+          },
+          "Identifier": "SongTuple",
+          "Description": null
+        },
+        {
+          "Id": "036614dd-a368-4f43-d49f-2fc596b9757e",
+          "SongId": null,
+          "SongHash": null,
+          "ShortName": null,
+          "SongTuple": {
+            "Artist": "Korn",
+            "Title": "Freak on a Leash",
+            "Source": "ghwt",
+            "Charter": "Neversoft"
+          },
+          "Identifier": "SongTuple",
+          "Description": null
+        },
+        {
+          "Id": "8b6d67f3-0829-a311-218c-7a48644cd25b",
+          "SongId": null,
+          "SongHash": null,
+          "ShortName": null,
+          "SongTuple": {
+            "Artist": "Vampire Weekend",
+            "Title": "Holiday",
+            "Source": "ghwtdlc",
+            "Charter": "Neversoft"
+          },
+          "Identifier": "SongTuple",
+          "Description": null
+        },
+        {
+          "Id": "8093421a-bea1-a3be-6e0a-421d8cad9389",
+          "SongId": null,
+          "SongHash": null,
+          "ShortName": null,
+          "SongTuple": {
+            "Artist": "Oasis",
+            "Title": "Im Outta Time",
+            "Source": "ghwtdlc",
+            "Charter": "Neversoft"
+          },
+          "Identifier": "SongTuple",
+          "Description": null
+        }
+      ],
+      "CustomUnlockText": "Uh... where are we? What did we say about eating the YARG gems? Now you'll need to play yourself out of this stupor. Go on, try whatever you want, it's all a dream.",
+      "BackgroundImage": null,
+      "CompletionBonusText": null,
+      "CompletionBonus": "None",
+      "MediaFilename": null,
+      "VenueSize": "NotSpecified",
+      "VenueHint": "Venue/TunnelTrip",
+      "UnlockType": "StarCount",
+      "UnlockCriteria": 25,
+      "CompletionMode": "SingleSong",
+      "IsBonus": true
+    },
+    {
+      "Name": "Getting in the Groove",
+      "Id": "17c8d050-8c32-4d5c-bd52-d798a586b6e2",
+      "Description": null,
+      "Songs": [
+        {
+          "Id": "041692e8-c63d-a579-d014-3006a775ad17",
+          "SongId": null,
+          "SongHash": null,
+          "ShortName": null,
+          "SongTuple": {
+            "Artist": "The Rasmus",
+            "Title": "In the Shadows",
+            "Source": "ghwtdlc",
+            "Charter": "Neversoft"
+          },
+          "Identifier": "SongTuple",
+          "Description": null
+        },
+        {
+          "Id": "3d2fc721-0ac3-d60e-0cf0-464d495270c9",
+          "SongId": null,
+          "SongHash": null,
+          "ShortName": null,
+          "SongTuple": {
+            "Artist": "Wings",
+            "Title": "Jet",
+            "Source": "ghwtdlc",
+            "Charter": "Neversoft"
+          },
+          "Identifier": "SongTuple",
+          "Description": null
+        },
+        {
+          "Id": "da7c0e56-761a-3580-3576-6a5dd64a590b",
+          "SongId": null,
+          "SongHash": null,
+          "ShortName": null,
+          "SongTuple": {
+            "Artist": "Di-Rect",
+            "Title": "Johnny",
+            "Source": "ghwtdlc",
+            "Charter": "Neversoft"
+          },
+          "Identifier": "SongTuple",
+          "Description": null
+        },
+        {
+          "Id": "a1674bbc-b086-bc00-c4b8-8cba9839f276",
+          "SongId": null,
+          "SongHash": null,
+          "ShortName": null,
+          "SongTuple": {
+            "Artist": "Paul McCartney & Wings",
+            "Title": "Junior's Farm",
+            "Source": "ghwtdlc",
+            "Charter": "Neversoft"
+          },
+          "Identifier": "SongTuple",
+          "Description": null
+        },
+        {
+          "Id": "4016b480-1852-6694-e60d-e4cdb6bbf16c",
+          "SongId": null,
+          "SongHash": null,
+          "ShortName": null,
+          "SongTuple": {
+            "Artist": "Interpol",
+            "Title": "Obstacle 1",
+            "Source": "ghwt",
+            "Charter": "Neversoft"
+          },
+          "Identifier": "SongTuple",
+          "Description": null
+        }
+      ],
+      "CustomUnlockText": "Getting the hang of it? Now you can start cranking up the energy. You're sure to impress your acquaintances with faster and more intricate songs.",
+      "BackgroundImage": null,
+      "CompletionBonusText": null,
+      "CompletionBonus": "None",
+      "MediaFilename": null,
+      "VenueSize": "NotSpecified",
+      "VenueHint": null,
+      "UnlockType": "StarCount",
+      "UnlockCriteria": 25,
+      "CompletionMode": "SingleSong",
+      "IsBonus": false
+    },
+    {
+      "Name": "Garage Band",
+      "Id": "014430d3-b689-4e0a-a100-fc85d3db3908",
+      "Description": null,
+      "Songs": [
+        {
+          "Id": "8719cd65-483a-04a9-1e9e-5184dadbd2e1",
+          "SongId": null,
+          "SongHash": null,
+          "ShortName": null,
+          "SongTuple": {
+            "Artist": "Oasis",
+            "Title": "Some Might Say",
+            "Source": "ghwt",
+            "Charter": "Neversoft"
+          },
+          "Identifier": "SongTuple",
+          "Description": null
+        },
+        {
+          "Id": "7841ad7c-5f85-98f2-e37b-381327554101",
+          "SongId": null,
+          "SongHash": null,
+          "ShortName": null,
+          "SongTuple": {
+            "Artist": "The Enemy",
+            "Title": "Aggro",
+            "Source": "ghwt",
+            "Charter": "Neversoft"
+          },
+          "Identifier": "SongTuple",
+          "Description": null
+        },
+        {
+          "Id": "94c7cd7f-ed67-20fd-d7bc-8178238ee9db",
+          "SongId": null,
+          "SongHash": null,
+          "ShortName": null,
+          "SongTuple": {
+            "Artist": "The Guess Who",
+            "Title": "American Woman",
+            "Source": "ghwt",
+            "Charter": "Neversoft"
+          },
+          "Identifier": "SongTuple",
+          "Description": null
+        },
+        {
+          "Id": "63b67f1f-712a-b962-6e4e-ae40ef665a4d",
+          "SongId": null,
+          "SongHash": null,
+          "ShortName": null,
+          "SongTuple": {
+            "Artist": "Fleetwood Mac",
+            "Title": "Go Your Own Way",
+            "Source": "ghwt",
+            "Charter": "Neversoft"
+          },
+          "Identifier": "SongTuple",
+          "Description": null
+        },
+        {
+          "Id": "e0ad6887-6d2b-5a4c-cfc5-4743f2ec3bfe",
+          "SongId": null,
+          "SongHash": null,
+          "ShortName": null,
+          "SongTuple": {
+            "Artist": "Beatsteaks",
+            "Title": "Hail to the Freaks",
+            "Source": "ghwt",
+            "Charter": "Neversoft"
+          },
+          "Identifier": "SongTuple",
+          "Description": null
+        }
+      ],
+      "CustomUnlockText": "Think you can make it as a band? The club in your area has a large garage where up-and-coming acts play shows on the regular. Sign up for a gig and see what you've got!",
+      "BackgroundImage": null,
+      "CompletionBonusText": null,
+      "CompletionBonus": "None",
+      "MediaFilename": null,
+      "VenueSize": "NotSpecified",
+      "VenueHint": null,
+      "UnlockType": "StarCount",
+      "UnlockCriteria": 50,
+      "CompletionMode": "SingleSong",
+      "IsBonus": false
+    },
+    {
+      "Name": "Locked Up",
+      "Id": "870417a4-aefb-4c9e-84c3-c1a8e9f0bdba",
+      "Description": null,
+      "Songs": [
+        {
+          "Id": "e1fbfcba-49cd-0d6d-2723-7c6b184621a2",
+          "SongId": null,
+          "SongHash": null,
+          "ShortName": null,
+          "SongTuple": {
+            "Artist": "Bon Jovi",
+            "Title": "Livin' on a Prayer",
+            "Source": "ghwt",
+            "Charter": "Neversoft"
+          },
+          "Identifier": "SongTuple",
+          "Description": null
+        },
+        {
+          "Id": "fd7344f3-4a9f-b5d0-d18a-35f010b233ab",
+          "SongId": null,
+          "SongHash": null,
+          "ShortName": null,
+          "SongTuple": {
+            "Artist": "Paramore",
+            "Title": "Misery Business",
+            "Source": "ghwt",
+            "Charter": "Neversoft"
+          },
+          "Identifier": "SongTuple",
+          "Description": null
+        },
+        {
+          "Id": "5f376a75-928f-7667-8798-b201d808de61",
+          "SongId": null,
+          "SongHash": null,
+          "ShortName": null,
+          "SongTuple": {
+            "Artist": "Negramaro",
+            "Title": "Nuvole e Lenzuola",
+            "Source": "ghwt",
+            "Charter": "Neversoft"
+          },
+          "Identifier": "SongTuple",
+          "Description": null
+        },
+        {
+          "Id": "4d065a9d-2744-24a2-a27c-f2804f59f6c0",
+          "SongId": null,
+          "SongHash": null,
+          "ShortName": null,
+          "SongTuple": {
+            "Artist": "At the Drive-In",
+            "Title": "One Armed Scissor",
+            "Source": "ghwt",
+            "Charter": "Neversoft"
+          },
+          "Identifier": "SongTuple",
+          "Description": null
+        },
+        {
+          "Id": "3f0ee5aa-0590-361f-b620-1b73a8767754",
+          "SongId": null,
+          "SongHash": null,
+          "ShortName": null,
+          "SongTuple": {
+            "Artist": "The Sex Pistols",
+            "Title": "Pretty Vacant",
+            "Source": "ghwt",
+            "Charter": "Neversoft"
+          },
+          "Identifier": "SongTuple",
+          "Description": null
+        },
+        {
+          "Id": "74ec533b-a2f3-8ecc-3ff5-b877fb11ab8c",
+          "SongId": null,
+          "SongHash": null,
+          "ShortName": null,
+          "SongTuple": {
+            "Artist": "Rise Against",
+            "Title": "Re-Education (Through Labor)",
+            "Source": "ghwt",
+            "Charter": "Neversoft"
+          },
+          "Identifier": "SongTuple",
+          "Description": null
+        },
+        {
+          "Id": "6ab7d814-3ed9-3110-5bf4-55fc0c981dfc",
+          "SongId": null,
+          "SongHash": null,
+          "ShortName": null,
+          "SongTuple": {
+            "Artist": "Lostprophets",
+            "Title": "Rooftops (A Liberation Broadcast)",
+            "Source": "ghwt",
+            "Charter": "Neversoft"
+          },
+          "Identifier": "SongTuple",
+          "Description": null
+        },
+        {
+          "Id": "4172c781-55d2-d270-b6ff-c59ec7544253",
+          "SongId": null,
+          "SongHash": null,
+          "ShortName": null,
+          "SongTuple": {
+            "Artist": "Steve Miller Band",
+            "Title": "The Joker",
+            "Source": "ghwt",
+            "Charter": "Neversoft"
+          },
+          "Identifier": "SongTuple",
+          "Description": null
+        },
+        {
+          "Id": "1537eb36-9a90-520f-556a-5c5b0aea8109",
+          "SongId": null,
+          "SongHash": null,
+          "ShortName": null,
+          "SongTuple": {
+            "Artist": "Airbourne",
+            "Title": "Too Much, Too Young, Too Fast",
+            "Source": "ghwt",
+            "Charter": "Neversoft"
+          },
+          "Identifier": "SongTuple",
+          "Description": null
+        },
+        {
+          "Id": "f6f05ffb-1e00-b5ea-1881-baeb2e75028f",
+          "SongId": null,
+          "SongHash": null,
+          "ShortName": null,
+          "SongTuple": {
+            "Artist": "Creedence Clearwater Revival",
+            "Title": "Up Around the Bend",
+            "Source": "ghwt",
+            "Charter": "Neversoft"
+          },
+          "Identifier": "SongTuple",
+          "Description": null
+        }
+      ],
+      "CustomUnlockText": "So you're telling me that you played some illegal songs, and the police got you trapped in this cell? That's just great. Perhaps you could play them some songs and they'll let you go.",
+      "BackgroundImage": null,
+      "CompletionBonusText": null,
+      "CompletionBonus": "None",
+      "MediaFilename": null,
+      "VenueSize": "NotSpecified",
+      "VenueHint": null,
+      "UnlockType": "StarCount",
+      "UnlockCriteria": 75,
+      "CompletionMode": "SingleSong",
+      "IsBonus": true
+    },
+    {
+      "Name": "Rocking Harder",
+      "Id": "f784b46f-40a9-407e-b956-f80ff41ddc19",
+      "Description": null,
+      "Songs": [
+        {
+          "Id": "6d471117-0de7-b450-0512-de0df3107f42",
+          "SongId": null,
+          "SongHash": null,
+          "ShortName": null,
+          "SongTuple": {
+            "Artist": "HushPuppies",
+            "Title": "You're Gonna Say Yeah!",
+            "Source": "ghwt",
+            "Charter": "Neversoft"
+          },
+          "Identifier": "SongTuple",
+          "Description": null
+        },
+        {
+          "Id": "475ace7f-1034-8b91-77ce-a3e485f21747",
+          "SongId": null,
+          "SongHash": null,
+          "ShortName": null,
+          "SongTuple": {
+            "Artist": "Trust",
+            "Title": "Antisocial",
+            "Source": "ghwt",
+            "Charter": "Neversoft"
+          },
+          "Identifier": "SongTuple",
+          "Description": null
+        },
+        {
+          "Id": "990cd0ba-3a05-9c9b-4109-1863a9bc8a93",
+          "SongId": null,
+          "SongHash": null,
+          "ShortName": null,
+          "SongTuple": {
+            "Artist": "Lenny Kravitz",
+            "Title": "Are You Gonna Go My Way",
+            "Source": "ghwt",
+            "Charter": "Neversoft"
+          },
+          "Identifier": "SongTuple",
+          "Description": null
+        },
+        {
+          "Id": "0366e0b6-92f5-2450-5ae6-12306f183512",
+          "SongId": null,
+          "SongHash": null,
+          "ShortName": null,
+          "SongTuple": {
+            "Artist": "Blink-182",
+            "Title": "Dammit (Growing Up)",
+            "Source": "ghwt",
+            "Charter": "Neversoft"
+          },
+          "Identifier": "SongTuple",
+          "Description": null
+        },
+        {
+          "Id": "ed3a0bb5-1d53-a427-980a-6fbf293721f6",
+          "SongId": null,
+          "SongHash": null,
+          "ShortName": null,
+          "SongTuple": {
+            "Artist": "Foo Fighters",
+            "Title": "Everlong",
+            "Source": "ghwt",
+            "Charter": "Neversoft"
+          },
+          "Identifier": "SongTuple",
+          "Description": null
+        }
+      ],
+      "CustomUnlockText": "Seems like the local patronage has taken a interest to you. Now that you've got the experience, it's time to captivate the crowd with your harder-hitting songs! Get the word out there.",
+      "BackgroundImage": null,
+      "CompletionBonusText": null,
+      "CompletionBonus": "None",
+      "MediaFilename": null,
+      "VenueSize": "NotSpecified",
+      "VenueHint": null,
+      "UnlockType": "StarCount",
+      "UnlockCriteria": 75,
+      "CompletionMode": "SingleSong",
+      "IsBonus": false
+    },
+    {
+      "Name": "Cathedral Concert",
+      "Id": "21da0d50-fbcf-4491-9598-575ae3c850b6",
+      "Description": null,
+      "Songs": [
+        {
+          "Id": "c9f52beb-29c0-0ed8-e32b-c8f77446ef6e",
+          "SongId": null,
+          "SongHash": null,
+          "ShortName": null,
+          "SongTuple": {
+            "Artist": "Survivor",
+            "Title": "Eye of the Tiger",
+            "Source": "ghwt",
+            "Charter": "Neversoft"
+          },
+          "Identifier": "SongTuple",
+          "Description": null
+        },
+        {
+          "Id": "0a05dd72-7425-8bc4-e59a-afce1a189e43",
+          "SongId": null,
+          "SongHash": null,
+          "ShortName": null,
+          "SongTuple": {
+            "Artist": "Anouk",
+            "Title": "Good God",
+            "Source": "ghwt",
+            "Charter": "Neversoft"
+          },
+          "Identifier": "SongTuple",
+          "Description": null
+        },
+        {
+          "Id": "71645ded-4d4e-435a-93c7-5bdb90f411ee",
+          "SongId": null,
+          "SongHash": null,
+          "ShortName": null,
+          "SongTuple": {
+            "Artist": "Filter",
+            "Title": "Hey Man, Nice Shot",
+            "Source": "ghwt",
+            "Charter": "Neversoft"
+          },
+          "Identifier": "SongTuple",
+          "Description": null
+        },
+        {
+          "Id": "253e3dc3-1645-0f1c-57b5-aba728eb8bfe",
+          "SongId": null,
+          "SongHash": null,
+          "ShortName": null,
+          "SongTuple": {
+            "Artist": "Bob Seger & the Silver Bullet Band",
+            "Title": "Hollywood Nights",
+            "Source": "ghwt",
+            "Charter": "Neversoft"
+          },
+          "Identifier": "SongTuple",
+          "Description": null
+        },
+        {
+          "Id": "4b881ae4-40da-0dfb-e5ba-a00cbef14991",
+          "SongId": null,
+          "SongHash": null,
+          "ShortName": null,
+          "SongTuple": {
+            "Artist": "Eagles",
+            "Title": "Hotel California",
+            "Source": "ghwt",
+            "Charter": "Neversoft"
+          },
+          "Identifier": "SongTuple",
+          "Description": null
+        }
+      ],
+      "CustomUnlockText": "You've booked a church for your next gig? That's wild. But with a larger space for a crowd, your range of influence ever grows. Bless these lands with your music!",
+      "BackgroundImage": null,
+      "CompletionBonusText": null,
+      "CompletionBonus": "None",
+      "MediaFilename": null,
+      "VenueSize": "NotSpecified",
+      "VenueHint": "Venue/Church",
+      "UnlockType": "StarCount",
+      "UnlockCriteria": 100,
+      "CompletionMode": "SingleSong",
+      "IsBonus": false
+    },
+    {
+      "Name": "Devil's Work",
+      "Id": "037a97f6-cfa9-48a8-84be-230b63d859bf",
+      "Description": null,
+      "Songs": [
+        {
+          "Id": "02dffb0b-2488-0b4e-3f81-c76594e0e7cb",
+          "SongId": null,
+          "SongHash": null,
+          "ShortName": null,
+          "SongTuple": {
+            "Artist": "Jane's Addiction",
+            "Title": "Mountain Song",
+            "Source": "ghwt",
+            "Charter": "Neversoft"
+          },
+          "Identifier": "SongTuple",
+          "Description": null
+        },
+        {
+          "Id": "5112cf5c-8444-b3fb-3d84-fe5f33926179",
+          "SongId": null,
+          "SongHash": null,
+          "ShortName": null,
+          "SongTuple": {
+            "Artist": "Willie Nelson",
+            "Title": "On the Road Again (Live)",
+            "Source": "ghwt",
+            "Charter": "Neversoft"
+          },
+          "Identifier": "SongTuple",
+          "Description": null
+        },
+        {
+          "Id": "aa22f118-a721-f6c3-8361-2c926333ba0f",
+          "SongId": null,
+          "SongHash": null,
+          "ShortName": null,
+          "SongTuple": {
+            "Artist": "Blondie",
+            "Title": "One Way or Another",
+            "Source": "ghwt",
+            "Charter": "Neversoft"
+          },
+          "Identifier": "SongTuple",
+          "Description": null
+        },
+        {
+          "Id": "f77d85b1-a20b-1831-b8af-8eb2db322fbf",
+          "SongId": null,
+          "SongHash": null,
+          "ShortName": null,
+          "SongTuple": {
+            "Artist": "Lacuna Coil",
+            "Title": "Our Truth",
+            "Source": "ghwt",
+            "Charter": "Neversoft"
+          },
+          "Identifier": "SongTuple",
+          "Description": null
+        },
+        {
+          "Id": "ce1851a9-139e-d535-19cd-c2cd81f3059b",
+          "SongId": null,
+          "SongHash": null,
+          "ShortName": null,
+          "SongTuple": {
+            "Artist": "The Allman Brothers Band",
+            "Title": "Ramblin' Man",
+            "Source": "ghwt",
+            "Charter": "Neversoft"
+          },
+          "Identifier": "SongTuple",
+          "Description": null
+        },
+        {
+          "Id": "9d0ae6a8-a57c-b80e-0693-5db21258fa18",
+          "SongId": null,
+          "SongHash": null,
+          "ShortName": null,
+          "SongTuple": {
+            "Artist": "Sublime",
+            "Title": "Santeria",
+            "Source": "ghwt",
+            "Charter": "Neversoft"
+          },
+          "Identifier": "SongTuple",
+          "Description": null
+        },
+        {
+          "Id": "249b6165-d7c3-3fdb-fcfa-ceef54508a80",
+          "SongId": null,
+          "SongHash": null,
+          "ShortName": null,
+          "SongTuple": {
+            "Artist": "Coldplay",
+            "Title": "Shiver",
+            "Source": "ghwt",
+            "Charter": "Neversoft"
+          },
+          "Identifier": "SongTuple",
+          "Description": null
+        },
+        {
+          "Id": "f617798e-fadc-f302-be2b-290842d3d041",
+          "SongId": null,
+          "SongHash": null,
+          "ShortName": null,
+          "SongTuple": {
+            "Artist": "30 Seconds to Mars",
+            "Title": "The Kill",
+            "Source": "ghwt",
+            "Charter": "Neversoft"
+          },
+          "Identifier": "SongTuple",
+          "Description": null
+        },
+        {
+          "Id": "d03eb620-d8c8-d324-2d27-d22a37a9ca16",
+          "SongId": null,
+          "SongHash": null,
+          "ShortName": null,
+          "SongTuple": {
+            "Artist": "Black Rebel Motorcycle Club",
+            "Title": "Weapon of Choice",
+            "Source": "ghwt",
+            "Charter": "Neversoft"
+          },
+          "Identifier": "SongTuple",
+          "Description": null
+        },
+        {
+          "Id": "9bb9aa3c-ed8a-b375-c9af-cc59a1ef917c",
+          "SongId": null,
+          "SongHash": null,
+          "ShortName": null,
+          "SongTuple": {
+            "Artist": "Radio Futura",
+            "Title": "Escuela de Calor",
+            "Source": "ghwt",
+            "Charter": "Neversoft"
+          },
+          "Identifier": "SongTuple",
+          "Description": null
+        }
+      ],
+      "CustomUnlockText": "Don't tell me you tried playing \"The Devil Went Down to Georgia\" of all songs... Now it seems you've got an audience with the underworld. Entertain them, or be damned for eternity...",
+      "BackgroundImage": null,
+      "CompletionBonusText": null,
+      "CompletionBonus": "None",
+      "MediaFilename": null,
+      "VenueSize": "NotSpecified",
+      "VenueHint": "Venue/MagiaAlliance",
+      "UnlockType": "StarCount",
+      "UnlockCriteria": 125,
+      "CompletionMode": "SingleSong",
+      "IsBonus": true
+    },
+    {
+      "Name": "Soaring Higher",
+      "Id": "d2b52506-e436-4913-a176-0202cecf6303",
+      "Description": null,
+      "Songs": [
+        {
+          "Id": "1622c5bb-370f-056c-8063-6294746fb316",
+          "SongId": null,
+          "SongHash": null,
+          "ShortName": null,
+          "SongTuple": {
+            "Artist": "MC5's Wayne Kramer",
+            "Title": "Kick Out the Jams",
+            "Source": "ghwt",
+            "Charter": "Neversoft"
+          },
+          "Identifier": "SongTuple",
+          "Description": null
+        },
+        {
+          "Id": "7318cb91-1b06-34fb-42d0-eab1d1327200",
+          "SongId": null,
+          "SongHash": null,
+          "ShortName": null,
+          "SongTuple": {
+            "Artist": "Silversun Pickups",
+            "Title": "Lazy Eye",
+            "Source": "ghwt",
+            "Charter": "Neversoft"
+          },
+          "Identifier": "SongTuple",
+          "Description": null
+        },
+        {
+          "Id": "ee8a0739-64be-f325-c23a-36c615ba3a98",
+          "SongId": null,
+          "SongHash": null,
+          "ShortName": null,
+          "SongTuple": {
+            "Artist": "Tool",
+            "Title": "Parabola",
+            "Source": "ghwt",
+            "Charter": "Neversoft"
+          },
+          "Identifier": "SongTuple",
+          "Description": null
+        },
+        {
+          "Id": "39dc77a3-1123-40f5-d483-88ae9a5408f2",
+          "SongId": null,
+          "SongHash": null,
+          "ShortName": null,
+          "SongTuple": {
+            "Artist": "Tool",
+            "Title": "Schism",
+            "Source": "ghwt",
+            "Charter": "Neversoft"
+          },
+          "Identifier": "SongTuple",
+          "Description": null
+        },
+        {
+          "Id": "9205684c-ffaf-c466-1d44-60261dd5bd5f",
+          "SongId": null,
+          "SongHash": null,
+          "ShortName": null,
+          "SongTuple": {
+            "Artist": "Jimmy Eat World",
+            "Title": "The Middle",
+            "Source": "ghwt",
+            "Charter": "Neversoft"
+          },
+          "Identifier": "SongTuple",
+          "Description": null
+        }
+      ],
+      "CustomUnlockText": "In a place where acts can give you wings, your band can take the jump and ascend ever higher! Serenade the crowd with soaring melodies and complex progressions, and take the next step towards stardom.",
+      "BackgroundImage": null,
+      "CompletionBonusText": null,
+      "CompletionBonus": "None",
+      "MediaFilename": null,
+      "VenueSize": "NotSpecified",
+      "VenueHint": null,
+      "UnlockType": "StarCount",
+      "UnlockCriteria": 125,
+      "CompletionMode": "SingleSong",
+      "IsBonus": false
+    },
+    {
+      "Name": "Festival Frenzy",
+      "Id": "95439645-9a53-405a-b98d-85f2a66e0736",
+      "Description": null,
+      "Songs": [
+        {
+          "Id": "5e7ec47c-5cb6-005d-eccd-6e08360bf0a3",
+          "SongId": null,
+          "SongHash": null,
+          "ShortName": null,
+          "SongTuple": {
+            "Artist": "The Jimi Hendrix Experience",
+            "Title": "The Wind Cries Mary",
+            "Source": "ghwt",
+            "Charter": "Neversoft"
+          },
+          "Identifier": "SongTuple",
+          "Description": null
+        },
+        {
+          "Id": "8a407b4d-d8d7-076e-5cd5-ce6b523d68f1",
+          "SongId": null,
+          "SongHash": null,
+          "ShortName": null,
+          "SongTuple": {
+            "Artist": "Muse",
+            "Title": "Assassin",
+            "Source": "ghwt",
+            "Charter": "Neversoft"
+          },
+          "Identifier": "SongTuple",
+          "Description": null
+        },
+        {
+          "Id": "da1da9ba-38fb-ebeb-b417-46f00be28a4d",
+          "SongId": null,
+          "SongHash": null,
+          "ShortName": null,
+          "SongTuple": {
+            "Artist": "The Police",
+            "Title": "Demolition Man (Live)",
+            "Source": "ghwt",
+            "Charter": "Neversoft"
+          },
+          "Identifier": "SongTuple",
+          "Description": null
+        },
+        {
+          "Id": "12310ad8-1be5-434a-8908-4f593485690a",
+          "SongId": null,
+          "SongHash": null,
+          "ShortName": null,
+          "SongTuple": {
+            "Artist": "Steely Dan",
+            "Title": "Do It Again",
+            "Source": "ghwt",
+            "Charter": "Neversoft"
+          },
+          "Identifier": "SongTuple",
+          "Description": null
+        },
+        {
+          "Id": "579dbd81-47ea-1638-0ed6-75b95f406471",
+          "SongId": null,
+          "SongHash": null,
+          "ShortName": null,
+          "SongTuple": {
+            "Artist": "Dinosaur Jr.",
+            "Title": "Feel the Pain",
+            "Source": "ghwt",
+            "Charter": "Neversoft"
+          },
+          "Identifier": "SongTuple",
+          "Description": null
+        }
+      ],
+      "CustomUnlockText": "You're finally here: the grand music festival, localized entirely within your city! So many bands take turns fighting for attention over a wave of visitors from all over the area. Make a name for yourself!",
+      "BackgroundImage": null,
+      "CompletionBonusText": null,
+      "CompletionBonus": "None",
+      "MediaFilename": null,
+      "VenueSize": "NotSpecified",
+      "VenueHint": "Venue/OutdoorConcert",
+      "UnlockType": "StarCount",
+      "UnlockCriteria": 150,
+      "CompletionMode": "SingleSong",
+      "IsBonus": false
+    },
+    {
+      "Name": "Own the Studio",
+      "Id": "c40cff85-25f6-497c-b17e-8e1eaa413b1b",
+      "Description": null,
+      "Songs": [
+        {
+          "Id": "b15fb091-d18b-17d9-4846-9917b062b49a",
+          "SongId": null,
+          "SongHash": null,
+          "ShortName": null,
+          "SongTuple": {
+            "Artist": "Pat Benatar",
+            "Title": "Heartbreaker",
+            "Source": "ghwt",
+            "Charter": "Neversoft"
+          },
+          "Identifier": "SongTuple",
+          "Description": null
+        },
+        {
+          "Id": "8c4d2611-1014-9eeb-9075-ec84cd929a4d",
+          "SongId": null,
+          "SongHash": null,
+          "ShortName": null,
+          "SongTuple": {
+            "Artist": "The Mars Volta",
+            "Title": "L'Via L'Viaquez",
+            "Source": "ghwt",
+            "Charter": "Neversoft"
+          },
+          "Identifier": "SongTuple",
+          "Description": null
+        },
+        {
+          "Id": "9ef5b365-45cf-62ad-7e57-01702101d46f",
+          "SongId": null,
+          "SongHash": null,
+          "ShortName": null,
+          "SongTuple": {
+            "Artist": "Los Lobos",
+            "Title": "La Bamba",
+            "Source": "ghwt",
+            "Charter": "Neversoft"
+          },
+          "Identifier": "SongTuple",
+          "Description": null
+        },
+        {
+          "Id": "5087446c-41b9-ad94-0b55-8e3658f93e34",
+          "SongId": null,
+          "SongHash": null,
+          "ShortName": null,
+          "SongTuple": {
+            "Artist": "The Doors",
+            "Title": "Love Me Two Times",
+            "Source": "ghwt",
+            "Charter": "Neversoft"
+          },
+          "Identifier": "SongTuple",
+          "Description": null
+        },
+        {
+          "Id": "dab995fd-e705-6e37-1ae6-5209237beec5",
+          "SongId": null,
+          "SongHash": null,
+          "ShortName": null,
+          "SongTuple": {
+            "Artist": "The Stone Roses",
+            "Title": "Love Spreads",
+            "Source": "ghwt",
+            "Charter": "Neversoft"
+          },
+          "Identifier": "SongTuple",
+          "Description": null
+        },
+        {
+          "Id": "74d80d8e-cf3f-d385-947b-e3db1709dfcb",
+          "SongId": null,
+          "SongHash": null,
+          "ShortName": null,
+          "SongTuple": {
+            "Artist": "The Answer",
+            "Title": "Never Too Late",
+            "Source": "ghwt",
+            "Charter": "Neversoft"
+          },
+          "Identifier": "SongTuple",
+          "Description": null
+        },
+        {
+          "Id": "e225848c-f3f7-c78f-a20c-64e49dc17ec4",
+          "SongId": null,
+          "SongHash": null,
+          "ShortName": null,
+          "SongTuple": {
+            "Artist": "Beastie Boys ft. Kerry King",
+            "Title": "No Sleep Till Brooklyn",
+            "Source": "ghwt",
+            "Charter": "Neversoft"
+          },
+          "Identifier": "SongTuple",
+          "Description": null
+        },
+        {
+          "Id": "b09d0f47-ae35-1cdd-7e24-2e8435603737",
+          "SongId": null,
+          "SongHash": null,
+          "ShortName": null,
+          "SongTuple": {
+            "Artist": "The Living End",
+            "Title": "Prisoner of Society",
+            "Source": "ghwt",
+            "Charter": "Neversoft"
+          },
+          "Identifier": "SongTuple",
+          "Description": null
+        },
+        {
+          "Id": "714eb895-1ea9-7319-3bfb-dff0f367b60a",
+          "SongId": null,
+          "SongHash": null,
+          "ShortName": null,
+          "SongTuple": {
+            "Artist": "Billy Idol",
+            "Title": "Rebel Yell",
+            "Source": "ghwt",
+            "Charter": "Neversoft"
+          },
+          "Identifier": "SongTuple",
+          "Description": null
+        },
+        {
+          "Id": "91e23b36-bf3a-65fd-a4b3-81d68656e083",
+          "SongId": null,
+          "SongHash": null,
+          "ShortName": null,
+          "SongTuple": {
+            "Artist": "NOFX",
+            "Title": "Soul Doubt",
+            "Source": "ghwt",
+            "Charter": "Neversoft"
+          },
+          "Identifier": "SongTuple",
+          "Description": null
+        }
+      ],
+      "CustomUnlockText": "This is your first opportunity to record your own music? With professional equipment and a white room? Choose whichever songs you please, I'm sure it'll turn out great!",
+      "BackgroundImage": null,
+      "CompletionBonusText": null,
+      "CompletionBonus": "None",
+      "MediaFilename": null,
+      "VenueSize": "NotSpecified",
+      "VenueHint": null,
+      "UnlockType": "StarCount",
+      "UnlockCriteria": 175,
+      "CompletionMode": "SingleSong",
+      "IsBonus": true
+    },
+    {
+      "Name": "Pinnacle of Performance",
+      "Id": "43da5370-f58e-45b0-843a-0502af81ffdc",
+      "Description": null,
+      "Songs": [
+        {
+          "Id": "bafce04d-c02b-6cbd-4f6e-b46df4e1d8ab",
+          "SongId": null,
+          "SongHash": null,
+          "ShortName": null,
+          "SongTuple": {
+            "Artist": "No Doubt",
+            "Title": "Spiderwebs",
+            "Source": "ghwt",
+            "Charter": "Neversoft"
+          },
+          "Identifier": "SongTuple",
+          "Description": null
+        },
+        {
+          "Id": "83ec875f-44b8-c378-4718-be2514ba1d24",
+          "SongId": null,
+          "SongHash": null,
+          "ShortName": null,
+          "SongTuple": {
+            "Artist": "Black Label Society",
+            "Title": "Stillborn",
+            "Source": "ghwt",
+            "Charter": "Neversoft"
+          },
+          "Identifier": "SongTuple",
+          "Description": null
+        },
+        {
+          "Id": "e6377739-d02e-3bef-9474-8b6cb039bffe",
+          "SongId": null,
+          "SongHash": null,
+          "ShortName": null,
+          "SongTuple": {
+            "Artist": "Lynyrd Skynyrd",
+            "Title": "Sweet Home Alabama (Live)",
+            "Source": "ghwt",
+            "Charter": "Neversoft"
+          },
+          "Identifier": "SongTuple",
+          "Description": null
+        },
+        {
+          "Id": "244c2b64-5303-2777-89fa-abe460b87122",
+          "SongId": null,
+          "SongHash": null,
+          "ShortName": null,
+          "SongTuple": {
+            "Artist": "Ted Nugent",
+            "Title": "Ted Nugent Guitar Battle (Career)",
+            "Source": "ghwt",
+            "Charter": "Neversoft"
+          },
+          "Identifier": "SongTuple",
+          "Description": null
+        },
+        {
+          "Id": "e05eb4e3-0307-f726-7567-d3167f98681a",
+          "SongId": null,
+          "SongHash": null,
+          "ShortName": null,
+          "SongTuple": {
+            "Artist": "Stuck in the Sound",
+            "Title": "Toy Boy",
+            "Source": "ghwt",
+            "Charter": "Neversoft"
+          },
+          "Identifier": "SongTuple",
+          "Description": null
+        }
+      ],
+      "CustomUnlockText": "Out of all acts in the festival, your band stands out on top. You have the final set: send the crowd home with an experience they'll never forget!",
+      "BackgroundImage": null,
+      "CompletionBonusText": null,
+      "CompletionBonus": "None",
+      "MediaFilename": null,
+      "VenueSize": "NotSpecified",
+      "VenueHint": "Venue/Festival",
+      "UnlockType": "StarCount",
+      "UnlockCriteria": 175,
+      "CompletionMode": "SingleSong",
+      "IsBonus": false
+    }
+  ]
+}
