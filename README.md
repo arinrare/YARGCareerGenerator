@@ -108,6 +108,32 @@ python -m yarg_career_builder.cli regenerate-sources
 
 ---
 
+## Creating a release (GitHub Actions)
+
+Pushing a version tag triggers a workflow (`.github/workflows/release.yml`) that
+builds the app and attaches a `YargCareerBuilder.zip` to a new GitHub release.
+
+1. (Optional) bump the version in `src/yarg_career_builder/_version.py`.
+2. Commit, tag, and push:
+
+```powershell
+git add -A
+git commit -m "Release v1.2.3"
+git tag v1.2.3
+git push origin main v1.2.3
+```
+
+The workflow then:
+
+- builds the one-folder app with PyInstaller,
+- injects the tag version into the build (so the About dialog shows `1.2.3`),
+- zips `dist\YARG Career Builder\` into `YargCareerBuilder.zip`,
+- creates a GitHub release named `v1.2.3` with the zip attached.
+
+---
+
+
+
 ## Configuration (`settings.json`)
 
 `settings.json` holds all configuration. Key sections:
