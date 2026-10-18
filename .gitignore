@@ -1,0 +1,14 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+build/
+dist/
+
+# Built career output (portable, regenerated)
+careers/
+
+# Tooling
+.pytest_cache/

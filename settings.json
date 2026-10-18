@@ -40,7 +40,7 @@
     "(e.g. ghwt = 86, ghwtdlc = 155); redistribute will split whatever you select across the tiers."
   ],
   "music_root": "J:\\Stored\\YARG Music",
-  "output_dir": "J:\\Stored\\YARG Careers",
+  "output_dir": "",
   "yarg": {
     "install_dir": "",
     "data_dir": "C:\\Users\\micha\\AppData\\LocalLow\\YARC\\YARG\\nightly"
@@ -56,10 +56,7 @@
       "ghwt": 8,
       "ghwtdlc": 1
     },
-    "filter": [
-      "ghwt",
-      "ghwtdlc"
-    ],
+    "filter": [],
     "limit": 0
   },
   "public_checks": {
@@ -78,7 +75,7 @@
     "title": null,
     "description": "Starting a band has never been easier! Bring your friends to the YARG and begin playing the songs you've rehearsed. Even if you flub a few notes, everyone's here for a good time!",
     "source": "yarg",
-    "version": 1,
+    "version": 4,
     "type": "Career"
   },
   "redistribute": "auto",
