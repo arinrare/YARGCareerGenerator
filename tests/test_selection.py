@@ -98,6 +98,18 @@ def test_apply_source_selection_weights_mode():
     assert breakdown == {"ghwt": 1, "gh3": 1}
 
 
+def test_apply_source_selection_filter_mode_caps_to_target():
+    songs = [_song(f"s{i}", diff=i, source="ghwt") for i in range(10)]
+    settings = _settings()
+    for s in songs:
+        s["difficulty"] = difficulty_value(s, settings)
+    songs.sort(key=lambda s: s["title"])
+
+    selected, _ = apply_source_selection(songs, settings, 4)
+    # filter mode with no filter/limit must respect the tier total (4), easiest first
+    assert [s["title"] for s in selected] == ["s0", "s1", "s2", "s3"]
+
+
 def _disp(title, source="ghwt", artist="A", charter="C"):
     return {"artist": artist, "title": title, "charter": charter, "source": source}
 

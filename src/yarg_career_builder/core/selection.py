@@ -120,6 +120,7 @@ def apply_source_selection(usable, settings, target):
         if source_limit > 0:
             top = {src for src, _ in Counter(s["source"] for s in selected).most_common(source_limit)}
             selected = [s for s in selected if s["source"] in top]
+        selected = selected[:target]
         breakdown = dict(Counter(s["source"] for s in selected))
 
     selected.sort(key=lambda s: difficulty_sort_key(s, ascending))
