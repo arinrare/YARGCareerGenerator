@@ -1,0 +1,41 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: python -m pip install -r requirements.txt
+
+      - name: Set version from tag
+        shell: pwsh
+        run: |
+          $v = $env:GITHUB_REF_NAME -replace '^v', ''
+          Set-Content -Path 'src\yarg_career_builder\_version.py' -Value "__version__ = `"$v`""
+
+      - name: Build
+        run: python -m PyInstaller packaging\yarg_career_builder.spec --noconfirm
+
+      - name: Package zip
+        run: Compress-Archive -Path 'dist\YARG Career Builder' -DestinationPath 'YargCareerBuilder.zip'
+
+      - name: Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: YargCareerBuilder.zip
+          generate_release_notes: true
