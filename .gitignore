@@ -10,5 +10,8 @@ dist/
 # Built career output (portable, regenerated)
 careers/
 
+# Runtime template (seeded from templates/Template.preset on first run)
+/Template.preset
+
 # Tooling
 .pytest_cache/

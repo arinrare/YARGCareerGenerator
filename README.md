@@ -123,11 +123,29 @@ python -m yarg_career_builder.cli regenerate-sources
 | `source_selection.filter` | Source ids to use (empty = all). |
 | `source_selection.limit` | Cap on the number of distinct sources (0 = unlimited). |
 | `source_selection.weights` | Optional map `source id -> weight`; if non-empty it overrides `filter`/`limit`. |
-| `career` | Career metadata (name, title, description, source, version, type). |
-| `tiers` | One entry per career level (name, `song_count`, `unlock_criteria`, `is_bonus`, …). |
+| `loaded_career` | Filename of the last loaded/built career (restored on startup if it still exists). |
 
 A documented default lives in `config/settings.default.json` (copied to
 `settings.json` on first run if missing).
+
+## Career structure & template
+
+The **career structure** (the list of tiers — names, song counts, unlock
+criteria, bonus flags, venue hints, unlock text) plus the career **metadata**
+(name, title, description) are derived from a **template**: a YARG `.preset`
+export stored at `Template.preset` (next to `settings.json`).
+
+- **First run** seeds `Template.preset` from the bundled default
+  (`templates/Template.preset`) and builds the initial structure from it.
+- **Edit the structure** in the **Tiers** tab (add/remove/reorder tiers, edit
+  their fields).
+- **File → Import Template…** supplies a *new* default template from a YARG
+  export (replaces `Template.preset` and loads it).
+- **File → Load Career…** loads an existing career from the `careers` folder
+  (structure + metadata only; source selection is unchanged).
+- **File → Reset to Template** restores the current template.
+- **On startup**, the app reloads the last loaded/built career if its file still
+  exists in the `careers` folder; otherwise it loads the template.
 
 ## How songs are referenced
 
@@ -180,10 +198,11 @@ src/yarg_career_builder/
 ├── app.py             # Qt bootstrap
 ├── cli.py             # command-line interface
 ├── paths.py           # portable base-dir resolution
-├── core/              # GUI-free logic (scan, selection, tiering, generate, config, sources, pipeline)
-└── ui/                # Qt UI (main window, theme, widgets, dialogs, workers)
+├── core/              # GUI-free logic (scan, selection, tiering, generate, config, sources, pipeline, career_io, bootstrap)
+└── ui/                # Qt UI (main window, theme, widgets incl. tier_editor, dialogs, workers)
 assets/                # app icon (CC0 guitar) + attribution
 config/                # shipped defaults (seeded on first run)
+templates/             # default career template (Template.preset)
 packaging/             # PyInstaller spec + entry point
 scripts/               # build.ps1 / run.ps1 / make_icon.py
 tests/                 # pytest suite

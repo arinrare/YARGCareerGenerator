@@ -22,6 +22,7 @@ a = Analysis(
         (os.path.join(root, "config", "settings.default.json"), "config"),
         (os.path.join(root, "config", "sources.default.json"), "config"),
         (os.path.join(root, "assets", "icon.png"), "assets"),
+        (os.path.join(root, "templates", "Template.preset"), "templates"),
     ],
     hiddenimports=[],
     hookspath=[],

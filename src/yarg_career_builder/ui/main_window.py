@@ -8,6 +8,7 @@ from PySide6.QtWidgets import (
     QApplication,
     QCheckBox,
     QComboBox,
+    QFileDialog,
     QFormLayout,
     QFrame,
     QGroupBox,
@@ -23,15 +24,15 @@ from PySide6.QtWidgets import (
     QScrollArea,
     QSpinBox,
     QSplitter,
-    QTableWidget,
-    QTableWidgetItem,
     QTabWidget,
     QVBoxLayout,
     QWidget,
 )
 
-from ..paths import SETTINGS_PATH, SOURCES_PATH, CAREERS_DIR
-from ..core.config import load_settings, load_sources, save_settings
+from ..paths import SETTINGS_PATH, SOURCES_PATH, CAREERS_DIR, BASE
+from ..core.config import save_settings
+from ..core.bootstrap import load_app_state
+from ..core.career_io import load_career_file, load_template, import_template
 from ..core.pipeline import (
     scan_report,
     build_career,
@@ -42,6 +43,7 @@ from ..core.sources import find_yarg_installs, source_info, merged_source_rows
 from .widgets.path_picker import PathPicker
 from .widgets.log_panel import LogPanel
 from .widgets.source_tags import SourceTagSelector
+from .widgets.tier_editor import TierEditor
 from .workers import Worker
 from .dialogs.about import AboutDialog
 
@@ -53,12 +55,13 @@ class MainWindow(QMainWindow):
         super().__init__()
         self.setWindowTitle("YARG Career Builder")
         self.resize(1020, 760)
+        self.setMinimumSize(640, 480)
 
-        self.settings = load_settings()
-        self.sources = load_sources()
+        self.settings, self.sources = load_app_state(apply_startup=True)
         self.scan_cache = None
         self._workers = []
         self._dark = True
+        self._career_dirty = False
 
         self._build_menus()
         self._build_ui()
@@ -72,6 +75,14 @@ class MainWindow(QMainWindow):
 
     def _build_menus(self):
         file_menu = self.menuBar().addMenu("&File")
+
+        load_career = file_menu.addAction("&Load Career…")
+        load_career.triggered.connect(self.on_load_career)
+        import_tpl = file_menu.addAction("&Import Template…")
+        import_tpl.triggered.connect(self.on_import_template)
+        reset_tpl = file_menu.addAction("&Reset to Template")
+        reset_tpl.triggered.connect(self.on_reset_to_template)
+        file_menu.addSeparator()
 
         open_output = file_menu.addAction("Open &Output Folder")
         open_output.triggered.connect(self.on_open_output_folder)
@@ -138,8 +149,6 @@ class MainWindow(QMainWindow):
         paths_layout.addWidget(self.music_picker)
         paths_layout.addWidget(self.output_picker)
 
-        root.addWidget(paths_group)
-
         # ---- Actions ---------------------------------------------------
         action_row = QHBoxLayout()
         self.scan_btn = QPushButton("Scan Library")
@@ -148,6 +157,10 @@ class MainWindow(QMainWindow):
         self.regen_btn = QPushButton("Regenerate Sources")
         self.regen_btn.setToolTip("Rebuild sources.json from a YARG install's OpenSource registry.")
         self.regen_btn.clicked.connect(self.on_regenerate_sources)
+        self.load_btn = QPushButton("Load Career")
+        self.load_btn.setProperty("accent", True)
+        self.load_btn.setToolTip("Load an existing career's structure and metadata.")
+        self.load_btn.clicked.connect(self.on_load_career)
         self.build_btn = QPushButton("Build Career")
         self.build_btn.setProperty("accent", True)
         self.build_btn.setToolTip("Build the career and write .json + .preset files.")
@@ -163,25 +176,34 @@ class MainWindow(QMainWindow):
         action_row.addWidget(self.regen_btn)
         action_row.addStretch(1)
         action_row.addWidget(self.progress)
+        action_row.addWidget(self.load_btn)
         action_row.addWidget(self.build_btn)
 
-        root.addLayout(action_row)
-
         # ---- Tabs ------------------------------------------------------
-        self.tabs = QWidget()
-        tabs_layout = QVBoxLayout(self.tabs)
-        tabs_layout.setContentsMargins(0, 0, 0, 0)
-
         self.tab_widget = QTabWidget()
         self._build_career_tab()
         self._build_tiers_tab()
-        tabs_layout.addWidget(self.tab_widget)
+
+        # ---- Scrollable content (paths + actions + tabs) ---------------
+        scroll_content = QWidget()
+        scroll_layout = QVBoxLayout(scroll_content)
+        scroll_layout.setContentsMargins(0, 0, 0, 0)
+        scroll_layout.setSpacing(10)
+        scroll_layout.addWidget(paths_group)
+        scroll_layout.addLayout(action_row)
+        scroll_layout.addWidget(self.tab_widget)
+
+        self.scroll_area = QScrollArea()
+        self.scroll_area.setWidgetResizable(True)
+        self.scroll_area.setFrameShape(QFrame.NoFrame)
+        self.scroll_area.setHorizontalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
+        self.scroll_area.setWidget(scroll_content)
 
         # ---- Log -------------------------------------------------------
         self.log_panel = LogPanel()
 
         splitter = QSplitter(Qt.Vertical)
-        splitter.addWidget(self.tabs)
+        splitter.addWidget(self.scroll_area)
         splitter.addWidget(self.log_panel)
         splitter.setStretchFactor(0, 1)
         splitter.setStretchFactor(1, 0)
@@ -192,10 +214,6 @@ class MainWindow(QMainWindow):
         self.statusBar().showMessage("Ready")
 
     def _build_career_tab(self):
-        scroll = QScrollArea()
-        scroll.setWidgetResizable(True)
-        scroll.setFrameShape(QFrame.NoFrame)
-
         content = QWidget()
         layout = QVBoxLayout(content)
         layout.setContentsMargins(0, 0, 0, 0)
@@ -213,6 +231,16 @@ class MainWindow(QMainWindow):
         self.version_spin = QSpinBox()
         self.version_spin.setRange(1, 9999)
         self.type_edit = QLineEdit()
+
+        for w, sig in (
+            (self.name_edit, self.name_edit.textChanged),
+            (self.title_edit, self.title_edit.textChanged),
+            (self.description_edit, self.description_edit.textChanged),
+            (self.version_spin, self.version_spin.valueChanged),
+            (self.type_edit, self.type_edit.textChanged),
+        ):
+            sig.connect(self._mark_career_dirty)
+
 
         self._add_form_row(
             form, "Name", self.name_edit,
@@ -324,8 +352,7 @@ class MainWindow(QMainWindow):
         layout.addWidget(rules_group)
         layout.addStretch(1)
 
-        scroll.setWidget(content)
-        self.tab_widget.addTab(scroll, "Career")
+        self.tab_widget.addTab(content, "Career")
 
     @staticmethod
     def _add_form_row(form, label_text, widget, tooltip):
@@ -341,23 +368,15 @@ class MainWindow(QMainWindow):
         layout = QVBoxLayout(tab)
 
         hint = QLabel(
-            "Tier structure is read-only for now. A visual tier editor is planned."
+            "Edit the career structure. Add, remove, reorder, or edit tiers."
         )
         hint.setProperty("muted", True)
         layout.addWidget(hint)
 
-        self.tiers_table = QTableWidget(0, 5)
-        self.tiers_table.setHorizontalHeaderLabels(["Tier", "Songs", "Unlock", "Bonus", "Venue"])
-        self.tiers_table.setEditTriggers(QTableWidget.NoEditTriggers)
-        self.tiers_table.verticalHeader().setVisible(False)
-        self.tiers_table.setSelectionBehavior(QTableWidget.SelectRows)
-        self.tiers_table.setAlternatingRowColors(True)
-        self.tiers_table.horizontalHeader().setStretchLastSection(True)
-        self.tiers_table.setColumnWidth(0, 240)
-        self.tiers_table.setColumnWidth(1, 60)
-        self.tiers_table.setColumnWidth(2, 60)
-        self.tiers_table.setColumnWidth(3, 60)
-        layout.addWidget(self.tiers_table, 1)
+        self.tier_editor = TierEditor()
+        self.tier_editor.changed.connect(self._update_source_summary)
+        self.tier_editor.changed.connect(self._mark_career_dirty)
+        layout.addWidget(self.tier_editor, 1)
 
         self.tab_widget.addTab(tab, "Tiers")
 
@@ -403,9 +422,10 @@ class MainWindow(QMainWindow):
             self.limit_spin.setValue(limit)
         self._on_mode_changed()
 
-        self._populate_tiers(s.get("tiers", []))
+        self.tier_editor.set_tiers(s.get("tiers", []))
 
         self._refresh_sources()
+        self._career_dirty = False
 
     def _collect_settings_from_ui(self):
         s = deepcopy(self.settings)
@@ -439,20 +459,28 @@ class MainWindow(QMainWindow):
             sel["limit"] = int(self.limit_spin.value())
             sel["weights"] = {}
 
+        s["tiers"] = self.tier_editor.tiers()
+
         return s
 
     def _persist_settings(self):
         self.settings = self._collect_settings_from_ui()
         save_settings(self.settings)
 
-    def _populate_tiers(self, tiers):
-        self.tiers_table.setRowCount(len(tiers))
-        for i, t in enumerate(tiers):
-            self.tiers_table.setItem(i, 0, QTableWidgetItem(t.get("name", "")))
-            self.tiers_table.setItem(i, 1, QTableWidgetItem(str(t.get("song_count", 0))))
-            self.tiers_table.setItem(i, 2, QTableWidgetItem(str(t.get("unlock_criteria", 0))))
-            self.tiers_table.setItem(i, 3, QTableWidgetItem("yes" if t.get("is_bonus") else "no"))
-            self.tiers_table.setItem(i, 4, QTableWidgetItem(t.get("venue_hint") or ""))
+    def _mark_career_dirty(self, *args):
+        self._career_dirty = True
+
+    def _confirm_discard_edits(self):
+        if not self._career_dirty:
+            return True
+        reply = QMessageBox.question(
+            self, "Discard career edits?",
+            "You have unsaved career changes. This will replace the current "
+            "structure and lose those edits.\n\nContinue?",
+            QMessageBox.Yes | QMessageBox.No,
+            QMessageBox.No,
+        )
+        return reply == QMessageBox.Yes
 
     def _refresh_sources(self):
         pc = self.settings.get("public_checks", {}) or {}
@@ -481,7 +509,7 @@ class MainWindow(QMainWindow):
     def _update_source_summary(self):
         ids = self.source_tags.selected_ids()
         counts = (self.scan_cache or {}).get("counts", {})
-        target = sum(int(t.get("song_count", 0)) for t in self.settings.get("tiers", []))
+        target = sum(t["song_count"] for t in self.tier_editor.tiers())
         total = sum(counts.get(i, 0) for i in ids)
 
         if self.scan_cache is None:
@@ -509,6 +537,7 @@ class MainWindow(QMainWindow):
     def _set_busy(self, busy):
         self.scan_btn.setEnabled(not busy)
         self.regen_btn.setEnabled(not busy)
+        self.load_btn.setEnabled(not busy)
         self.build_btn.setEnabled(not busy)
         self.progress.setVisible(busy)
         if busy:
@@ -578,6 +607,10 @@ class MainWindow(QMainWindow):
             self.log_panel.log(f"  - {cfg['name']:<26} {len(chunk)} songs")
         self.log_panel.log(f"\nWrote:\n  {result['json_path']}\n  {result['preset_path']}")
         self.statusBar().showMessage(f"Built '{name}'")
+
+        self.settings["loaded_career"] = os.path.basename(result["json_path"])
+        save_settings(self.settings)
+        self._career_dirty = False
 
         reply = QMessageBox.question(
             self, "Build complete",
@@ -667,6 +700,59 @@ class MainWindow(QMainWindow):
 
     def on_open_settings_json(self):
         os.startfile(str(SETTINGS_PATH))
+
+    def _apply_structure(self, result, loaded_filename):
+        self.settings["career"] = result["career"]
+        self.settings["tiers"] = result["tiers"]
+        self.settings["loaded_career"] = loaded_filename
+        self._load_settings_into_ui()
+        self._persist_settings()
+        self._career_dirty = False
+
+    def on_load_career(self):
+        if not self._confirm_discard_edits():
+            return
+        start = str(CAREERS_DIR) if CAREERS_DIR.exists() else str(BASE)
+        path, _ = QFileDialog.getOpenFileName(
+            self, "Load career", start, "Career files (*.json *.preset)"
+        )
+        if not path:
+            return
+        try:
+            result = load_career_file(path)
+        except Exception as exc:
+            QMessageBox.critical(self, "Load failed", f"Could not load career:\n{exc}")
+            return
+        self._apply_structure(result, os.path.basename(path))
+        self.log_panel.log(f"Loaded career: {os.path.basename(path)}")
+
+    def on_import_template(self):
+        if not self._confirm_discard_edits():
+            return
+        path, _ = QFileDialog.getOpenFileName(
+            self, "Import template (YARG export)", str(BASE), "YARG preset (*.preset *.json)"
+        )
+        if not path:
+            return
+        try:
+            import_template(path)
+            result = load_template()
+        except Exception as exc:
+            QMessageBox.critical(self, "Import failed", f"Could not import template:\n{exc}")
+            return
+        self._apply_structure(result, None)
+        self.log_panel.log(f"Imported template: {os.path.basename(path)}")
+
+    def on_reset_to_template(self):
+        if not self._confirm_discard_edits():
+            return
+        try:
+            result = load_template()
+        except Exception as exc:
+            QMessageBox.critical(self, "Reset failed", f"Could not load template:\n{exc}")
+            return
+        self._apply_structure(result, None)
+        self.log_panel.log("Reset to default template.")
 
     def on_toggle_theme(self):
         from .theme import apply_theme

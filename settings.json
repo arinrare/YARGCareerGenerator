@@ -71,110 +71,111 @@
     ]
   },
   "career": {
-    "name": "Test",
+    "name": "Career Guitar Hero World Tour",
     "title": null,
     "description": "Starting a band has never been easier! Bring your friends to the YARG and begin playing the songs you've rehearsed. Even if you flub a few notes, everyone's here for a good time!",
     "source": "yarg",
-    "version": 4,
+    "version": 1,
     "type": "Career"
   },
   "redistribute": "auto",
   "tiers": [
     {
       "name": "Playing in the Backyard",
+      "song_count": 5,
       "unlock_criteria": 0,
       "is_bonus": false,
       "venue_hint": null,
-      "custom_unlock_text": null,
-      "song_count": 5
+      "custom_unlock_text": null
     },
     {
       "name": "Tunnel Tripping",
+      "song_count": 10,
       "unlock_criteria": 25,
       "is_bonus": true,
       "venue_hint": "Venue/TunnelTrip",
-      "custom_unlock_text": "Uh... where are we? What did we say about eating the YARG gems? Now you'll need to play yourself out of this stupor. Go on, try whatever you want, it's all a dream.",
-      "song_count": 10
+      "custom_unlock_text": "Uh... where are we? What did we say about eating the YARG gems? Now you'll need to play yourself out of this stupor. Go on, try whatever you want, it's all a dream."
     },
     {
       "name": "Getting in the Groove",
+      "song_count": 5,
       "unlock_criteria": 25,
       "is_bonus": false,
       "venue_hint": null,
-      "custom_unlock_text": "Getting the hang of it? Now you can start cranking up the energy. You're sure to impress your acquaintances with faster and more intricate songs.",
-      "song_count": 5
+      "custom_unlock_text": "Getting the hang of it? Now you can start cranking up the energy. You're sure to impress your acquaintances with faster and more intricate songs."
     },
     {
       "name": "Garage Band",
+      "song_count": 5,
       "unlock_criteria": 50,
       "is_bonus": false,
       "venue_hint": null,
-      "custom_unlock_text": "Think you can make it as a band? The club in your area has a large garage where up-and-coming acts play shows on the regular. Sign up for a gig and see what you've got!",
-      "song_count": 5
+      "custom_unlock_text": "Think you can make it as a band? The club in your area has a large garage where up-and-coming acts play shows on the regular. Sign up for a gig and see what you've got!"
     },
     {
       "name": "Locked Up",
+      "song_count": 10,
       "unlock_criteria": 75,
       "is_bonus": true,
       "venue_hint": null,
-      "custom_unlock_text": "So you're telling me that you played some illegal songs, and the police got you trapped in this cell? That's just great. Perhaps you could play them some songs and they'll let you go.",
-      "song_count": 10
+      "custom_unlock_text": "So you're telling me that you played some illegal songs, and the police got you trapped in this cell? That's just great. Perhaps you could play them some songs and they'll let you go."
     },
     {
       "name": "Rocking Harder",
+      "song_count": 5,
       "unlock_criteria": 75,
       "is_bonus": false,
       "venue_hint": null,
-      "custom_unlock_text": "Seems like the local patronage has taken a interest to you. Now that you've got the experience, it's time to captivate the crowd with your harder-hitting songs! Get the word out there.",
-      "song_count": 5
+      "custom_unlock_text": "Seems like the local patronage has taken a interest to you. Now that you've got the experience, it's time to captivate the crowd with your harder-hitting songs! Get the word out there."
     },
     {
       "name": "Cathedral Concert",
+      "song_count": 5,
       "unlock_criteria": 100,
       "is_bonus": false,
       "venue_hint": "Venue/Church",
-      "custom_unlock_text": "You've booked a church for your next gig? That's wild. But with a larger space for a crowd, your range of influence ever grows. Bless these lands with your music!",
-      "song_count": 5
+      "custom_unlock_text": "You've booked a church for your next gig? That's wild. But with a larger space for a crowd, your range of influence ever grows. Bless these lands with your music!"
     },
     {
       "name": "Devil's Work",
+      "song_count": 10,
       "unlock_criteria": 125,
       "is_bonus": true,
       "venue_hint": "Venue/MagiaAlliance",
-      "custom_unlock_text": "Don't tell me you tried playing \"The Devil Went Down to Georgia\" of all songs... Now it seems you've got an audience with the underworld. Entertain them, or be damned for eternity...",
-      "song_count": 10
+      "custom_unlock_text": "Don't tell me you tried playing \"The Devil Went Down to Georgia\" of all songs... Now it seems you've got an audience with the underworld. Entertain them, or be damned for eternity..."
     },
     {
       "name": "Soaring Higher",
+      "song_count": 5,
       "unlock_criteria": 125,
       "is_bonus": false,
       "venue_hint": null,
-      "custom_unlock_text": "In a place where acts can give you wings, your band can take the jump and ascend ever higher! Serenade the crowd with soaring melodies and complex progressions, and take the next step towards stardom.",
-      "song_count": 5
+      "custom_unlock_text": "In a place where acts can give you wings, your band can take the jump and ascend ever higher! Serenade the crowd with soaring melodies and complex progressions, and take the next step towards stardom."
     },
     {
       "name": "Festival Frenzy",
+      "song_count": 5,
       "unlock_criteria": 150,
       "is_bonus": false,
       "venue_hint": "Venue/OutdoorConcert",
-      "custom_unlock_text": "You're finally here: the grand music festival, localized entirely within your city! So many bands take turns fighting for attention over a wave of visitors from all over the area. Make a name for yourself!",
-      "song_count": 5
+      "custom_unlock_text": "You're finally here: the grand music festival, localized entirely within your city! So many bands take turns fighting for attention over a wave of visitors from all over the area. Make a name for yourself!"
     },
     {
       "name": "Own the Studio",
+      "song_count": 10,
       "unlock_criteria": 175,
       "is_bonus": true,
       "venue_hint": null,
-      "custom_unlock_text": "This is your first opportunity to record your own music? With professional equipment and a white room? Choose whichever songs you please, I'm sure it'll turn out great!",
-      "song_count": 10
+      "custom_unlock_text": "This is your first opportunity to record your own music? With professional equipment and a white room? Choose whichever songs you please, I'm sure it'll turn out great!"
     },
     {
       "name": "Pinnacle of Performance",
+      "song_count": 5,
       "unlock_criteria": 175,
       "is_bonus": false,
       "venue_hint": "Venue/Festival",
-      "custom_unlock_text": "Out of all acts in the festival, your band stands out on top. You have the final set: send the crowd home with an experience they'll never forget!",
-      "song_count": 5
+      "custom_unlock_text": "Out of all acts in the festival, your band stands out on top. You have the final set: send the crowd home with an experience they'll never forget!"
     }
-  ]
+  ],
+  "loaded_career": "Career_Guitar_Hero_World_Tour.preset"
 }

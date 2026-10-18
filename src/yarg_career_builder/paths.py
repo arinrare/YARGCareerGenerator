@@ -54,3 +54,9 @@ BUNDLED = bundled_dir()
 SETTINGS_PATH = BASE / "settings.json"
 SOURCES_PATH = BASE / "sources.json"
 CAREERS_DIR = dist_dir() / "careers"
+
+# The default career template: a user-replaceable YARG .preset export.
+# TEMPLATE_PATH is the live file (next to settings.json); BUNDLED_TEMPLATE_PATH
+# is the shipped pristine copy used to seed TEMPLATE_PATH on first run.
+TEMPLATE_PATH = BASE / "Template.preset"
+BUNDLED_TEMPLATE_PATH = BUNDLED / "templates" / "Template.preset"

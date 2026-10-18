@@ -11,7 +11,7 @@ import os
 import sys
 from collections import Counter
 
-from .core.config import load_settings, load_sources
+from .core.bootstrap import load_app_state
 from .core.pipeline import scan_report, build_career, PublicBlockError, NoSongsError
 from .core.sources import (
     find_yarg_installs,
@@ -140,8 +140,7 @@ def main(argv=None):
     parser.add_argument("command", choices=["scan", "build", "regenerate-sources"], help="what to do")
     args = parser.parse_args(argv)
 
-    settings = load_settings()
-    sources = load_sources()
+    settings, sources = load_app_state(apply_startup=False)
 
     if args.command == "scan":
         cmd_scan(settings, sources)
