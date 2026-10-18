@@ -3,6 +3,7 @@ from yarg_career_builder.core.selection import (
     select_and_sort_songs,
     allocate_sources,
     apply_source_selection,
+    reconcile_setlist,
 )
 
 
@@ -95,3 +96,52 @@ def test_apply_source_selection_weights_mode():
     # both sources exhausted (1 each available), weights clamp
     assert len(selected) == 2
     assert breakdown == {"ghwt": 1, "gh3": 1}
+
+
+def _disp(title, source="ghwt", artist="A", charter="C"):
+    return {"artist": artist, "title": title, "charter": charter, "source": source}
+
+
+def test_reconcile_setlist_preserves_and_clamps():
+    settings = _settings()
+    old = {
+        "t1": [_disp("a"), _disp("b"), _disp("c")],
+        "t2": [_disp("d")],
+    }
+    tiers = [
+        {"id": "t1", "song_count": 2},
+        {"id": "t2", "song_count": 1},
+        {"id": "t3", "song_count": 0},
+    ]
+    new = reconcile_setlist(old, tiers, [], settings)
+    assert [s["title"] for s in new["t1"]] == ["a", "b"]
+    assert [s["title"] for s in new["t2"]] == ["d"]
+    assert new["t3"] == []
+
+
+def test_reconcile_setlist_fills_gaps_without_repeats():
+    settings = _settings()
+    old = {"t1": [_disp("pinned")]}
+    tiers = [{"id": "t1", "song_count": 3}]
+    songs = [
+        _song("pinned", diff=1),  # already in setlist -> excluded
+        _song("easy", diff=2),
+        _song("mid", diff=4),
+        _song("hard", diff=7),
+    ]
+    new = reconcile_setlist(old, tiers, songs, settings)
+    assert [s["title"] for s in new["t1"]] == ["pinned", "easy", "mid"]
+
+
+def test_reconcile_setlist_fills_weighted_from_remaining():
+    settings = _settings()
+    settings["source_selection"]["weights"] = {"ghwt": 1}
+    old = {"t1": [_disp(f"t{i}") for i in range(3)]}
+    tiers = [
+        {"id": "t1", "song_count": 3},
+        {"id": "t2", "song_count": 2},
+    ]
+    songs = [_song(f"t{i}", diff=i, source="ghwt") for i in range(6)]
+    new = reconcile_setlist(old, tiers, songs, settings)
+    # new tier filled from remaining (unused) ghwt songs, easiest first
+    assert [s["title"] for s in new["t2"]] == ["t3", "t4"]

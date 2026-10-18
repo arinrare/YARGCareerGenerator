@@ -1,5 +1,7 @@
 """Editable career structure (tier list + detail form)."""
 
+import uuid
+
 from PySide6.QtCore import Signal
 from PySide6.QtWidgets import (
     QCheckBox,
@@ -27,6 +29,7 @@ def _new_tier():
         "is_bonus": False,
         "venue_hint": None,
         "custom_unlock_text": None,
+        "id": str(uuid.uuid4()),
     }
 
 
@@ -38,6 +41,7 @@ def _copy_tier(tier):
         "is_bonus": bool(tier.get("is_bonus", False)),
         "venue_hint": tier.get("venue_hint"),
         "custom_unlock_text": tier.get("custom_unlock_text"),
+        "id": tier.get("id") or str(uuid.uuid4()),
     }
 
 

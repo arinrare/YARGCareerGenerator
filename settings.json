@@ -52,7 +52,10 @@
     "missing": "last"
   },
   "source_selection": {
-    "weights": {},
+    "weights": {
+      "ghwt": 8,
+      "ghwtdlc": 1
+    },
     "filter": [],
     "limit": 0
   },
@@ -68,7 +71,7 @@
     ]
   },
   "career": {
-    "name": "YARG Career",
+    "name": "Guitar Hero World Tour 2",
     "title": null,
     "description": "Starting a band has never been easier! Bring your friends to the YARG and begin playing the songs you've rehearsed. Even if you flub a few notes, everyone's here for a good time!",
     "source": "yarg",
@@ -83,7 +86,8 @@
       "unlock_criteria": 0,
       "is_bonus": false,
       "venue_hint": null,
-      "custom_unlock_text": null
+      "custom_unlock_text": null,
+      "id": "cdb50d5f-1070-44a4-b37b-f4b10f950c3a"
     },
     {
       "name": "Tunnel Tripping",
@@ -91,7 +95,8 @@
       "unlock_criteria": 25,
       "is_bonus": true,
       "venue_hint": "Venue/TunnelTrip",
-      "custom_unlock_text": "Uh... where are we? What did we say about eating the YARG gems? Now you'll need to play yourself out of this stupor. Go on, try whatever you want, it's all a dream."
+      "custom_unlock_text": "Uh... where are we? What did we say about eating the YARG gems? Now you'll need to play yourself out of this stupor. Go on, try whatever you want, it's all a dream.",
+      "id": "a43a8500-b5af-42fc-8803-fd92eada4eed"
     },
     {
       "name": "Getting in the Groove",
@@ -99,7 +104,8 @@
       "unlock_criteria": 25,
       "is_bonus": false,
       "venue_hint": null,
-      "custom_unlock_text": "Getting the hang of it? Now you can start cranking up the energy. You're sure to impress your acquaintances with faster and more intricate songs."
+      "custom_unlock_text": "Getting the hang of it? Now you can start cranking up the energy. You're sure to impress your acquaintances with faster and more intricate songs.",
+      "id": "8d17f843-2968-4c73-968c-f3565d570ff3"
     },
     {
       "name": "Garage Band",
@@ -107,7 +113,8 @@
       "unlock_criteria": 50,
       "is_bonus": false,
       "venue_hint": null,
-      "custom_unlock_text": "Think you can make it as a band? The club in your area has a large garage where up-and-coming acts play shows on the regular. Sign up for a gig and see what you've got!"
+      "custom_unlock_text": "Think you can make it as a band? The club in your area has a large garage where up-and-coming acts play shows on the regular. Sign up for a gig and see what you've got!",
+      "id": "c7854cd4-2b00-4956-8b22-7e7d0565fc0e"
     },
     {
       "name": "Locked Up",
@@ -115,7 +122,8 @@
       "unlock_criteria": 75,
       "is_bonus": true,
       "venue_hint": null,
-      "custom_unlock_text": "So you're telling me that you played some illegal songs, and the police got you trapped in this cell? That's just great. Perhaps you could play them some songs and they'll let you go."
+      "custom_unlock_text": "So you're telling me that you played some illegal songs, and the police got you trapped in this cell? That's just great. Perhaps you could play them some songs and they'll let you go.",
+      "id": "c0f1a973-b166-47c2-8b2d-c87764f3fd80"
     },
     {
       "name": "Rocking Harder",
@@ -123,7 +131,8 @@
       "unlock_criteria": 75,
       "is_bonus": false,
       "venue_hint": null,
-      "custom_unlock_text": "Seems like the local patronage has taken a interest to you. Now that you've got the experience, it's time to captivate the crowd with your harder-hitting songs! Get the word out there."
+      "custom_unlock_text": "Seems like the local patronage has taken a interest to you. Now that you've got the experience, it's time to captivate the crowd with your harder-hitting songs! Get the word out there.",
+      "id": "64caf712-09fe-43cd-ace4-79e0f8da2400"
     },
     {
       "name": "Cathedral Concert",
@@ -131,7 +140,8 @@
       "unlock_criteria": 100,
       "is_bonus": false,
       "venue_hint": "Venue/Church",
-      "custom_unlock_text": "You've booked a church for your next gig? That's wild. But with a larger space for a crowd, your range of influence ever grows. Bless these lands with your music!"
+      "custom_unlock_text": "You've booked a church for your next gig? That's wild. But with a larger space for a crowd, your range of influence ever grows. Bless these lands with your music!",
+      "id": "8610b274-f87b-44ce-b57b-8e198e830f1f"
     },
     {
       "name": "Devil's Work",
@@ -139,7 +149,8 @@
       "unlock_criteria": 125,
       "is_bonus": true,
       "venue_hint": "Venue/MagiaAlliance",
-      "custom_unlock_text": "Don't tell me you tried playing \"The Devil Went Down to Georgia\" of all songs... Now it seems you've got an audience with the underworld. Entertain them, or be damned for eternity..."
+      "custom_unlock_text": "Don't tell me you tried playing \"The Devil Went Down to Georgia\" of all songs... Now it seems you've got an audience with the underworld. Entertain them, or be damned for eternity...",
+      "id": "6966230c-613f-4c1d-946a-746751c9a488"
     },
     {
       "name": "Soaring Higher",
@@ -147,7 +158,8 @@
       "unlock_criteria": 125,
       "is_bonus": false,
       "venue_hint": null,
-      "custom_unlock_text": "In a place where acts can give you wings, your band can take the jump and ascend ever higher! Serenade the crowd with soaring melodies and complex progressions, and take the next step towards stardom."
+      "custom_unlock_text": "In a place where acts can give you wings, your band can take the jump and ascend ever higher! Serenade the crowd with soaring melodies and complex progressions, and take the next step towards stardom.",
+      "id": "943b3d7c-004e-45f3-847c-598d453cda4b"
     },
     {
       "name": "Festival Frenzy",
@@ -155,7 +167,8 @@
       "unlock_criteria": 150,
       "is_bonus": false,
       "venue_hint": "Venue/OutdoorConcert",
-      "custom_unlock_text": "You're finally here: the grand music festival, localized entirely within your city! So many bands take turns fighting for attention over a wave of visitors from all over the area. Make a name for yourself!"
+      "custom_unlock_text": "You're finally here: the grand music festival, localized entirely within your city! So many bands take turns fighting for attention over a wave of visitors from all over the area. Make a name for yourself!",
+      "id": "408f59f1-41e1-46c9-a9fb-9414c13ee0ea"
     },
     {
       "name": "Own the Studio",
@@ -163,18 +176,20 @@
       "unlock_criteria": 175,
       "is_bonus": true,
       "venue_hint": null,
-      "custom_unlock_text": "This is your first opportunity to record your own music? With professional equipment and a white room? Choose whichever songs you please, I'm sure it'll turn out great!"
+      "custom_unlock_text": "This is your first opportunity to record your own music? With professional equipment and a white room? Choose whichever songs you please, I'm sure it'll turn out great!",
+      "id": "9abfb110-a59f-409e-8551-7fbb9dc88b68"
     },
     {
-      "name": "Pinnacle of Performance",
+      "name": "Pinnacle of Career",
       "song_count": 5,
-      "unlock_criteria": 175,
+      "unlock_criteria": 200,
       "is_bonus": false,
-      "venue_hint": "Venue/Festival",
-      "custom_unlock_text": "Out of all acts in the festival, your band stands out on top. You have the final set: send the crowd home with an experience they'll never forget!"
+      "venue_hint": null,
+      "custom_unlock_text": null,
+      "id": "b89385bf-8410-4397-87d9-6e2a4f5071ae"
     }
   ],
-  "loaded_career": null,
+  "loaded_career": "Guitar_Hero_World_Tour_2.json",
   "scan_counts": {
     "bh": 65,
     "djh": 10,
@@ -209,5 +224,511 @@
     "rbb": 25,
     "rb1dlc": 184,
     "gdrb": 50
+  },
+  "setlist": {
+    "cdb50d5f-1070-44a4-b37b-f4b10f950c3a": [
+      {
+        "artist": "Nirvana",
+        "title": "About a Girl (Unplugged Live)",
+        "charter": "Neversoft",
+        "source": "ghwt"
+      },
+      {
+        "artist": "Tokio Hotel",
+        "title": "Monsoon",
+        "charter": "Neversoft",
+        "source": "ghwt"
+      },
+      {
+        "artist": "R.E.M.",
+        "title": "The One I Love",
+        "charter": "Neversoft",
+        "source": "ghwt"
+      },
+      {
+        "artist": "The Smashing Pumpkins",
+        "title": "Today",
+        "charter": "Neversoft",
+        "source": "ghwt"
+      },
+      {
+        "artist": "Kent",
+        "title": "Vinternoll2",
+        "charter": "Neversoft",
+        "source": "ghwt"
+      }
+    ],
+    "a43a8500-b5af-42fc-8803-fd92eada4eed": [
+      {
+        "artist": "Linkin Park",
+        "title": "What I've Done",
+        "charter": "Neversoft",
+        "source": "ghwt"
+      },
+      {
+        "artist": "Sportfreunde Stiller",
+        "title": "'54,'74,'90,2010",
+        "charter": "Neversoft",
+        "source": "ghwtdlc"
+      },
+      {
+        "artist": "Oasis",
+        "title": "Ain't Got Nothin'",
+        "charter": "Neversoft",
+        "source": "ghwtdlc"
+      },
+      {
+        "artist": "Paul McCartney & Wings",
+        "title": "Band on the Run",
+        "charter": "Neversoft",
+        "source": "ghwt"
+      },
+      {
+        "artist": "311",
+        "title": "Beautiful Disaster",
+        "charter": "Neversoft",
+        "source": "ghwt"
+      },
+      {
+        "artist": "Wolfmother",
+        "title": "Dimension",
+        "charter": "Neversoft",
+        "source": "ghwtdlc"
+      },
+      {
+        "artist": "Modest Mouse",
+        "title": "Float On",
+        "charter": "Neversoft",
+        "source": "ghwt"
+      },
+      {
+        "artist": "Korn",
+        "title": "Freak on a Leash",
+        "charter": "Neversoft",
+        "source": "ghwt"
+      },
+      {
+        "artist": "Vampire Weekend",
+        "title": "Holiday",
+        "charter": "Neversoft",
+        "source": "ghwtdlc"
+      },
+      {
+        "artist": "Oasis",
+        "title": "Im Outta Time",
+        "charter": "Neversoft",
+        "source": "ghwtdlc"
+      }
+    ],
+    "8d17f843-2968-4c73-968c-f3565d570ff3": [
+      {
+        "artist": "The Rasmus",
+        "title": "In the Shadows",
+        "charter": "Neversoft",
+        "source": "ghwtdlc"
+      },
+      {
+        "artist": "Wings",
+        "title": "Jet",
+        "charter": "Neversoft",
+        "source": "ghwtdlc"
+      },
+      {
+        "artist": "Di-Rect",
+        "title": "Johnny",
+        "charter": "Neversoft",
+        "source": "ghwtdlc"
+      },
+      {
+        "artist": "Paul McCartney & Wings",
+        "title": "Junior's Farm",
+        "charter": "Neversoft",
+        "source": "ghwtdlc"
+      },
+      {
+        "artist": "Interpol",
+        "title": "Obstacle 1",
+        "charter": "Neversoft",
+        "source": "ghwt"
+      }
+    ],
+    "c7854cd4-2b00-4956-8b22-7e7d0565fc0e": [
+      {
+        "artist": "Oasis",
+        "title": "Some Might Say",
+        "charter": "Neversoft",
+        "source": "ghwt"
+      },
+      {
+        "artist": "The Enemy",
+        "title": "Aggro",
+        "charter": "Neversoft",
+        "source": "ghwt"
+      },
+      {
+        "artist": "The Guess Who",
+        "title": "American Woman",
+        "charter": "Neversoft",
+        "source": "ghwt"
+      },
+      {
+        "artist": "Fleetwood Mac",
+        "title": "Go Your Own Way",
+        "charter": "Neversoft",
+        "source": "ghwt"
+      },
+      {
+        "artist": "Beatsteaks",
+        "title": "Hail to the Freaks",
+        "charter": "Neversoft",
+        "source": "ghwt"
+      }
+    ],
+    "c0f1a973-b166-47c2-8b2d-c87764f3fd80": [
+      {
+        "artist": "Bon Jovi",
+        "title": "Livin' on a Prayer",
+        "charter": "Neversoft",
+        "source": "ghwt"
+      },
+      {
+        "artist": "Paramore",
+        "title": "Misery Business",
+        "charter": "Neversoft",
+        "source": "ghwt"
+      },
+      {
+        "artist": "Negramaro",
+        "title": "Nuvole e Lenzuola",
+        "charter": "Neversoft",
+        "source": "ghwt"
+      },
+      {
+        "artist": "At the Drive-In",
+        "title": "One Armed Scissor",
+        "charter": "Neversoft",
+        "source": "ghwt"
+      },
+      {
+        "artist": "The Sex Pistols",
+        "title": "Pretty Vacant",
+        "charter": "Neversoft",
+        "source": "ghwt"
+      },
+      {
+        "artist": "Rise Against",
+        "title": "Re-Education (Through Labor)",
+        "charter": "Neversoft",
+        "source": "ghwt"
+      },
+      {
+        "artist": "Lostprophets",
+        "title": "Rooftops (A Liberation Broadcast)",
+        "charter": "Neversoft",
+        "source": "ghwt"
+      },
+      {
+        "artist": "Steve Miller Band",
+        "title": "The Joker",
+        "charter": "Neversoft",
+        "source": "ghwt"
+      },
+      {
+        "artist": "Airbourne",
+        "title": "Too Much, Too Young, Too Fast",
+        "charter": "Neversoft",
+        "source": "ghwt"
+      },
+      {
+        "artist": "Creedence Clearwater Revival",
+        "title": "Up Around the Bend",
+        "charter": "Neversoft",
+        "source": "ghwt"
+      }
+    ],
+    "64caf712-09fe-43cd-ace4-79e0f8da2400": [
+      {
+        "artist": "HushPuppies",
+        "title": "You're Gonna Say Yeah!",
+        "charter": "Neversoft",
+        "source": "ghwt"
+      },
+      {
+        "artist": "Trust",
+        "title": "Antisocial",
+        "charter": "Neversoft",
+        "source": "ghwt"
+      },
+      {
+        "artist": "Lenny Kravitz",
+        "title": "Are You Gonna Go My Way",
+        "charter": "Neversoft",
+        "source": "ghwt"
+      },
+      {
+        "artist": "Blink-182",
+        "title": "Dammit (Growing Up)",
+        "charter": "Neversoft",
+        "source": "ghwt"
+      },
+      {
+        "artist": "Foo Fighters",
+        "title": "Everlong",
+        "charter": "Neversoft",
+        "source": "ghwt"
+      }
+    ],
+    "8610b274-f87b-44ce-b57b-8e198e830f1f": [
+      {
+        "artist": "Survivor",
+        "title": "Eye of the Tiger",
+        "charter": "Neversoft",
+        "source": "ghwt"
+      },
+      {
+        "artist": "Anouk",
+        "title": "Good God",
+        "charter": "Neversoft",
+        "source": "ghwt"
+      },
+      {
+        "artist": "Filter",
+        "title": "Hey Man, Nice Shot",
+        "charter": "Neversoft",
+        "source": "ghwt"
+      },
+      {
+        "artist": "Bob Seger & the Silver Bullet Band",
+        "title": "Hollywood Nights",
+        "charter": "Neversoft",
+        "source": "ghwt"
+      },
+      {
+        "artist": "Eagles",
+        "title": "Hotel California",
+        "charter": "Neversoft",
+        "source": "ghwt"
+      }
+    ],
+    "6966230c-613f-4c1d-946a-746751c9a488": [
+      {
+        "artist": "Jane's Addiction",
+        "title": "Mountain Song",
+        "charter": "Neversoft",
+        "source": "ghwt"
+      },
+      {
+        "artist": "Willie Nelson",
+        "title": "On the Road Again (Live)",
+        "charter": "Neversoft",
+        "source": "ghwt"
+      },
+      {
+        "artist": "Blondie",
+        "title": "One Way or Another",
+        "charter": "Neversoft",
+        "source": "ghwt"
+      },
+      {
+        "artist": "Lacuna Coil",
+        "title": "Our Truth",
+        "charter": "Neversoft",
+        "source": "ghwt"
+      },
+      {
+        "artist": "The Allman Brothers Band",
+        "title": "Ramblin' Man",
+        "charter": "Neversoft",
+        "source": "ghwt"
+      },
+      {
+        "artist": "Sublime",
+        "title": "Santeria",
+        "charter": "Neversoft",
+        "source": "ghwt"
+      },
+      {
+        "artist": "Coldplay",
+        "title": "Shiver",
+        "charter": "Neversoft",
+        "source": "ghwt"
+      },
+      {
+        "artist": "30 Seconds to Mars",
+        "title": "The Kill",
+        "charter": "Neversoft",
+        "source": "ghwt"
+      },
+      {
+        "artist": "Black Rebel Motorcycle Club",
+        "title": "Weapon of Choice",
+        "charter": "Neversoft",
+        "source": "ghwt"
+      },
+      {
+        "artist": "Radio Futura",
+        "title": "Escuela de Calor",
+        "charter": "Neversoft",
+        "source": "ghwt"
+      }
+    ],
+    "943b3d7c-004e-45f3-847c-598d453cda4b": [
+      {
+        "artist": "MC5's Wayne Kramer",
+        "title": "Kick Out the Jams",
+        "charter": "Neversoft",
+        "source": "ghwt"
+      },
+      {
+        "artist": "Silversun Pickups",
+        "title": "Lazy Eye",
+        "charter": "Neversoft",
+        "source": "ghwt"
+      },
+      {
+        "artist": "Tool",
+        "title": "Parabola",
+        "charter": "Neversoft",
+        "source": "ghwt"
+      },
+      {
+        "artist": "Tool",
+        "title": "Schism",
+        "charter": "Neversoft",
+        "source": "ghwt"
+      },
+      {
+        "artist": "Jimmy Eat World",
+        "title": "The Middle",
+        "charter": "Neversoft",
+        "source": "ghwt"
+      }
+    ],
+    "408f59f1-41e1-46c9-a9fb-9414c13ee0ea": [
+      {
+        "artist": "The Jimi Hendrix Experience",
+        "title": "The Wind Cries Mary",
+        "charter": "Neversoft",
+        "source": "ghwt"
+      },
+      {
+        "artist": "Muse",
+        "title": "Assassin",
+        "charter": "Neversoft",
+        "source": "ghwt"
+      },
+      {
+        "artist": "The Police",
+        "title": "Demolition Man (Live)",
+        "charter": "Neversoft",
+        "source": "ghwt"
+      },
+      {
+        "artist": "Steely Dan",
+        "title": "Do It Again",
+        "charter": "Neversoft",
+        "source": "ghwt"
+      },
+      {
+        "artist": "Dinosaur Jr.",
+        "title": "Feel the Pain",
+        "charter": "Neversoft",
+        "source": "ghwt"
+      }
+    ],
+    "9abfb110-a59f-409e-8551-7fbb9dc88b68": [
+      {
+        "artist": "Pat Benatar",
+        "title": "Heartbreaker",
+        "charter": "Neversoft",
+        "source": "ghwt"
+      },
+      {
+        "artist": "The Mars Volta",
+        "title": "L'Via L'Viaquez",
+        "charter": "Neversoft",
+        "source": "ghwt"
+      },
+      {
+        "artist": "Los Lobos",
+        "title": "La Bamba",
+        "charter": "Neversoft",
+        "source": "ghwt"
+      },
+      {
+        "artist": "The Doors",
+        "title": "Love Me Two Times",
+        "charter": "Neversoft",
+        "source": "ghwt"
+      },
+      {
+        "artist": "The Stone Roses",
+        "title": "Love Spreads",
+        "charter": "Neversoft",
+        "source": "ghwt"
+      },
+      {
+        "artist": "The Answer",
+        "title": "Never Too Late",
+        "charter": "Neversoft",
+        "source": "ghwt"
+      },
+      {
+        "artist": "Beastie Boys ft. Kerry King",
+        "title": "No Sleep Till Brooklyn",
+        "charter": "Neversoft",
+        "source": "ghwt"
+      },
+      {
+        "artist": "The Living End",
+        "title": "Prisoner of Society",
+        "charter": "Neversoft",
+        "source": "ghwt"
+      },
+      {
+        "artist": "Billy Idol",
+        "title": "Rebel Yell",
+        "charter": "Neversoft",
+        "source": "ghwt"
+      },
+      {
+        "artist": "NOFX",
+        "title": "Soul Doubt",
+        "charter": "Neversoft",
+        "source": "ghwt"
+      }
+    ],
+    "b89385bf-8410-4397-87d9-6e2a4f5071ae": [
+      {
+        "artist": "No Doubt",
+        "title": "Spiderwebs",
+        "charter": "Neversoft",
+        "source": "ghwt"
+      },
+      {
+        "artist": "Black Label Society",
+        "title": "Stillborn",
+        "charter": "Neversoft",
+        "source": "ghwt"
+      },
+      {
+        "artist": "Lynyrd Skynyrd",
+        "title": "Sweet Home Alabama (Live)",
+        "charter": "Neversoft",
+        "source": "ghwt"
+      },
+      {
+        "artist": "Ted Nugent",
+        "title": "Ted Nugent Guitar Battle (Career)",
+        "charter": "Neversoft",
+        "source": "ghwt"
+      },
+      {
+        "artist": "Stuck in the Sound",
+        "title": "Toy Boy",
+        "charter": "Neversoft",
+        "source": "ghwt"
+      }
+    ]
   }
 }

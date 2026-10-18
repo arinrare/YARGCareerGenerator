@@ -9,7 +9,7 @@ from collections import Counter
 
 from .config import load_settings, load_sources
 from .scan import scan_library
-from .selection import select_and_sort_songs, apply_source_selection
+from .selection import select_and_sort_songs, apply_source_selection, reconcile_setlist
 from .sources import source_info, is_public_allowed
 from .tiering import redistribute
 from .generate import make_tier_json, make_preset_json, write_outputs
@@ -130,6 +130,26 @@ def build_career(settings, sources):
 def load_defaults():
     """Load settings + sources (used by both CLI and GUI entry points)."""
     return load_settings(), load_sources()
+
+
+def update_setlist(settings, sources, old_setlist):
+    """Reconcile the setlist against the current tiers, filling gaps from a fresh scan."""
+    tiers = settings.get("tiers", [])
+    total_needed = sum(
+        max(0, int(t.get("song_count", 0)) - len(old_setlist.get(t.get("id"), [])))
+        for t in tiers
+    )
+    songs = scan_library(settings.get("music_root")) if total_needed > 0 else []
+    return reconcile_setlist(old_setlist, tiers, songs, settings)
+
+
+def save_setlist(settings, sources, setlist):
+    """Write the current setlist (tiers + concrete songs) to .json and .preset."""
+    tiers_cfg = settings.get("tiers", [])
+    tiers_json = [make_tier_json(t, setlist.get(t.get("id"), [])) for t in tiers_cfg]
+    preset = make_preset_json(settings.get("career", {}), tiers_json)
+    json_path, preset_path = write_outputs(preset, settings.get("career", {}), settings)
+    return {"json_path": json_path, "preset_path": preset_path}
 
 
 def regenerate_sources(install_dir):

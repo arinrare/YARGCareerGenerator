@@ -12,6 +12,7 @@ A "career" is a YARG preset export — either a plain ``.json`` or a zipped
 import json
 import os
 import shutil
+import uuid
 import zipfile
 
 from ..paths import CAREERS_DIR, TEMPLATE_PATH, BUNDLED_TEMPLATE_PATH
@@ -34,11 +35,36 @@ def _tier_to_structure(tier):
         "is_bonus": bool(tier.get("IsBonus", False)),
         "venue_hint": tier.get("VenueHint"),
         "custom_unlock_text": tier.get("CustomUnlockText"),
+        "id": tier.get("Id") or str(uuid.uuid4()),
     }
 
 
+def _song_to_dict(entry):
+    tup = entry.get("SongTuple") or {}
+    artist = (tup.get("Artist") or "").strip()
+    title = (tup.get("Title") or "").strip()
+    source = (tup.get("Source") or "").strip()
+    charter = (tup.get("Charter") or "").strip()
+    if not (artist and title and source and charter):
+        return None
+    return {"artist": artist, "title": title, "charter": charter, "source": source}
+
+
+def _tier_songs(tier):
+    songs = []
+    for entry in (tier.get("Songs") or []):
+        song = _song_to_dict(entry)
+        if song:
+            songs.append(song)
+    return songs
+
+
+def _setlist_from_songs(tiers, songs):
+    return {t["id"]: list(songs[i]) for i, t in enumerate(tiers)}
+
+
 def load_career_file(path):
-    """Parse a .json or .preset career into {career, tiers}."""
+    """Parse a .json or .preset career into {career, tiers, songs}."""
     data = _read_career_json(path)
 
     career = {
@@ -49,12 +75,14 @@ def load_career_file(path):
         "version": int(data.get("Version") or 1),
         "type": data.get("Type") or "Career",
     }
-    tiers = [_tier_to_structure(t) for t in (data.get("Tiers") or [])]
-    return {"career": career, "tiers": tiers}
+    tiers_data = data.get("Tiers") or []
+    tiers = [_tier_to_structure(t) for t in tiers_data]
+    songs = [_tier_songs(t) for t in tiers_data]
+    return {"career": career, "tiers": tiers, "songs": songs}
 
 
 def load_template():
-    """Load the current default template into {career, tiers}."""
+    """Load the current default template into {career, tiers, songs}."""
     if not os.path.isfile(TEMPLATE_PATH):
         raise FileNotFoundError(f"Template not found: {TEMPLATE_PATH}")
     return load_career_file(TEMPLATE_PATH)
@@ -78,22 +106,29 @@ def import_template(source_path):
 
 
 def apply_startup_rule(settings):
-    """Resolve the career structure on startup.
+    """Ensure the career structure and setlist are populated on startup.
 
-    Load the last-loaded career (if it still exists in the careers folder),
-    otherwise fall back to the default template. Mutates and returns ``settings``
-    with ``career`` and ``tiers`` populated.
+    A structure persisted by a previous session (``tiers`` present) is kept
+    as-is, so in-session tier edits and the reconciled setlist survive a
+    restart. Otherwise the structure is seeded from the last loaded/built
+    career, falling back to the default template. Mutates and returns
+    ``settings`` with ``career``, ``tiers`` and ``setlist`` populated.
     """
+    if settings.get("tiers"):
+        settings.setdefault("setlist", {})
+        return settings
+
+    result = None
     loaded = settings.get("loaded_career")
     if loaded:
         candidate = CAREERS_DIR / loaded
         if candidate.is_file():
             result = load_career_file(candidate)
-            settings["career"] = result["career"]
-            settings["tiers"] = result["tiers"]
-            return settings
 
-    result = load_template()
+    if result is None:
+        result = load_template()
+
     settings["career"] = result["career"]
     settings["tiers"] = result["tiers"]
+    settings["setlist"] = _setlist_from_songs(result["tiers"], result["songs"])
     return settings

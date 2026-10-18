@@ -124,3 +124,64 @@ def apply_source_selection(usable, settings, target):
 
     selected.sort(key=lambda s: difficulty_sort_key(s, ascending))
     return selected, breakdown
+
+
+def _song_identity(song):
+    return (song["artist"], song["title"], song["source"], song["charter"])
+
+
+def _display_song(song):
+    return {
+        "artist": song["artist"],
+        "title": song["title"],
+        "charter": song["charter"],
+        "source": song["source"],
+    }
+
+
+def reconcile_setlist(old_setlist, tiers, songs, settings):
+    """Reconcile a setlist against a new tier structure.
+
+    Preserves each tier's existing songs (clamped to its new ``song_count``,
+    keeping the first N), then fills any remaining slots from ``songs`` in
+    difficulty order (easiest first) without repeating a song already present.
+
+    ``old_setlist`` maps tier id -> list of {artist, title, charter, source}.
+    ``tiers`` is the current structure (each with ``id`` and ``song_count``).
+    Returns a new id -> songs mapping (song entries are normalized display dicts).
+    """
+    new_setlist = {}
+    used = set()
+
+    for t in tiers:
+        tid = t["id"]
+        count = int(t.get("song_count") or 0)
+        kept = [s for s in old_setlist.get(tid, [])][:count]
+        new_setlist[tid] = kept
+        for s in kept:
+            used.add(_song_identity(s))
+
+    needed = {}
+    total = 0
+    for t in tiers:
+        n = int(t.get("song_count") or 0) - len(new_setlist[t["id"]])
+        if n > 0:
+            needed[t["id"]] = n
+            total += n
+
+    if total <= 0 or not songs:
+        return new_setlist
+
+    usable, _ = select_and_sort_songs(songs, settings, None)
+    remaining = [s for s in usable if _song_identity(s) not in used]
+    selected, _ = apply_source_selection(remaining, settings, total)
+    pool = selected
+
+    idx = 0
+    for t in tiers:
+        n = needed.get(t["id"], 0)
+        if n > 0:
+            new_setlist[t["id"]].extend(_display_song(s) for s in pool[idx:idx + n])
+            idx += n
+
+    return new_setlist

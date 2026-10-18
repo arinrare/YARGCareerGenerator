@@ -110,3 +110,32 @@ def test_apply_startup_rule_falls_back_to_template(tmp_path, monkeypatch):
     career_io.apply_startup_rule(settings)
 
     assert settings["career"]["name"] == "Template Career"
+
+
+def test_load_career_file_retains_songs(tmp_path):
+    data = _career_json()
+    data["Tiers"][0]["Songs"] = [
+        {"SongTuple": {"Artist": "A", "Title": "T", "Source": "ghwt", "Charter": "C"}},
+        {"SongTuple": None},
+        {},
+    ]
+    path = tmp_path / "career.json"
+    path.write_text(json.dumps(data), encoding="utf-8")
+
+    result = career_io.load_career_file(path)
+
+    assert result["songs"][0] == [{"artist": "A", "title": "T", "charter": "C", "source": "ghwt"}]
+    assert result["songs"][1] == []
+    assert result["tiers"][0]["id"]
+
+
+def test_apply_startup_rule_preserves_persisted_tiers():
+    settings = {
+        "tiers": [
+            {"id": "t1", "name": "Kept", "song_count": 3, "unlock_criteria": 0,
+             "is_bonus": False, "venue_hint": None, "custom_unlock_text": None},
+        ]
+    }
+    career_io.apply_startup_rule(settings)
+    assert settings["tiers"][0]["name"] == "Kept"
+    assert settings["setlist"] == {}

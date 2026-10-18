@@ -12,6 +12,7 @@ from PySide6.QtWidgets import (
     QFrame,
     QGroupBox,
     QHBoxLayout,
+    QHeaderView,
     QInputDialog,
     QLabel,
     QLineEdit,
@@ -23,18 +24,23 @@ from PySide6.QtWidgets import (
     QScrollArea,
     QSplitter,
     QTabWidget,
+    QTreeWidget,
+    QTreeWidgetItem,
     QVBoxLayout,
     QWidget,
 )
 
-from ..paths import SETTINGS_PATH, SOURCES_PATH, CAREERS_DIR, BASE
+from ..paths import SETTINGS_PATH, SOURCES_PATH, CAREERS_DIR, BASE, BUNDLED_TEMPLATE_PATH
 from ..core.config import save_settings
 from ..core.bootstrap import load_app_state
 from ..core.career_io import load_career_file, load_template, import_template
+from ..core.generate import sanitize_filename
 from ..core.pipeline import (
     scan_report,
     build_career,
     regenerate_sources,
+    update_setlist,
+    save_setlist,
     PublicBlockError,
 )
 from ..core.sources import find_yarg_installs, source_info, merged_source_rows
@@ -62,6 +68,7 @@ class MainWindow(QMainWindow):
         self._workers = []
         self._dark = True
         self._career_dirty = False
+        self._setlist_dirty = False
 
         self._build_menus()
         self._build_ui()
@@ -161,6 +168,9 @@ class MainWindow(QMainWindow):
         self.load_btn.setProperty("accent", True)
         self.load_btn.setToolTip("Load an existing career's structure and metadata.")
         self.load_btn.clicked.connect(self.on_load_career)
+        self.reset_default_btn = QPushButton("Reset to Default")
+        self.reset_default_btn.setToolTip("Reset the career to the shipped default.")
+        self.reset_default_btn.clicked.connect(self.on_reset_to_default)
         self.build_btn = QPushButton("Build Career")
         self.build_btn.setProperty("accent", True)
         self.build_btn.setToolTip("Build the career and write .json + .preset files.")
@@ -177,12 +187,14 @@ class MainWindow(QMainWindow):
         action_row.addStretch(1)
         action_row.addWidget(self.progress)
         action_row.addWidget(self.load_btn)
+        action_row.addWidget(self.reset_default_btn)
         action_row.addWidget(self.build_btn)
 
         # ---- Tabs ------------------------------------------------------
         self.tab_widget = QTabWidget()
         self._build_career_tab()
         self._build_tiers_tab()
+        self._build_songs_tab()
 
         # ---- Scrollable content (paths + actions + tabs) ---------------
         scroll_content = QWidget()
@@ -367,18 +379,57 @@ class MainWindow(QMainWindow):
         tab = QWidget()
         layout = QVBoxLayout(tab)
 
+        header = QHBoxLayout()
         hint = QLabel(
             "Edit the career structure. Add, remove, reorder, or edit tiers."
         )
         hint.setProperty("muted", True)
-        layout.addWidget(hint)
+        header.addWidget(hint, 1)
+        self.update_setlist_btn = QPushButton("Fill setlist")
+        self.update_setlist_btn.setProperty("accent", True)
+        self.update_setlist_btn.setToolTip(
+            "Reconcile the setlist with the current tiers, filling any new slots from the library."
+        )
+        self.update_setlist_btn.setEnabled(False)
+        self.update_setlist_btn.clicked.connect(self.on_update_setlist)
+        header.addWidget(self.update_setlist_btn)
+        layout.addLayout(header)
 
         self.tier_editor = TierEditor()
         self.tier_editor.changed.connect(self._update_source_summary)
         self.tier_editor.changed.connect(self._mark_career_dirty)
+        self.tier_editor.changed.connect(self._on_tiers_changed)
         layout.addWidget(self.tier_editor, 1)
 
         self.tab_widget.addTab(tab, "Tiers")
+
+    def _build_songs_tab(self):
+        tab = QWidget()
+        layout = QVBoxLayout(tab)
+        layout.setContentsMargins(0, 0, 0, 0)
+
+        header = QHBoxLayout()
+        hint = QLabel("Read-only view of the current career. Songs are listed under each tier.")
+        hint.setProperty("muted", True)
+        header.addWidget(hint, 1)
+        self.save_setlist_btn = QPushButton("Save setlist")
+        self.save_setlist_btn.setProperty("accent", True)
+        self.save_setlist_btn.setToolTip(
+            "Save the current setlist to a .preset and .json in the careers folder."
+        )
+        self.save_setlist_btn.clicked.connect(self.on_save_setlist)
+        header.addWidget(self.save_setlist_btn)
+        layout.addLayout(header)
+
+        self.setlist_tree = QTreeWidget()
+        self.setlist_tree.setColumnCount(4)
+        self.setlist_tree.setHeaderLabels(["Title", "Artist", "Charter", "Source"])
+        self.setlist_tree.setEditTriggers(QTreeWidget.NoEditTriggers)
+        self.setlist_tree.header().setStretchLastSection(False)
+        self.setlist_tree.header().setSectionResizeMode(QHeaderView.ResizeToContents)
+        layout.addWidget(self.setlist_tree)
+
+        self.tab_widget.addTab(tab, "Setlist")
 
     # ------------------------------------------------------------------ #
     #  Settings <-> UI
@@ -425,6 +476,7 @@ class MainWindow(QMainWindow):
         self.tier_editor.set_tiers(s.get("tiers", []))
 
         self._refresh_sources()
+        self._refresh_setlist()
         self._career_dirty = False
 
     def _collect_settings_from_ui(self):
@@ -526,6 +578,54 @@ class MainWindow(QMainWindow):
             )
 
     # ------------------------------------------------------------------ #
+    #  Setlist
+    # ------------------------------------------------------------------ #
+
+    def _refresh_setlist(self):
+        self.setlist_tree.clear()
+        setlist = self.settings.get("setlist") or {}
+        tiers = self.settings.get("tiers", [])
+
+        for i, tier in enumerate(tiers):
+            name = tier.get("name") or "Untitled tier"
+            songs = setlist.get(tier.get("id"), [])
+            header = QTreeWidgetItem([f"{i + 1}. {name}", f"{len(songs)} songs", "", ""])
+            font = header.font(0)
+            font.setBold(True)
+            header.setFont(0, font)
+            self.setlist_tree.addTopLevelItem(header)
+            for song in songs:
+                item = QTreeWidgetItem([
+                    song.get("title", ""),
+                    song.get("artist", ""),
+                    song.get("charter", ""),
+                    song.get("source", ""),
+                ])
+                header.addChild(item)
+            header.setExpanded(True)
+
+    def _on_tiers_changed(self, *args):
+        self._setlist_dirty = True
+        self.update_setlist_btn.setEnabled(True)
+
+    def on_update_setlist(self):
+        self._persist_settings()
+        old_setlist = self.settings.get("setlist") or {}
+        self.log_panel.log("Updating setlist…")
+        self._start_worker(
+            update_setlist, self._on_update_setlist_done,
+            self.settings, self.sources, old_setlist,
+        )
+
+    def _on_update_setlist_done(self, new_setlist):
+        self.settings["setlist"] = new_setlist
+        save_settings(self.settings)
+        self._setlist_dirty = False
+        self.update_setlist_btn.setEnabled(False)
+        self._refresh_setlist()
+        self.log_panel.log("Setlist updated.")
+
+    # ------------------------------------------------------------------ #
     #  Actions
     # ------------------------------------------------------------------ #
 
@@ -542,7 +642,9 @@ class MainWindow(QMainWindow):
         self.scan_btn.setEnabled(not busy)
         self.regen_btn.setEnabled(not busy)
         self.load_btn.setEnabled(not busy)
+        self.reset_default_btn.setEnabled(not busy)
         self.build_btn.setEnabled(not busy)
+        self.save_setlist_btn.setEnabled(not busy)
         self.progress.setVisible(busy)
         if busy:
             self.statusBar().showMessage("Working…")
@@ -615,8 +717,23 @@ class MainWindow(QMainWindow):
         self.statusBar().showMessage(f"Built '{name}'")
 
         self.settings["loaded_career"] = os.path.basename(result["json_path"])
+        self.settings["setlist"] = {
+            cfg["id"]: [
+                {
+                    "artist": s["artist"],
+                    "title": s["title"],
+                    "charter": s["charter"],
+                    "source": s["source"],
+                }
+                for s in chunk
+            ]
+            for cfg, chunk in result["filled"]
+        }
         save_settings(self.settings)
         self._career_dirty = False
+        self._setlist_dirty = False
+        self.update_setlist_btn.setEnabled(False)
+        self._refresh_setlist()
 
         reply = QMessageBox.question(
             self, "Build complete",
@@ -711,8 +828,15 @@ class MainWindow(QMainWindow):
         self.settings["career"] = result["career"]
         self.settings["tiers"] = result["tiers"]
         self.settings["loaded_career"] = loaded_filename
+        self.settings["setlist"] = {
+            t["id"]: list(songs)
+            for t, songs in zip(result["tiers"], result.get("songs", []))
+        }
         self._load_settings_into_ui()
         self._persist_settings()
+        self._refresh_setlist()
+        self._setlist_dirty = False
+        self.update_setlist_btn.setEnabled(False)
         self._career_dirty = False
 
     def on_load_career(self):
@@ -759,6 +883,43 @@ class MainWindow(QMainWindow):
             return
         self._apply_structure(result, None)
         self.log_panel.log("Reset to default template.")
+
+    def on_reset_to_default(self):
+        if not self._confirm_discard_edits():
+            return
+        try:
+            import_template(str(BUNDLED_TEMPLATE_PATH))
+            result = load_template()
+        except Exception as exc:
+            QMessageBox.critical(self, "Reset failed", f"Could not reset to default:\n{exc}")
+            return
+        self._apply_structure(result, None)
+        self.log_panel.log("Reset to shipped default career.")
+
+    def on_save_setlist(self):
+        career = self.settings.get("career", {}) or {}
+        out_dir = self.settings.get("output_dir") or CAREERS_DIR
+        name = sanitize_filename(career.get("name") or "Career")
+        json_path = os.path.join(str(out_dir), f"{name}.json")
+        preset_path = os.path.join(str(out_dir), f"{name}.preset")
+
+        if os.path.exists(json_path) or os.path.exists(preset_path):
+            reply = QMessageBox.question(
+                self, "Overwrite career?",
+                f"This will overwrite:\n  {json_path}\n  {preset_path}\n\nContinue?",
+                QMessageBox.Yes | QMessageBox.No,
+                QMessageBox.No,
+            )
+            if reply != QMessageBox.Yes:
+                return
+
+        self._persist_settings()
+        setlist = self.settings.get("setlist") or {}
+        result = save_setlist(self.settings, self.sources, setlist)
+        self.settings["loaded_career"] = os.path.basename(result["json_path"])
+        save_settings(self.settings)
+        self.log_panel.log(f"Saved setlist:\n  {result['json_path']}\n  {result['preset_path']}")
+        self.statusBar().showMessage("Setlist saved")
 
     def on_toggle_theme(self):
         from .theme import apply_theme
