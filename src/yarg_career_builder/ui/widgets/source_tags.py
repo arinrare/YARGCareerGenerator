@@ -3,17 +3,17 @@
 from PySide6.QtCore import QPoint, QRect, QSize, Qt, Signal
 from PySide6.QtWidgets import (
     QCheckBox,
-    QComboBox,
     QFrame,
     QHBoxLayout,
     QLabel,
     QLayout,
     QLineEdit,
     QPushButton,
-    QSpinBox,
     QVBoxLayout,
     QWidget,
 )
+
+from .controls import NoScrollComboBox, NoScrollSpinBox
 
 
 class FlowLayout(QLayout):
@@ -109,7 +109,7 @@ class SourceTagSelector(QWidget):
         self.filter_edit.setToolTip("Filter the list of available sources by name or source id.")
         self.filter_edit.textChanged.connect(self._rebuild_dropdown)
 
-        self.type_combo = QComboBox()
+        self.type_combo = NoScrollComboBox()
         self.type_combo.setToolTip("Filter available sources by type.")
         self.type_combo.currentIndexChanged.connect(self._rebuild_dropdown)
 
@@ -122,7 +122,7 @@ class SourceTagSelector(QWidget):
         filter_row.addWidget(self.type_combo)
         filter_row.addWidget(self.public_only)
 
-        self.source_combo = QComboBox()
+        self.source_combo = NoScrollComboBox()
         self.source_combo.setMinimumWidth(260)
         self.source_combo.setToolTip("Pick a music source to add to the career.")
 
@@ -256,7 +256,7 @@ class SourceTagSelector(QWidget):
         lay.addWidget(label)
 
         if self._weights_visible:
-            spin = QSpinBox()
+            spin = NoScrollSpinBox()
             spin.setRange(1, 1000)
             spin.setValue(int(weight))
             spin.setFixedWidth(60)

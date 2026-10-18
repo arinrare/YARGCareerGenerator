@@ -7,7 +7,6 @@ from PySide6.QtCore import Qt
 from PySide6.QtWidgets import (
     QApplication,
     QCheckBox,
-    QComboBox,
     QFileDialog,
     QFormLayout,
     QFrame,
@@ -22,7 +21,6 @@ from PySide6.QtWidgets import (
     QProgressBar,
     QPushButton,
     QScrollArea,
-    QSpinBox,
     QSplitter,
     QTabWidget,
     QVBoxLayout,
@@ -44,6 +42,7 @@ from .widgets.path_picker import PathPicker
 from .widgets.log_panel import LogPanel
 from .widgets.source_tags import SourceTagSelector
 from .widgets.tier_editor import TierEditor
+from .widgets.controls import NoScrollComboBox, NoScrollSpinBox
 from .workers import Worker
 from .dialogs.about import AboutDialog
 
@@ -228,7 +227,7 @@ class MainWindow(QMainWindow):
         self.title_edit = QLineEdit()
         self.description_edit = QPlainTextEdit()
         self.description_edit.setFixedHeight(64)
-        self.version_spin = QSpinBox()
+        self.version_spin = NoScrollSpinBox()
         self.version_spin.setRange(1, 9999)
         self.type_edit = QLineEdit()
 
@@ -278,7 +277,7 @@ class MainWindow(QMainWindow):
             "Weighted — split the career across sources in proportion to each weight."
         )
         mode_row.addWidget(mode_label)
-        self.mode_combo = QComboBox()
+        self.mode_combo = NoScrollComboBox()
         self.mode_combo.addItem("Filter / limit (pick sources)", "filter")
         self.mode_combo.addItem("Weighted (set source proportions)", "weighted")
         self.mode_combo.setToolTip(
@@ -295,7 +294,7 @@ class MainWindow(QMainWindow):
             "Sources are ranked by song count; the top N are kept."
         )
         mode_row.addWidget(limit_label)
-        self.limit_spin = QSpinBox()
+        self.limit_spin = NoScrollSpinBox()
         self.limit_spin.setRange(0, 10000)
         self.limit_spin.setSpecialValueText("unlimited")
         self.limit_spin.setToolTip(
@@ -316,15 +315,15 @@ class MainWindow(QMainWindow):
         rules = QFormLayout(rules_group)
         rules.setLabelAlignment(Qt.AlignRight)
 
-        self.visibility_combo = QComboBox()
+        self.visibility_combo = NoScrollComboBox()
         self.visibility_combo.addItems(["private", "public"])
 
-        self.difficulty_combo = QComboBox()
+        self.difficulty_combo = NoScrollComboBox()
         self.difficulty_combo.addItems(DIFFICULTY_FIELDS)
 
         self.ascending_check = QCheckBox("Sort easiest first")
 
-        self.missing_combo = QComboBox()
+        self.missing_combo = NoScrollComboBox()
         self.missing_combo.addItem("last (keep songs without difficulty)", "last")
         self.missing_combo.addItem("skip (drop songs without difficulty)", "skip")
 

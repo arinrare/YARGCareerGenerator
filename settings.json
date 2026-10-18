@@ -52,10 +52,7 @@
     "missing": "last"
   },
   "source_selection": {
-    "weights": {
-      "ghwt": 8,
-      "ghwtdlc": 1
-    },
+    "weights": {},
     "filter": [],
     "limit": 0
   },
@@ -177,5 +174,5 @@
       "custom_unlock_text": "Out of all acts in the festival, your band stands out on top. You have the final set: send the crowd home with an experience they'll never forget!"
     }
   ],
-  "loaded_career": "Career_Guitar_Hero_World_Tour.preset"
+  "loaded_career": null
 }

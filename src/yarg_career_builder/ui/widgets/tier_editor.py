@@ -12,10 +12,11 @@ from PySide6.QtWidgets import (
     QListWidgetItem,
     QPlainTextEdit,
     QPushButton,
-    QSpinBox,
     QVBoxLayout,
     QWidget,
 )
+
+from .controls import NoScrollSpinBox
 
 
 def _new_tier():
@@ -83,12 +84,12 @@ class TierEditor(QWidget):
         self.name_edit.setToolTip("Tier name shown in the career.")
         self.name_edit.textChanged.connect(self._on_edit)
 
-        self.songs_spin = QSpinBox()
+        self.songs_spin = NoScrollSpinBox()
         self.songs_spin.setRange(1, 1000)
         self.songs_spin.setToolTip("Relative number of songs in this tier (used to split the selected songs).")
         self.songs_spin.valueChanged.connect(self._on_edit)
 
-        self.unlock_spin = QSpinBox()
+        self.unlock_spin = NoScrollSpinBox()
         self.unlock_spin.setRange(0, 100000)
         self.unlock_spin.setToolTip("Stars required to unlock this tier.")
         self.unlock_spin.valueChanged.connect(self._on_edit)
