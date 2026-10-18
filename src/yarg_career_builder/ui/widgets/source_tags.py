@@ -103,6 +103,7 @@ class SourceTagSelector(QWidget):
         self._rows = []
         self._selected = {}  # source id -> weight
         self._weights_visible = False
+        self._has_counts = False
 
         self.filter_edit = QLineEdit()
         self.filter_edit.setPlaceholderText("Filter by name or source id…")
@@ -167,6 +168,10 @@ class SourceTagSelector(QWidget):
         self._weights_visible = bool(visible)
         self._rebuild_chips()
 
+    def set_has_counts(self, has_counts):
+        self._has_counts = bool(has_counts)
+        self._rebuild_chips()
+
     def selected_ids(self):
         return list(self._selected.keys())
 
@@ -220,7 +225,12 @@ class SourceTagSelector(QWidget):
                 w.deleteLater()
 
         if not self._selected:
-            empty = QLabel("No sources selected — add some from the dropdown above.")
+            message = (
+                "No sources selected — add some from the dropdown above."
+                if self._has_counts
+                else "Scan the library to see available sources."
+            )
+            empty = QLabel(message)
             empty.setProperty("muted", True)
             self.chips_layout.addWidget(empty)
             return

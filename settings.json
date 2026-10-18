@@ -42,7 +42,7 @@
   "music_root": "J:\\Stored\\YARG Music",
   "output_dir": "",
   "yarg": {
-    "install_dir": "",
+    "install_dir": "F:\\YARC\\YARG Installs\\c3565756-05e6-419a-a6fd-c75ae3aabc1e\\installation",
     "data_dir": "C:\\Users\\micha\\AppData\\LocalLow\\YARC\\YARG\\nightly"
   },
   "visibility": "private",
@@ -68,7 +68,7 @@
     ]
   },
   "career": {
-    "name": "Career Guitar Hero World Tour",
+    "name": "YARG Career",
     "title": null,
     "description": "Starting a band has never been easier! Bring your friends to the YARG and begin playing the songs you've rehearsed. Even if you flub a few notes, everyone's here for a good time!",
     "source": "yarg",
@@ -174,5 +174,40 @@
       "custom_unlock_text": "Out of all acts in the festival, your band stands out on top. You have the final set: send the crowd home with an experience they'll never forget!"
     }
   ],
-  "loaded_career": null
+  "loaded_career": null,
+  "scan_counts": {
+    "bh": 65,
+    "djh": 10,
+    "gh1": 58,
+    "ghm": 49,
+    "ghmdlc": 11,
+    "ghsh": 50,
+    "ghwor": 94,
+    "gh5": 90,
+    "gh5dlc": 155,
+    "ghwtdlc": 155,
+    "bhdlc": 1,
+    "gha": 47,
+    "gh80s": 39,
+    "gh2": 100,
+    "gh2dlc": 24,
+    "gh3": 75,
+    "ghot": 31,
+    "ghotd": 36,
+    "ghotmh": 44,
+    "ghvh": 47,
+    "ghwordlc": 84,
+    "ghwt": 86,
+    "rb1": 62,
+    "rb2": 84,
+    "rb2dlc": 930,
+    "rb3": 83,
+    "rb3dlc": 610,
+    "rbacdc": 18,
+    "tbrbdlc": 29,
+    "tbrb": 44,
+    "rbb": 25,
+    "rb1dlc": 184,
+    "gdrb": 50
+  }
 }

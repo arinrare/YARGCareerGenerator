@@ -57,7 +57,8 @@ class MainWindow(QMainWindow):
         self.setMinimumSize(640, 480)
 
         self.settings, self.sources = load_app_state(apply_startup=True)
-        self.scan_cache = None
+        counts = self.settings.get("scan_counts") or {}
+        self.scan_cache = {"counts": counts} if counts else None
         self._workers = []
         self._dark = True
         self._career_dirty = False
@@ -487,7 +488,10 @@ class MainWindow(QMainWindow):
         always_allowed = pc.get("always_allowed_ids", [])
 
         counts = (self.scan_cache or {}).get("counts", {})
-        rows = merged_source_rows(self.sources, counts, allowed_types, always_allowed)
+        rows = [
+            r for r in merged_source_rows(self.sources, counts, allowed_types, always_allowed)
+            if r["count"] > 0
+        ]
 
         sel = self.settings.get("source_selection", {}) or {}
         weights = sel.get("weights") or {}
@@ -497,6 +501,7 @@ class MainWindow(QMainWindow):
         else:
             selected = {s: 1 for s in filter_list}
 
+        self.source_tags.set_has_counts(bool(counts))
         self.source_tags.set_sources(rows, selected)
         self._update_source_summary()
 
@@ -572,6 +577,8 @@ class MainWindow(QMainWindow):
 
     def _on_scan_done(self, report):
         self.scan_cache = report
+        self.settings["scan_counts"] = report["counts"]
+        save_settings(self.settings)
         self.log_panel.log(
             f"Found {len(report['songs'])} song folders "
             f"({report['no_source']} without a source icon)."
