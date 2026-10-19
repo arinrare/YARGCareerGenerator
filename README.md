@@ -17,8 +17,13 @@ and shareable.
   (private/public), difficulty field, sort order, and missing-difficulty handling.
 - **Sources tab** — a filterable source table (text search, type filter, public-only)
   with include checkboxes, and a **filter/limit** or **weighted** selection mode.
-- **Tiers tab** — read-only view of the career tier structure (a visual tier editor
-  is planned).
+- **Tiers tab** — a full tier editor: add/remove/reorder tiers and edit every
+  YARG tier option (name, description, unlock type/criteria, bonus flag, venue
+  size/hint, completion mode, custom unlock text, completion bonus, and
+  completion-bonus media).
+- **Careers tab** — list the careers in the output folder, load one into the
+  editor, delete a career (its `.json`, `.preset`, and — when no longer used —
+  its media), and remove media left behind by careers that no longer exist.
 - Live **"selected / target"** readout and an output log panel.
 - Export both `<name>.json` (import via YARG → Presets → Career → Import) and
   `<name>.preset` (the zipped export form).
@@ -245,3 +250,34 @@ The app icon is a public-domain (CC0) guitar illustration; see
 `.\scripts\make_icon.py`. The YARG logo is a YARC trademark and is intentionally
 not used.
 
+## Tier options
+
+Each tier in the **Tiers** tab exposes the full set of options YARG supports for a
+career tier, matching the fields written to the preset file:
+
+| Option | Values | Meaning |
+|---|---|---|
+| Name | Text | The tier's display name shown in the career menu. |
+| Description | Text | Optional tier-level flavour text (stored in the preset's `Description`). |
+| Song count | Number (≥ 1) | Relative number of songs; used to split the selected songs across tiers. |
+| Unlock type | `StarCount` / `CompletionCount` | `StarCount` unlocks on the running star total; `CompletionCount` unlocks on the number of completed songs. |
+| Unlock criteria | Number (≥ 0) | Stars (StarCount) or completed songs (CompletionCount) required to unlock this tier. |
+| Bonus tier | Yes / No | Optional side-setlist. Bonus tiers don't count toward unlocking later tiers. |
+| Venue size | `NotSpecified` / `Starter` / `Small` / `Medium` / `Large` / `Epic` | Approximate stage size used for venue selection. |
+| Venue hint | Text | Optional venue path (e.g. `Venue/Church`), or type a custom `Venue/<name>`. |
+| Completion mode | `SingleSong` / `FullTierPlaylist` / `FullCareerPlaylist` | How the tier's songs are completed. Playlist modes are stored but not yet honored by YARG gameplay. |
+| Custom unlock text | Text | Flavour text shown when the tier unlocks. |
+| Completion bonus | `None` / `Image` / `Sound` / `Video` | What to show when the tier is completed. |
+| Completion bonus text | Text | Text shown when the completion bonus triggers. |
+| Media file | File picker (`png`/`jpg`/`jpeg` images, `webm` video, `ogg`/`mp3`/`wav`/`flac` audio) | The media shown/played on completion. Copied into the app's `media` folder and embedded in the exported `.preset`. |
+| Clear media file | Button | Removes the tier's completion-bonus media file. |
+
+Media is stored in the `.preset` archive as a separate entry keyed by filename
+(the JSON only records the filename in `MediaFilename`), so exported careers stay
+self-contained. The app keeps its own working copy of each career's media in a
+per-career folder `media/<career-id>/` (keyed by the career's stable `Id`, which
+is preserved across builds so a shared preset round-trips unchanged). Loading or
+importing a `.preset` extracts its media back into that folder; loading a plain
+`.json` has no media (it was never embedded). Unreferenced media files are
+removed automatically, and the **Careers** tab can delete whole careers or clean
+up media left behind by careers that no longer exist.

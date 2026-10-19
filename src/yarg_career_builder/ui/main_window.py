@@ -1,6 +1,7 @@
 """Main application window."""
 
 import os
+import uuid
 from copy import deepcopy
 
 from PySide6.QtCore import Qt
@@ -30,10 +31,18 @@ from PySide6.QtWidgets import (
     QWidget,
 )
 
-from ..paths import SETTINGS_PATH, SOURCES_PATH, CAREERS_DIR, BASE, BUNDLED_TEMPLATE_PATH
+from ..paths import SETTINGS_PATH, SOURCES_PATH, CAREERS_DIR, BASE, BUNDLED_TEMPLATE_PATH, media_dir_for
 from ..core.config import save_settings
 from ..core.bootstrap import load_app_state
-from ..core.career_io import load_career_file, load_template, import_template
+from ..core.career_io import (
+    load_career_file,
+    load_template,
+    import_template,
+    reconcile_media,
+    scan_careers,
+    delete_career,
+    clean_unused_media,
+)
 from ..core.generate import sanitize_filename
 from ..core.pipeline import (
     scan_report,
@@ -195,6 +204,7 @@ class MainWindow(QMainWindow):
         self._build_career_tab()
         self._build_tiers_tab()
         self._build_songs_tab()
+        self._build_careers_tab()
 
         # ---- Scrollable content (paths + actions + tabs) ---------------
         scroll_content = QWidget()
@@ -431,6 +441,49 @@ class MainWindow(QMainWindow):
 
         self.tab_widget.addTab(tab, "Setlist")
 
+    def _build_careers_tab(self):
+        tab = QWidget()
+        layout = QVBoxLayout(tab)
+        layout.setContentsMargins(0, 0, 0, 0)
+
+        header = QHBoxLayout()
+        hint = QLabel("Careers in the output folder. Delete removes its files and, if unused, its media.")
+        hint.setProperty("muted", True)
+        header.addWidget(hint, 1)
+
+        self.careers_refresh_btn = QPushButton("Refresh")
+        self.careers_refresh_btn.setToolTip("Re-scan the output folder for careers.")
+        self.careers_refresh_btn.clicked.connect(self._refresh_careers)
+
+        self.careers_load_btn = QPushButton("Load")
+        self.careers_load_btn.setToolTip("Load the selected career into the editor.")
+        self.careers_load_btn.clicked.connect(self._on_load_career_from_list)
+
+        self.careers_delete_btn = QPushButton("Delete")
+        self.careers_delete_btn.setToolTip("Delete the selected career's .json/.preset and, if unused, its media.")
+        self.careers_delete_btn.clicked.connect(self._on_delete_career)
+
+        self.careers_clean_btn = QPushButton("Clean unused media")
+        self.careers_clean_btn.setToolTip("Delete media folders for careers that no longer exist in the output folder.")
+        self.careers_clean_btn.clicked.connect(self._on_clean_unused_media)
+
+        for b in (self.careers_refresh_btn, self.careers_load_btn, self.careers_delete_btn, self.careers_clean_btn):
+            header.addWidget(b)
+        layout.addLayout(header)
+
+        self.careers_list = QTreeWidget()
+        self.careers_list.setColumnCount(4)
+        self.careers_list.setHeaderLabels(["Name", "Files", "Tiers", "Media"])
+        self.careers_list.setRootIsDecorated(False)
+        self.careers_list.setSelectionBehavior(QTreeWidget.SelectRows)
+        self.careers_list.setEditTriggers(QTreeWidget.NoEditTriggers)
+        self.careers_list.header().setStretchLastSection(False)
+        self.careers_list.header().setSectionResizeMode(QHeaderView.ResizeToContents)
+        self.careers_list.itemDoubleClicked.connect(lambda *_: self._on_load_career_from_list())
+        layout.addWidget(self.careers_list)
+
+        self.tab_widget.addTab(tab, "Careers")
+
     # ------------------------------------------------------------------ #
     #  Settings <-> UI
     # ------------------------------------------------------------------ #
@@ -474,9 +527,11 @@ class MainWindow(QMainWindow):
         self._on_mode_changed()
 
         self.tier_editor.set_tiers(s.get("tiers", []))
+        self.tier_editor.set_media_dir(media_dir_for(s.get("career", {})))
 
         self._refresh_sources()
         self._refresh_setlist()
+        self._refresh_careers()
         self._career_dirty = False
 
     def _collect_settings_from_ui(self):
@@ -493,6 +548,7 @@ class MainWindow(QMainWindow):
         career.setdefault("source", "yarg")
         career["version"] = int(self.version_spin.value())
         career["type"] = self.type_edit.text().strip() or "Career"
+        career.setdefault("id", str(uuid.uuid4()))
 
         s["visibility"] = self.visibility_combo.currentText()
 
@@ -518,6 +574,7 @@ class MainWindow(QMainWindow):
     def _persist_settings(self):
         self.settings = self._collect_settings_from_ui()
         save_settings(self.settings)
+        reconcile_media(self.settings.get("career", {}), self.settings.get("tiers", []))
 
     def _mark_career_dirty(self, *args):
         self._career_dirty = True
@@ -624,6 +681,111 @@ class MainWindow(QMainWindow):
         self.update_setlist_btn.setEnabled(False)
         self._refresh_setlist()
         self.log_panel.log("Setlist updated.")
+
+    # ------------------------------------------------------------------ #
+    #  Career management
+    # ------------------------------------------------------------------ #
+
+    def _careers_out_dir(self):
+        return str(self.settings.get("output_dir") or CAREERS_DIR)
+
+    def _refresh_careers(self):
+        records = scan_careers(self._careers_out_dir())
+        loaded = self.settings.get("loaded_career") or ""
+        loaded_stem = os.path.splitext(loaded)[0] if loaded else None
+
+        self.careers_list.clear()
+        for r in records:
+            files = []
+            if r["json"]:
+                files.append(".json")
+            if r["preset"]:
+                files.append(".preset")
+            files_text = " + ".join(files) if files else "—"
+            media_text = "yes" if r["has_media"] else "—"
+            name = r["name"]
+            if r["stem"] == loaded_stem:
+                name += "  (loaded)"
+            item = QTreeWidgetItem([name, files_text, str(r["tier_count"]), media_text])
+            item.setData(0, Qt.UserRole, r["stem"])
+            self.careers_list.addTopLevelItem(item)
+
+    def _selected_career_stem(self):
+        items = self.careers_list.selectedItems()
+        return items[0].data(0, Qt.UserRole) if items else None
+
+    def _on_load_career_from_list(self):
+        stem = self._selected_career_stem()
+        if not stem:
+            QMessageBox.information(self, "Select a career", "Select a career to load.")
+            return
+        out_dir = self._careers_out_dir()
+        preset = os.path.join(out_dir, f"{stem}.preset")
+        jsonp = os.path.join(out_dir, f"{stem}.json")
+        path = preset if os.path.isfile(preset) else (jsonp if os.path.isfile(jsonp) else None)
+        if not path:
+            QMessageBox.warning(self, "Not found", f"No career files for '{stem}'.")
+            return
+        if not self._confirm_discard_edits():
+            return
+        try:
+            result = load_career_file(path)
+        except Exception as exc:
+            QMessageBox.critical(self, "Load failed", f"Could not load career:\n{exc}")
+            return
+        self._apply_structure(result, os.path.basename(path))
+        self.log_panel.log(f"Loaded career: {os.path.basename(path)}")
+        self._refresh_careers()
+
+    def _on_delete_career(self):
+        stem = self._selected_career_stem()
+        if not stem:
+            QMessageBox.information(self, "Select a career", "Select a career to delete.")
+            return
+        loaded = self.settings.get("loaded_career") or ""
+        is_loaded = stem == (os.path.splitext(loaded)[0] if loaded else None)
+
+        msg = (f"Delete career '{stem}'?\n\n"
+               "This removes its .json/.preset files and, if no other career uses it, its media.")
+        if is_loaded:
+            msg += "\n\nThis is the currently loaded career — the active structure will reset to the template."
+        reply = QMessageBox.question(self, "Delete career", msg, QMessageBox.Yes | QMessageBox.No, QMessageBox.No)
+        if reply != QMessageBox.Yes:
+            return
+
+        result = delete_career(self._careers_out_dir(), stem)
+        for f in result["files"]:
+            self.log_panel.log(f"Deleted {f}")
+        if result.get("media"):
+            self.log_panel.log(f"Deleted media {result['media']}")
+
+        if is_loaded:
+            self.settings["loaded_career"] = None
+            try:
+                tpl = load_template()
+            except Exception:
+                tpl = None
+            if tpl:
+                self._apply_structure(tpl, None)
+            self.log_panel.log("Loaded career deleted; reset to template.")
+        self._refresh_careers()
+
+    def _on_clean_unused_media(self):
+        reply = QMessageBox.question(
+            self, "Clean unused media",
+            "Remove media folders for careers that no longer exist in the output folder?",
+            QMessageBox.Yes | QMessageBox.No,
+            QMessageBox.No,
+        )
+        if reply != QMessageBox.Yes:
+            return
+        removed = clean_unused_media(self._careers_out_dir())
+        if removed:
+            for d in removed:
+                self.log_panel.log(f"Removed unused media {d}")
+        else:
+            self.log_panel.log("No unused media found.")
+        self._refresh_careers()
 
     # ------------------------------------------------------------------ #
     #  Actions
@@ -734,6 +896,7 @@ class MainWindow(QMainWindow):
         self._setlist_dirty = False
         self.update_setlist_btn.setEnabled(False)
         self._refresh_setlist()
+        self._refresh_careers()
 
         reply = QMessageBox.question(
             self, "Build complete",
@@ -920,6 +1083,7 @@ class MainWindow(QMainWindow):
         save_settings(self.settings)
         self.log_panel.log(f"Saved setlist:\n  {result['json_path']}\n  {result['preset_path']}")
         self.statusBar().showMessage("Setlist saved")
+        self._refresh_careers()
 
     def on_toggle_theme(self):
         from .theme import apply_theme

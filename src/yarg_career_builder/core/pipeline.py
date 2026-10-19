@@ -12,7 +12,7 @@ from .scan import scan_library
 from .selection import select_and_sort_songs, apply_source_selection, reconcile_setlist
 from .sources import source_info, is_public_allowed
 from .tiering import redistribute
-from .generate import make_tier_json, make_preset_json, write_outputs
+from .generate import make_tier_json, make_preset_json, write_outputs, _media_filename
 
 
 class PublicBlockError(Exception):
@@ -112,7 +112,8 @@ def build_career(settings, sources):
     # ---- emit --------------------------------------------------------------
     tiers_json = [make_tier_json(cfg, chunk) for cfg, chunk in filled]
     preset = make_preset_json(settings.get("career", {}), tiers_json)
-    json_path, preset_path = write_outputs(preset, settings.get("career", {}), settings)
+    media_files = collect_media_files(tiers_cfg)
+    json_path, preset_path = write_outputs(preset, settings.get("career", {}), settings, media_files)
 
     return {
         "songs_scanned": len(songs),
@@ -148,8 +149,18 @@ def save_setlist(settings, sources, setlist):
     tiers_cfg = settings.get("tiers", [])
     tiers_json = [make_tier_json(t, setlist.get(t.get("id"), [])) for t in tiers_cfg]
     preset = make_preset_json(settings.get("career", {}), tiers_json)
-    json_path, preset_path = write_outputs(preset, settings.get("career", {}), settings)
+    media_files = collect_media_files(tiers_cfg)
+    json_path, preset_path = write_outputs(preset, settings.get("career", {}), settings, media_files)
     return {"json_path": json_path, "preset_path": preset_path}
+
+
+def collect_media_files(tiers_cfg):
+    """Collect referenced completion-bonus media paths from the tier configs."""
+    files = []
+    for t in tiers_cfg:
+        if _media_filename(t) and t.get("media_path"):
+            files.append(t["media_path"])
+    return files
 
 
 def regenerate_sources(install_dir):

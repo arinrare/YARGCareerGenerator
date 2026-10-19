@@ -55,6 +55,19 @@ SETTINGS_PATH = BASE / "settings.json"
 SOURCES_PATH = BASE / "sources.json"
 CAREERS_DIR = dist_dir() / "careers"
 
+# Managed folder for career tier media (completion-bonus images/sounds/videos).
+# Picked files are copied here so the exported .preset stays self-contained.
+# Each career gets its own subfolder keyed by its stable Id, so distinct careers
+# never collide on media filenames. Lives beside ``careers/`` in the
+# distributable folder (same base as CAREERS_DIR) so it's portable in dev too.
+MEDIA_DIR = dist_dir() / "media"
+
+
+def media_dir_for(career):
+    """Return the per-career media folder for ``career`` (keyed by its Id)."""
+    cid = (career or {}).get("id") or "default"
+    return MEDIA_DIR / str(cid)
+
 # The default career template: a user-replaceable YARG .preset export.
 # TEMPLATE_PATH is the live file (next to settings.json); BUNDLED_TEMPLATE_PATH
 # is the shipped pristine copy used to seed TEMPLATE_PATH on first run.
