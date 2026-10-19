@@ -897,6 +897,7 @@ class MainWindow(QMainWindow):
         self.log_panel.log("Reset to shipped default career.")
 
     def on_save_setlist(self):
+        self._persist_settings()
         career = self.settings.get("career", {}) or {}
         out_dir = self.settings.get("output_dir") or CAREERS_DIR
         name = sanitize_filename(career.get("name") or "Career")
@@ -913,7 +914,6 @@ class MainWindow(QMainWindow):
             if reply != QMessageBox.Yes:
                 return
 
-        self._persist_settings()
         setlist = self.settings.get("setlist") or {}
         result = save_setlist(self.settings, self.sources, setlist)
         self.settings["loaded_career"] = os.path.basename(result["json_path"])

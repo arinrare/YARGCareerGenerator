@@ -62,6 +62,20 @@ def test_select_and_sort_songs_missing_skip_mode():
     assert len(excluded["no_guitar"]) == 1
 
 
+def test_select_and_sort_songs_preserves_difficulty_order_with_jitter():
+    songs = [
+        _song("a", diff=5),
+        _song("b", diff=1),
+        _song("c", diff=3),
+        _song("d", diff=3),
+        _song("e", diff=3),
+        _song("f", diff=2),
+    ]
+    usable, _ = select_and_sort_songs(songs, _settings(), {})
+    diffs = [s["difficulty"] for s in usable]
+    assert diffs == sorted(diffs)
+
+
 def test_allocate_sources_proportional_and_clamped():
     available = {"a": 100, "b": 100, "c": 2}
     takes = allocate_sources({"a": 1, "b": 1, "c": 1}, 60, available)

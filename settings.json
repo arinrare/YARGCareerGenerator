@@ -71,7 +71,7 @@
     ]
   },
   "career": {
-    "name": "YARG Career",
+    "name": "Guitat Hero World Tour 3",
     "title": null,
     "description": "Starting a band has never been easier! Bring your friends to the YARG and begin playing the songs you've rehearsed. Even if you flub a few notes, everyone's here for a good time!",
     "source": "yarg",
@@ -189,7 +189,7 @@
       "id": "b9a93442-3b42-4820-885f-82d6ecfc32ab"
     }
   ],
-  "loaded_career": "YARG_Career.json",
+  "loaded_career": "Guitat_Hero_World_Tour_3.json",
   "scan_counts": {
     "bh": 65,
     "djh": 10,
@@ -228,20 +228,14 @@
   "setlist": {
     "cdb50d5f-1070-44a4-b37b-f4b10f950c3a": [
       {
-        "artist": "Nirvana",
-        "title": "About a Girl (Unplugged Live)",
+        "artist": "Kent",
+        "title": "Vinternoll2",
         "charter": "Neversoft",
         "source": "ghwt"
       },
       {
-        "artist": "Tokio Hotel",
-        "title": "Monsoon",
-        "charter": "Neversoft",
-        "source": "ghwt"
-      },
-      {
-        "artist": "R.E.M.",
-        "title": "The One I Love",
+        "artist": "Linkin Park",
+        "title": "What I've Done",
         "charter": "Neversoft",
         "source": "ghwt"
       },
@@ -252,30 +246,48 @@
         "source": "ghwt"
       },
       {
-        "artist": "Kent",
-        "title": "Vinternoll2",
+        "artist": "R.E.M.",
+        "title": "The One I Love",
+        "charter": "Neversoft",
+        "source": "ghwt"
+      },
+      {
+        "artist": "Tokio Hotel",
+        "title": "Monsoon",
         "charter": "Neversoft",
         "source": "ghwt"
       }
     ],
     "a43a8500-b5af-42fc-8803-fd92eada4eed": [
       {
-        "artist": "Linkin Park",
-        "title": "What I've Done",
+        "artist": "Nirvana",
+        "title": "About a Girl (Unplugged Live)",
         "charter": "Neversoft",
         "source": "ghwt"
       },
       {
-        "artist": "Sportfreunde Stiller",
-        "title": "'54,'74,'90,2010",
+        "artist": "Interpol",
+        "title": "Obstacle 1",
         "charter": "Neversoft",
-        "source": "ghwtdlc"
+        "source": "ghwt"
       },
       {
         "artist": "Oasis",
-        "title": "Ain't Got Nothin'",
+        "title": "Some Might Say",
         "charter": "Neversoft",
-        "source": "ghwtdlc"
+        "source": "ghwt"
+      },
+      {
+        "artist": "Korn",
+        "title": "Freak on a Leash",
+        "charter": "Neversoft",
+        "source": "ghwt"
+      },
+      {
+        "artist": "Modest Mouse",
+        "title": "Float On",
+        "charter": "Neversoft",
+        "source": "ghwt"
       },
       {
         "artist": "Paul McCartney & Wings",
@@ -290,22 +302,30 @@
         "source": "ghwt"
       },
       {
-        "artist": "Wolfmother",
-        "title": "Dimension",
+        "artist": "Oasis",
+        "title": "To Be Where There's Life",
         "charter": "Neversoft",
         "source": "ghwtdlc"
       },
       {
-        "artist": "Modest Mouse",
-        "title": "Float On",
+        "artist": "Flo Rida ft. T-Pain",
+        "title": "Low (Travis Barker Remix)",
         "charter": "Neversoft",
-        "source": "ghwt"
+        "source": "ghwtdlc"
       },
       {
-        "artist": "Korn",
-        "title": "Freak on a Leash",
+        "artist": "The Rasmus",
+        "title": "In the Shadows",
         "charter": "Neversoft",
-        "source": "ghwt"
+        "source": "ghwtdlc"
+      }
+    ],
+    "8d17f843-2968-4c73-968c-f3565d570ff3": [
+      {
+        "artist": "Paul McCartney & Wings",
+        "title": "Junior's Farm",
+        "charter": "Neversoft",
+        "source": "ghwtdlc"
       },
       {
         "artist": "Vampire Weekend",
@@ -314,16 +334,14 @@
         "source": "ghwtdlc"
       },
       {
-        "artist": "Oasis",
-        "title": "Im Outta Time",
+        "artist": "Pixies",
+        "title": "Monkey Gone to Heaven",
         "charter": "Neversoft",
         "source": "ghwtdlc"
-      }
-    ],
-    "8d17f843-2968-4c73-968c-f3565d570ff3": [
+      },
       {
-        "artist": "The Rasmus",
-        "title": "In the Shadows",
+        "artist": "Oasis",
+        "title": "Ain't Got Nothin'",
         "charter": "Neversoft",
         "source": "ghwtdlc"
       },
@@ -332,42 +350,18 @@
         "title": "Jet",
         "charter": "Neversoft",
         "source": "ghwtdlc"
-      },
-      {
-        "artist": "Di-Rect",
-        "title": "Johnny",
-        "charter": "Neversoft",
-        "source": "ghwtdlc"
-      },
-      {
-        "artist": "Paul McCartney & Wings",
-        "title": "Junior's Farm",
-        "charter": "Neversoft",
-        "source": "ghwtdlc"
-      },
-      {
-        "artist": "Interpol",
-        "title": "Obstacle 1",
-        "charter": "Neversoft",
-        "source": "ghwt"
       }
     ],
     "c7854cd4-2b00-4956-8b22-7e7d0565fc0e": [
       {
         "artist": "Oasis",
-        "title": "Some Might Say",
+        "title": "Soldier On",
         "charter": "Neversoft",
-        "source": "ghwt"
+        "source": "ghwtdlc"
       },
       {
-        "artist": "The Enemy",
-        "title": "Aggro",
-        "charter": "Neversoft",
-        "source": "ghwt"
-      },
-      {
-        "artist": "The Guess Who",
-        "title": "American Woman",
+        "artist": "Beatsteaks",
+        "title": "Hail to the Freaks",
         "charter": "Neversoft",
         "source": "ghwt"
       },
@@ -378,8 +372,14 @@
         "source": "ghwt"
       },
       {
-        "artist": "Beatsteaks",
-        "title": "Hail to the Freaks",
+        "artist": "Steve Miller Band",
+        "title": "The Joker",
+        "charter": "Neversoft",
+        "source": "ghwt"
+      },
+      {
+        "artist": "Rise Against",
+        "title": "Re-Education (Through Labor)",
         "charter": "Neversoft",
         "source": "ghwt"
       }
@@ -388,12 +388,6 @@
       {
         "artist": "Bon Jovi",
         "title": "Livin' on a Prayer",
-        "charter": "Neversoft",
-        "source": "ghwt"
-      },
-      {
-        "artist": "Paramore",
-        "title": "Misery Business",
         "charter": "Neversoft",
         "source": "ghwt"
       },
@@ -410,14 +404,14 @@
         "source": "ghwt"
       },
       {
-        "artist": "The Sex Pistols",
-        "title": "Pretty Vacant",
+        "artist": "The Guess Who",
+        "title": "American Woman",
         "charter": "Neversoft",
         "source": "ghwt"
       },
       {
-        "artist": "Rise Against",
-        "title": "Re-Education (Through Labor)",
+        "artist": "The Sex Pistols",
+        "title": "Pretty Vacant",
         "charter": "Neversoft",
         "source": "ghwt"
       },
@@ -428,8 +422,14 @@
         "source": "ghwt"
       },
       {
-        "artist": "Steve Miller Band",
-        "title": "The Joker",
+        "artist": "Paramore",
+        "title": "Misery Business",
+        "charter": "Neversoft",
+        "source": "ghwt"
+      },
+      {
+        "artist": "HushPuppies",
+        "title": "You're Gonna Say Yeah!",
         "charter": "Neversoft",
         "source": "ghwt"
       },
@@ -440,54 +440,16 @@
         "source": "ghwt"
       },
       {
-        "artist": "Creedence Clearwater Revival",
-        "title": "Up Around the Bend",
+        "artist": "The Enemy",
+        "title": "Aggro",
         "charter": "Neversoft",
         "source": "ghwt"
       }
     ],
     "64caf712-09fe-43cd-ace4-79e0f8da2400": [
       {
-        "artist": "HushPuppies",
-        "title": "You're Gonna Say Yeah!",
-        "charter": "Neversoft",
-        "source": "ghwt"
-      },
-      {
-        "artist": "Trust",
-        "title": "Antisocial",
-        "charter": "Neversoft",
-        "source": "ghwt"
-      },
-      {
-        "artist": "Lenny Kravitz",
-        "title": "Are You Gonna Go My Way",
-        "charter": "Neversoft",
-        "source": "ghwt"
-      },
-      {
-        "artist": "Blink-182",
-        "title": "Dammit (Growing Up)",
-        "charter": "Neversoft",
-        "source": "ghwt"
-      },
-      {
-        "artist": "Foo Fighters",
-        "title": "Everlong",
-        "charter": "Neversoft",
-        "source": "ghwt"
-      }
-    ],
-    "8610b274-f87b-44ce-b57b-8e198e830f1f": [
-      {
-        "artist": "Survivor",
-        "title": "Eye of the Tiger",
-        "charter": "Neversoft",
-        "source": "ghwt"
-      },
-      {
-        "artist": "Anouk",
-        "title": "Good God",
+        "artist": "Creedence Clearwater Revival",
+        "title": "Up Around the Bend",
         "charter": "Neversoft",
         "source": "ghwt"
       },
@@ -498,22 +460,14 @@
         "source": "ghwt"
       },
       {
-        "artist": "Bob Seger & the Silver Bullet Band",
-        "title": "Hollywood Nights",
+        "artist": "Lenny Kravitz",
+        "title": "Are You Gonna Go My Way",
         "charter": "Neversoft",
         "source": "ghwt"
       },
       {
-        "artist": "Eagles",
-        "title": "Hotel California",
-        "charter": "Neversoft",
-        "source": "ghwt"
-      }
-    ],
-    "6966230c-613f-4c1d-946a-746751c9a488": [
-      {
-        "artist": "Jane's Addiction",
-        "title": "Mountain Song",
+        "artist": "Survivor",
+        "title": "Eye of the Tiger",
         "charter": "Neversoft",
         "source": "ghwt"
       },
@@ -522,10 +476,12 @@
         "title": "On the Road Again (Live)",
         "charter": "Neversoft",
         "source": "ghwt"
-      },
+      }
+    ],
+    "8610b274-f87b-44ce-b57b-8e198e830f1f": [
       {
-        "artist": "Blondie",
-        "title": "One Way or Another",
+        "artist": "Eagles",
+        "title": "Hotel California",
         "charter": "Neversoft",
         "source": "ghwt"
       },
@@ -536,20 +492,52 @@
         "source": "ghwt"
       },
       {
-        "artist": "The Allman Brothers Band",
-        "title": "Ramblin' Man",
+        "artist": "Jane's Addiction",
+        "title": "Mountain Song",
         "charter": "Neversoft",
         "source": "ghwt"
       },
       {
-        "artist": "Sublime",
-        "title": "Santeria",
+        "artist": "Trust",
+        "title": "Antisocial",
         "charter": "Neversoft",
         "source": "ghwt"
       },
       {
         "artist": "Coldplay",
         "title": "Shiver",
+        "charter": "Neversoft",
+        "source": "ghwt"
+      }
+    ],
+    "6966230c-613f-4c1d-946a-746751c9a488": [
+      {
+        "artist": "Black Rebel Motorcycle Club",
+        "title": "Weapon of Choice",
+        "charter": "Neversoft",
+        "source": "ghwt"
+      },
+      {
+        "artist": "The Allman Brothers Band",
+        "title": "Ramblin' Man",
+        "charter": "Neversoft",
+        "source": "ghwt"
+      },
+      {
+        "artist": "Bob Seger & the Silver Bullet Band",
+        "title": "Hollywood Nights",
+        "charter": "Neversoft",
+        "source": "ghwt"
+      },
+      {
+        "artist": "Blink-182",
+        "title": "Dammit (Growing Up)",
+        "charter": "Neversoft",
+        "source": "ghwt"
+      },
+      {
+        "artist": "Blondie",
+        "title": "One Way or Another",
         "charter": "Neversoft",
         "source": "ghwt"
       },
@@ -560,22 +548,34 @@
         "source": "ghwt"
       },
       {
-        "artist": "Black Rebel Motorcycle Club",
-        "title": "Weapon of Choice",
+        "artist": "Anouk",
+        "title": "Good God",
         "charter": "Neversoft",
         "source": "ghwt"
       },
       {
-        "artist": "Radio Futura",
-        "title": "Escuela de Calor",
+        "artist": "Foo Fighters",
+        "title": "Everlong",
+        "charter": "Neversoft",
+        "source": "ghwt"
+      },
+      {
+        "artist": "Sublime",
+        "title": "Santeria",
+        "charter": "Neversoft",
+        "source": "ghwt"
+      },
+      {
+        "artist": "MC5's Wayne Kramer",
+        "title": "Kick Out the Jams",
         "charter": "Neversoft",
         "source": "ghwt"
       }
     ],
     "943b3d7c-004e-45f3-847c-598d453cda4b": [
       {
-        "artist": "MC5's Wayne Kramer",
-        "title": "Kick Out the Jams",
+        "artist": "Radio Futura",
+        "title": "Escuela de Calor",
         "charter": "Neversoft",
         "source": "ghwt"
       },
@@ -586,14 +586,8 @@
         "source": "ghwt"
       },
       {
-        "artist": "Tool",
-        "title": "Parabola",
-        "charter": "Neversoft",
-        "source": "ghwt"
-      },
-      {
-        "artist": "Tool",
-        "title": "Schism",
+        "artist": "The Jimi Hendrix Experience",
+        "title": "The Wind Cries Mary",
         "charter": "Neversoft",
         "source": "ghwt"
       },
@@ -602,12 +596,18 @@
         "title": "The Middle",
         "charter": "Neversoft",
         "source": "ghwt"
+      },
+      {
+        "artist": "Tool",
+        "title": "Parabola",
+        "charter": "Neversoft",
+        "source": "ghwt"
       }
     ],
     "408f59f1-41e1-46c9-a9fb-9414c13ee0ea": [
       {
-        "artist": "The Jimi Hendrix Experience",
-        "title": "The Wind Cries Mary",
+        "artist": "Tool",
+        "title": "Schism",
         "charter": "Neversoft",
         "source": "ghwt"
       },
@@ -624,46 +624,8 @@
         "source": "ghwt"
       },
       {
-        "artist": "Steely Dan",
-        "title": "Do It Again",
-        "charter": "Neversoft",
-        "source": "ghwt"
-      },
-      {
-        "artist": "Dinosaur Jr.",
-        "title": "Feel the Pain",
-        "charter": "Neversoft",
-        "source": "ghwt"
-      }
-    ],
-    "9abfb110-a59f-409e-8551-7fbb9dc88b68": [
-      {
-        "artist": "Pat Benatar",
-        "title": "Heartbreaker",
-        "charter": "Neversoft",
-        "source": "ghwt"
-      },
-      {
-        "artist": "The Mars Volta",
-        "title": "L'Via L'Viaquez",
-        "charter": "Neversoft",
-        "source": "ghwt"
-      },
-      {
-        "artist": "Los Lobos",
-        "title": "La Bamba",
-        "charter": "Neversoft",
-        "source": "ghwt"
-      },
-      {
-        "artist": "The Doors",
-        "title": "Love Me Two Times",
-        "charter": "Neversoft",
-        "source": "ghwt"
-      },
-      {
-        "artist": "The Stone Roses",
-        "title": "Love Spreads",
+        "artist": "No Doubt",
+        "title": "Spiderwebs",
         "charter": "Neversoft",
         "source": "ghwt"
       },
@@ -672,10 +634,18 @@
         "title": "Never Too Late",
         "charter": "Neversoft",
         "source": "ghwt"
-      },
+      }
+    ],
+    "9abfb110-a59f-409e-8551-7fbb9dc88b68": [
       {
         "artist": "Beastie Boys ft. Kerry King",
         "title": "No Sleep Till Brooklyn",
+        "charter": "Neversoft",
+        "source": "ghwt"
+      },
+      {
+        "artist": "Steely Dan",
+        "title": "Do It Again",
         "charter": "Neversoft",
         "source": "ghwt"
       },
@@ -686,28 +656,26 @@
         "source": "ghwt"
       },
       {
-        "artist": "Billy Idol",
-        "title": "Rebel Yell",
+        "artist": "Ted Nugent",
+        "title": "Ted Nugent Guitar Battle (Career)",
         "charter": "Neversoft",
         "source": "ghwt"
       },
       {
-        "artist": "NOFX",
-        "title": "Soul Doubt",
-        "charter": "Neversoft",
-        "source": "ghwt"
-      }
-    ],
-    "b9a93442-3b42-4820-885f-82d6ecfc32ab": [
-      {
-        "artist": "No Doubt",
-        "title": "Spiderwebs",
+        "artist": "The Mars Volta",
+        "title": "L'Via L'Viaquez",
         "charter": "Neversoft",
         "source": "ghwt"
       },
       {
-        "artist": "Black Label Society",
-        "title": "Stillborn",
+        "artist": "Pat Benatar",
+        "title": "Heartbreaker",
+        "charter": "Neversoft",
+        "source": "ghwt"
+      },
+      {
+        "artist": "The Doors",
+        "title": "Love Me Two Times",
         "charter": "Neversoft",
         "source": "ghwt"
       },
@@ -718,14 +686,46 @@
         "source": "ghwt"
       },
       {
-        "artist": "Ted Nugent",
-        "title": "Ted Nugent Guitar Battle (Career)",
+        "artist": "Los Lobos",
+        "title": "La Bamba",
         "charter": "Neversoft",
         "source": "ghwt"
       },
       {
-        "artist": "Stuck in the Sound",
-        "title": "Toy Boy",
+        "artist": "Billy Idol",
+        "title": "Rebel Yell",
+        "charter": "Neversoft",
+        "source": "ghwt"
+      }
+    ],
+    "b9a93442-3b42-4820-885f-82d6ecfc32ab": [
+      {
+        "artist": "Zakk Wylde",
+        "title": "Zakk Wylde Guitar Battle (Career)",
+        "charter": "Neversoft",
+        "source": "ghwt"
+      },
+      {
+        "artist": "The Stone Roses",
+        "title": "Love Spreads",
+        "charter": "Neversoft",
+        "source": "ghwt"
+      },
+      {
+        "artist": "Dinosaur Jr.",
+        "title": "Feel the Pain",
+        "charter": "Neversoft",
+        "source": "ghwt"
+      },
+      {
+        "artist": "Tool",
+        "title": "Vicarious",
+        "charter": "Neversoft",
+        "source": "ghwt"
+      },
+      {
+        "artist": "Black Label Society",
+        "title": "Stillborn",
         "charter": "Neversoft",
         "source": "ghwt"
       }

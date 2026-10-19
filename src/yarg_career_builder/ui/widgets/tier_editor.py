@@ -18,7 +18,15 @@ from PySide6.QtWidgets import (
     QWidget,
 )
 
-from .controls import NoScrollSpinBox
+from .controls import NoScrollComboBox, NoScrollSpinBox
+
+VENUE_HINTS = [
+    "Venue/TunnelTrip",
+    "Venue/Church",
+    "Venue/MagiaAlliance",
+    "Venue/OutdoorConcert",
+    "Venue/Festival",
+]
 
 
 def _new_tier():
@@ -102,10 +110,12 @@ class TierEditor(QWidget):
         self.bonus_check.setToolTip("Bonus tiers are optional side-setlists.")
         self.bonus_check.toggled.connect(self._on_edit)
 
-        self.venue_edit = QLineEdit()
-        self.venue_edit.setPlaceholderText("e.g. Venue/TunnelTrip")
-        self.venue_edit.setToolTip("Optional venue for this tier (e.g. Venue/Church).")
-        self.venue_edit.textChanged.connect(self._on_edit)
+        self.venue_combo = NoScrollComboBox()
+        self.venue_combo.setEditable(True)
+        self.venue_combo.addItem("")
+        self.venue_combo.addItems(VENUE_HINTS)
+        self.venue_combo.setToolTip("Optional venue for this tier. Pick one or type a custom Venue/<name>.")
+        self.venue_combo.currentTextChanged.connect(self._on_edit)
 
         self.text_edit = QPlainTextEdit()
         self.text_edit.setPlaceholderText("Optional flavour text shown when the tier unlocks.")
@@ -119,7 +129,7 @@ class TierEditor(QWidget):
         form.addRow("Song count", self.songs_spin)
         form.addRow("Unlock criteria", self.unlock_spin)
         form.addRow("", self.bonus_check)
-        form.addRow("Venue hint", self.venue_edit)
+        form.addRow("Venue hint", self.venue_combo)
         form.addRow("Unlock text", self.text_edit)
 
         right = QVBoxLayout()
@@ -171,7 +181,7 @@ class TierEditor(QWidget):
         self.songs_spin.setEnabled(has)
         self.unlock_spin.setEnabled(has)
         self.bonus_check.setEnabled(has)
-        self.venue_edit.setEnabled(has)
+        self.venue_combo.setEnabled(has)
         self.text_edit.setEnabled(has)
 
         self._load_detail()
@@ -184,14 +194,14 @@ class TierEditor(QWidget):
             self.songs_spin.setValue(t["song_count"])
             self.unlock_spin.setValue(t["unlock_criteria"])
             self.bonus_check.setChecked(t["is_bonus"])
-            self.venue_edit.setText(t["venue_hint"] or "")
+            self.venue_combo.setCurrentText(t["venue_hint"] or "")
             self.text_edit.setPlainText(t["custom_unlock_text"] or "")
         else:
             self.name_edit.clear()
             self.songs_spin.setValue(5)
             self.unlock_spin.setValue(0)
             self.bonus_check.setChecked(False)
-            self.venue_edit.clear()
+            self.venue_combo.setCurrentText("")
             self.text_edit.clear()
         self._block_signals(False)
 
@@ -202,11 +212,11 @@ class TierEditor(QWidget):
             t["song_count"] = int(self.songs_spin.value())
             t["unlock_criteria"] = int(self.unlock_spin.value())
             t["is_bonus"] = self.bonus_check.isChecked()
-            t["venue_hint"] = self.venue_edit.text().strip() or None
+            t["venue_hint"] = self.venue_combo.currentText().strip() or None
             t["custom_unlock_text"] = self.text_edit.toPlainText().strip() or None
 
     def _block_signals(self, blocked):
-        for w in (self.name_edit, self.songs_spin, self.unlock_spin, self.bonus_check, self.venue_edit, self.text_edit):
+        for w in (self.name_edit, self.songs_spin, self.unlock_spin, self.bonus_check, self.venue_combo, self.text_edit):
             w.blockSignals(blocked)
 
     def _on_select(self, row):

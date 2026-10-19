@@ -1,5 +1,6 @@
 """Song selection: difficulty sorting and source allocation."""
 
+import random
 from collections import Counter, defaultdict
 
 
@@ -16,8 +17,8 @@ def difficulty_sort_key(song, ascending):
     # missing difficulty (-1) sorts last when ascending
     d = song["difficulty"]
     if ascending:
-        return (0 if d >= 0 else 1, d if d >= 0 else 0, song["title"].lower())
-    return (0 if d >= 0 else 1, -(d if d >= 0 else 0), song["title"].lower())
+        return (0 if d >= 0 else 1, d if d >= 0 else 0)
+    return (0 if d >= 0 else 1, -(d if d >= 0 else 0))
 
 
 def select_and_sort_songs(songs, settings, sources):
@@ -45,6 +46,7 @@ def select_and_sort_songs(songs, settings, sources):
                 kept.append(s)
         usable = kept
 
+    random.shuffle(usable)
     usable.sort(key=lambda s: difficulty_sort_key(s, ascending))
     return usable, excluded
 
